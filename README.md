@@ -40,6 +40,10 @@ docker-compose build
 docker-compose up
 ```
 
+### Server certificate ###
+For the servers certificate we use dehydrated.....
+
+
 ### Call website ###
 You should now be able to use the webshop by open your browser and .........
 
