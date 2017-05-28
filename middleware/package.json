@@ -1,0 +1,22 @@
+{
+  "name": "middleware",
+  "version": "0.0.1",
+  "description": "Middleware for cnc-shop.",
+  "license": "MIT",
+  "author": [
+    "Artur B."
+  ],
+  "keywords": [
+    "express",
+    "middleware"
+  ],
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "mongoose": "^4.10.3"
+  }
+}
