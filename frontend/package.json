@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve -H 46.38.255.109",
+    "start": "ng serve --host 46.38.255.109",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
