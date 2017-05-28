@@ -1,0 +1,22 @@
+version: "3"
+services:
+
+  backend:
+    image: mongo:latest # build from DockerHub
+    ports:
+      - "27017:27017"
+    container_name: backend
+
+  middleware:
+    build: ./middleware # build from Dockerfile in directory
+    ports:
+      - "3000:3000"
+    links:
+      - backend
+    container_name: middleware
+
+  frontend:
+    build: ./frontend # build from Dockerfile in directory
+    ports:
+      - "4200:4200"
+    container_name: frontend
