@@ -5,17 +5,19 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class AuthenticationService {
 
+  API = 'https://192.168.99.1:3000';
+
   constructor(private http: Http) { }
 
   register(user) {
-    return this.http.post('/api/register', user)
+    return this.http.post(`${this.API}/register`, user)
       .map((res: Response) => {
         res.json();
       });
   }
 
   login(user) {
-    return this.http.post('/api/login', user)
+    return this.http.post(`${this.API}/login`, user)
       .map((res: Response) => {
         let user = res.json();
         if (user && user.token) {
