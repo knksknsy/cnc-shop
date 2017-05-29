@@ -16,3 +16,4 @@ mongoose.connection.on('disconnected', function() {
 
 require('./products.model');
 require('./users.model');
+require('./colors.model');
