@@ -1,0 +1,31 @@
+.modal-dialog {
+    .modal-header {
+        justify-content: flex-end;
+        padding: 0 5px 5px 0;
+        height: 1.3rem;
+        border-bottom: none;
+        .fa-times {
+            font-size: 1rem;
+        }
+        .close {
+            color: #fff;
+            text-shadow: none;
+        }
+    }
+
+    .modal-body {
+        padding: 0 1rem 1rem 1rem;
+
+        .first-row {
+            margin-top: 1rem;
+        }
+
+        .input-group {
+            margin-left: 1rem;
+            margin-right: 1rem !important;
+            .input-group-addon {
+                width: 15%;
+            }
+        }
+    }    
+}
