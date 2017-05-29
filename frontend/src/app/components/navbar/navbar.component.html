@@ -1,0 +1,68 @@
+
+<nav class="navbar navbar-default">
+      <div class="container">
+
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Cap-and-Can Webshop</a>
+        </div>
+
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-left">   
+             <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="fa fa-menu-hamburger"></span> <span class="caret"></span></a>
+                <ul class="dropdown-menu" style="background-color:black; color: white; width: 350px;">
+                <li class="dropdown-header"> <b>-------------   SHOP  ------------ </b> </li>
+                <li><a [routerLink]="['/products']">DOSEN</a></li>
+                <li class="divider"></li>
+                <li><a [routerLink]="['/accessoires']">ACCESSOIRES</a></li>
+                <li class="divider"></li>
+                <li><a [routerLink]="['/caps']">CAPS</a></li>
+                <li class="divider"></li>
+                <li class="divider"></li>
+                <li class="dropdown-header"><b>-------------   SPECIAL  ------------ </b></li>
+                <li><a href="#">CUSTOMIZE</a></li>
+              </ul>      
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li ><a [routerLink]="['/shoppingcart']"> <span class="fa fa-shopping-cart "></span>  </a></li>
+            <!--<li ><a [routerLink]="['/search']"> <span class="fa fa-search "></span>  </a></li>-->
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="fa fa-search"></span> <span class="caret"></span></a>
+                <ul class="dropdown-menu" style="background-color:black; color: white;width: 400px;">
+                <li>
+                   <form class="navbar-form">
+                      <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search" style="width:280px;"> 
+                      </div>
+                      <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
+                </li>
+                
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="fa fa-globe"></span> <span class="caret"></span></a>
+                <ul class="dropdown-menu" style="background-color:black; color: white;">
+                <li><a href="#">English</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Deutsch</a></li>
+              </ul>
+            </li>
+            <li><app-login-modal></app-login-modal></li>
+          </ul>
+    
+        </div>
+
+      </div>
+ </nav>
+
