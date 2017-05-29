@@ -14,5 +14,5 @@ mongoose.connection.on('disconnected', function() {
   console.log('Mongoose disconnected');
 });
 
-require('./Products');
-require('./Users');
+require('./products.model');
+require('./users.model');
