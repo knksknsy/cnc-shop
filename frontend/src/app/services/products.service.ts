@@ -5,7 +5,8 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class ProductsService {
 
-  API = 'http://192.168.99.1:3000';
+  API = 'http://localhost:3000';
+//  API = 'http://46.38.255.109:3000';
 
   constructor(private http: Http) { }
 
