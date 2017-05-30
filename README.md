@@ -26,6 +26,7 @@ In case of the message "Invalid Host Header" we currently use the
 Further we have X-OS Problems. Node-Sass has to be C-Compiled. So we 
 need to rebuild this npm package for the dev PC/Server. A quick hack
 to save time is compress the node-sass/ and extract it at the running system.
+(It seems that the Problem is gone by adding node-sass to package.json!!!)
 
 ```bash
 # Extract node-sass@4.5.3 into node_modules
