@@ -8,11 +8,9 @@
 
 var mongoose = require('mongoose');
 
-var colorSchema = mongoose.Schema({
+var colorSchema = new mongoose.Schema({
     name: String,
     hexcode: String
 });
 
-var Colors = mongoose.model('Colors', colorSchema);
-
-module.exports = Colors;
+mongoose.model('Colors', colorSchema);

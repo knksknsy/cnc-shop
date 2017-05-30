@@ -4,12 +4,13 @@
 
 FROM node:7
 
+RUN apt-get update && apt-get -y install nano
 RUN mkdir -p /usr/src/app
 
 # Copy & install app dependencies
 COPY . /usr/src/app
 WORKDIR /usr/src/app
-RUN npm install
+RUN npm install # && npm rebuild node-sass --force
 
 EXPOSE 4200
 CMD ["npm", "start"]

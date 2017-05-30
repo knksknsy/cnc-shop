@@ -8,12 +8,13 @@
 
 var mongoose = require('mongoose');
 
-var productSchema = mongoose.Schema({
+var productSchema = new mongoose.Schema({
     p_id: String,
     p_name: String,
-    p_image: String
+    p_image: String,
+    p_description: String,
+    p_price: Number,
+    p_category: String
 });
 
-var Products = mongoose.model('Products', productSchema);
-
-module.exports = Products;
+mongoose.model('Products', productSchema);
