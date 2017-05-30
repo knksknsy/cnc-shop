@@ -16,18 +16,21 @@ cd ~
 git clone git@gitlab.mi.hdm-stuttgart.de:ab176/cnc-shop.git
 cd cnc-shop
 # Start install script
-./prereq/dockernode.sh
+./config/dockernode.sh
 ```
 
 ### Server Settings ###
-You have to set your server IP-addr in some files for propor work.
-Beside that you can also set bindings to localhost. 
+In case of the message "Invalid Host Header" we currently use the
+--disable-host-check flag till we setup a proxy.
+
+Further we have X-OS Problems. Node-Sass has to be C-Compiled. So we 
+need to rebuild this npm package for the dev PC/Server. A quick hack
+to save time is compress the node-sass/ and extract it at the running system.
+(It seems that the Problem is gone by adding node-sass to package.json!!!)
 
 ```bash
-# change localhost to your IP
-hostname -i
-vi frontend/protractor.conf.js
-vi frontend/src/app/app.component.ts
+# Extract node-sass@4.5.3 into node_modules
+tar xf ./config/node_sass.tar.xz -C ./frontend/
 ```
 
 ### Start Container ###
