@@ -28,9 +28,18 @@ need to rebuild this npm package for the dev PC/Server. A quick hack
 to save time is compress the node-sass/ and extract it at the running system.
 (It seems that the Problem is gone by adding node-sass to package.json!!!)
 
+First we need to enter the docker containerimage called frontend. For this run 
+in a new terminal following commands. 
+
 ```bash
+# Check the container ID for the frontend container
+docker ps -a
+# Next we can enter the running container with
+docker exec -it <CONTAINERID> /bin/bash
+# You ll enter the working dir.
+
 # Extract node-sass@4.5.3 into node_modules
-tar xf ./config/node_sass.tar.xz -C ./frontend/
+tar xf ./config/node_sass.tar<mac OR lnx>.xz -C .
 ```
 
 ### Start Container ###
