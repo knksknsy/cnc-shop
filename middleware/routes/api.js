@@ -16,25 +16,21 @@ var auth = jwt({
   userProperty: 'payload'
 });
 
+var products = require('./products');
+var colors = require('./colors');
+
 var ctrlProfile = require('../controllers/profile');
 var ctrlAuth = require('../controllers/authentication');
-
-var mongoose = require('mongoose');
-var Products = mongoose.model('Products');
 
 router.get('/', (req, res) => {
     res.send('api works');
 });
 
-// Get all products
-router.get('/products', (req, res) => {
-  Products.find((err, products) => {
-    if (err) {
-      return next(err);
-    }
-    res.json(products);
-  });
-});
+// products
+router.use('/products', products);
+
+// colors
+router.use('/colors', colors);
 
 // profile
 router.get('/profile', auth, ctrlProfile.profileRead);

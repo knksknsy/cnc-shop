@@ -1,3 +1,11 @@
+/**
+*  Copyright (C) 2017
+*
+*   Kaan K.
+*
+*  MIT License
+*/
+
 var mongoose = require('mongoose');
 var User = mongoose.model('Users');
 
