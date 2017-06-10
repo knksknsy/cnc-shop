@@ -1,3 +1,11 @@
+/**
+*  Copyright (C) 2017
+*
+*   Kaan K.
+*
+*  MIT License
+*/
+
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
@@ -10,9 +18,29 @@ export class ProductsService {
 
   constructor(private http: Http) { }
 
-  // Get all products from the API
   getAllProducts() {
-    return this.http.get(`${this.API}/products`)
+    return this.http.get(`${this.API}/products/all`)
       .map(res => res.json());
   }
+
+  getProductDetails(id: string) {
+    return this.http.get(`${this.API}/products/` + id)
+      .map(res => res.json());
+  }
+
+  getProductsByCategory(category: string) {
+    return this.http.get(`${this.API}/products/` + category)
+      .map(res => res.json());
+  }
+
+  getPopularProducts() {
+    return this.http.get(`${this.API}/products/popular`)
+      .map(res => res.json());
+  }
+
+  getProductCategories() {
+    return this.http.get(`${this.API}/products/categories`)
+      .map(res => res.json());
+  }
+
 }
