@@ -1,3 +1,11 @@
+/**
+*  Copyright (C) 2017
+*
+*   Kaan K.
+*
+*  MIT License
+*/
+
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
 import 'rxjs/add/operator/map';

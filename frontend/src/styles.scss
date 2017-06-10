@@ -1,3 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'variables'; 
 @import '../node_modules/bootstrap/scss/bootstrap';
+
+.modal-backdrop {
+    z-index: 1010;
+}
+
+// adjust z-indices for list-modal
+.list-modal-active {
+	.slide {
+		/deep/ .carousel-indicators {
+			z-index: 1045 !important;
+		}
+		/deep/ .carousel-inner {
+			.carousel-item {
+				z-index: 1046 !important;
+				.item {
+					img {
+						filter: brightness(60%) !important;
+					}
+				}
+			}
+		}
+	}
+}

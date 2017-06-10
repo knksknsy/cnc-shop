@@ -1,20 +1,50 @@
+/**
+*  Copyright (C) 2017
+*
+*   Kaan K.
+*
+*  MIT License
+*/
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AccessoiresComponent } from './components/accessoires/accessoires.component';
 import { CapsComponent } from './components/caps/caps.component';
 import { ShoppingcartComponent } from './components/shoppingcart/shoppingcart.component';
-import { AuthGuard } from './guards/auth.guard';
-import { ProductsComponent } from './components/products/products.component';
+import { ProductsViewComponent } from './components/products-view/products-view.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { HomeComponent } from './components/home/home.component';
 
+import { AuthGuard } from './guards/auth.guard';
+
+import { ProductsResolverService } from './resolver/products-resolver.service';
+import { ProductDetailsResolverService } from './resolver/product-details-resolver.service';
+import { CategoryResolverService } from './resolver/category-resolver.service';
+
 const appRoutes: Routes = [
-    { path: '', component: HomeComponent },
-    { path: 'products', component: ProductsComponent },
-    // Example. Not really necessary in ShoppingcardComponent.
-    { path: 'shoppingcart', component: ShoppingcartComponent, canActivate: [AuthGuard] },
-    { path: 'caps', component: CapsComponent },
-    { path: 'accessoires', component: AccessoiresComponent },
+    {
+        path: '',
+        component: HomeComponent,
+        resolve: {
+            categories: CategoryResolverService
+        }
+    },
+    {
+        path: 'products/category/:category',
+        component: ProductsViewComponent,
+        resolve: {
+            products: ProductsResolverService,
+            categories: CategoryResolverService
+        }
+    },
+    {
+        path: 'products/details/:id',
+        component: ProductDetailsComponent,
+        resolve: {
+            details: ProductDetailsResolverService
+        }
+    }
     // { 
     //   path: '',
     //   redirectTo: '/component_name',
@@ -35,7 +65,10 @@ const appRoutes: Routes = [
         RouterModule
     ],
     providers: [
-        AuthGuard
+        AuthGuard,
+        ProductsResolverService,
+        ProductDetailsResolverService,
+        CategoryResolverService
     ]
 })
 export class AppRoutingModule { }

@@ -1,25 +1,28 @@
+/**
+*  Copyright (C) 2017
+*
+*   Kaan K.
+*
+*  MIT License
+*/
+
 import { Component, OnInit } from '@angular/core';
-import { ProductsService } from '../../services/products.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss']
 })
-export class ProductsComponent implements OnInit{
-  // instantiate products to an empty array
+export class ProductsComponent implements OnInit {
   products: any = [];
 
-  constructor(private productsService: ProductsService) { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.getProducts();
-  }
-
-  getProducts() {
-    this.productsService.getAllProducts().subscribe(products => {
-      this.products = products;
-      console.log("products: ", this.products);
+    this.route.params.forEach(params => {
+      this.products = this.route.snapshot.data['products'];
     });
   }
+
 }

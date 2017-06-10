@@ -1,0 +1,15 @@
+<button type="button" class="btn btn-outline-primary" (click)="showModal()">
+  <span class="fa fa-shopping-cart" aria-hidden="true"></span>
+</button>
+
+<div *ngIf="isModalShown" [config]="{ show: true }" (onHidden)="onHidden()" bsModal #autoShownModal="bs-modal" class="modal fade"
+  tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <div class="modal-header">Cart Header</div>
+      <div class="modal-body">Cart Content</div>
+
+    </div>
+  </div>
+</div>
