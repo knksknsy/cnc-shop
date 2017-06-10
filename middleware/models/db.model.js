@@ -1,3 +1,11 @@
+/**
+*  Copyright (C) 2017
+*
+*   Kaan K.
+*
+*  MIT License
+*/
+
 var mongoose = require('mongoose');
 const dbURI = require('../config/db.config').database;
 
@@ -14,6 +22,8 @@ mongoose.connection.on('disconnected', function() {
   console.log('Mongoose disconnected');
 });
 
+require('./counter.model');
+require('./categories.model');
 require('./products.model');
 require('./users.model');
 require('./colors.model');
