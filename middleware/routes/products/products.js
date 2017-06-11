@@ -50,14 +50,10 @@ router.get('/categories', (req, res) => {
 router.post('/new', (req, res) => {
     var products = [];
     if (!req.body.data) {
-        console.log('!req.body.data');
         return res.status(500).json({ 'message': 'No body defined.' });
     }
     products = req.body.data;
-    console.log('products.length', products.length);
-    console.log('first product`s name', products[0].p_name);
-    products.foreach((product, index) => {
-        console.log(`product ${index + 1} name`, product.p_name);
+    products.forEach((product) => {
         if (!product.p_name || !product.p_image || !product.p_description || !product.p_price || !product.p_category) {
             console.error('error', product);
             return res.status(500).json({'message': 'Product is corrupt.'});
@@ -74,17 +70,16 @@ router.post('/new', (req, res) => {
             },
             (err, data) => {
                 if (err) {
-                    console.error('error', err);
+                    console.error('error after save', err);
                     return res.status(500);
                 }
                 if (data) {
-                    console.log('saved', data);
+                    console.log('saved p_id', data.p_id);
                 }
             }
         );
-        console.log('done');
     });
-    return res.status(200);
+    return res.send(200);
 });
 
 // router.put('/update/:id', (req, res) => {

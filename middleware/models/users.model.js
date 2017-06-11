@@ -12,7 +12,7 @@ var crypto = require('crypto');
 var jwt = require('jsonwebtoken');
 const secret = require('../config/db.config').secret;
 
-var userSchema = Schema({
+var userSchema = new Schema({
     email: {
         type: String,
         unique: true,

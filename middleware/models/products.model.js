@@ -8,10 +8,15 @@
 */
 
 var mongoose = require('mongoose');
-var counter = mongoose.model('Counter');
+const dbURI = require('../config/db.config').database;
+var autoIncrement = require('mongoose-auto-increment');
 var Schema = mongoose.Schema;
 
-var productSchema = Schema({
+var connection = mongoose.createConnection(dbURI);
+
+autoIncrement.initialize(connection);
+
+var productSchema = new Schema({
     p_id: String,
     p_name: String,
     p_image: String,
@@ -22,16 +27,11 @@ var productSchema = Schema({
     p_category: String
 });
 
-// method is called before any product is being saved in order to increment p_id
-productSchema.pre('save', (next) => {
-    var doc = this;
-    counter.findByIdAndUpdate({ _id: 'p_id' }, { $inc: { seq: 1 } }, (error, counter) => {
-        if (error) {
-            return next(error);
-        }
-        doc.p_id = counter.seq;
-        next();
-    });
+productSchema.plugin(autoIncrement.plugin, {
+    model: 'Products',
+    field: 'p_id',
+    startAt: 543210,
+    incrementBy: 1
 });
 
 mongoose.model('Products', productSchema);

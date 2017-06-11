@@ -22,7 +22,6 @@ mongoose.connection.on('disconnected', function() {
   console.log('Mongoose disconnected');
 });
 
-require('./counter.model');
 require('./categories.model');
 require('./products.model');
 require('./users.model');

@@ -9,7 +9,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var categoriesSchema = Schema({
+var categoriesSchema = new Schema({
     name: String,
     image: String,
 });
