@@ -9,8 +9,9 @@
 
 var mongoose = require('mongoose');
 var counter = mongoose.model('Counter');
+var Schema = mongoose.Schema;
 
-var productSchema = new mongoose.Schema({
+var productSchema = Schema({
     p_id: String,
     p_name: String,
     p_image: String,

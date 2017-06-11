@@ -21,3 +21,5 @@ router.post('/add', (req, res) => {
 router.get('/', (req, res) => {
 
 });
+
+module.exports = router;

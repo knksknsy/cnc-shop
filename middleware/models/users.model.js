@@ -7,11 +7,12 @@
 */
 
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 var crypto = require('crypto');
 var jwt = require('jsonwebtoken');
 const secret = require('../config/db.config').secret;
 
-var userSchema = new mongoose.Schema({
+var userSchema = Schema({
     email: {
         type: String,
         unique: true,
