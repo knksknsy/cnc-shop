@@ -1,3 +1,7 @@
-<div *ngFor="let category of categories">
-    <app-category-card [data]="category"></app-category-card>
+<div class="container-fluid">
+    <div class="row">
+        <div *ngFor="let category of categories" class="col-md">
+            <app-category-card [data]="category"></app-category-card>
+        </div>
+    </div>
 </div>

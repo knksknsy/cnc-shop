@@ -1,0 +1,232 @@
+.slideshow{
+
+	/deep/ div.carousel > ol.carousel-indicators{
+		bottom: 0;
+	}
+
+	// carosuel height
+	/deep/ div.carousel > div.carousel-inner{
+		height: 60vh;
+		border-radius: 0.25rem;
+
+		.carousel-caption{
+			bottom: 0;
+		}
+
+		slide{
+			height: 60vh;
+			.item{
+				width: 100%;
+
+				img{
+                    height: 60vh;
+                    display: block;
+                    margin: 0 auto;
+					cursor: pointer;
+				}
+
+				.carousel-caption{
+					width: 100%;
+					left: 0;
+					background-color: rgba(0,0,0,.5);
+					cursor: pointer;
+				}
+
+			}
+
+		}
+	}
+
+	/deep/ span.icon-prev.carousel-control-prev-icon{
+		background-color: black;
+        border-radius: 5px;
+        height: 30px;
+        width: 30px;
+	}
+	/deep/ span.icon-next.carousel-control-next-icon{
+		background-color: black;
+        border-radius: 5px;
+        height: 30px;
+        width: 30px;
+	}
+
+}
+
+
+/* media queries
+*  tablet landscape
+*/
+@media (min-width: 1024px) and (max-width: 1200px){
+
+	.slideshow{
+		/deep/ div.carousel > ol.carousel-indicators{
+			bottom: 0;
+		}
+		/deep/ span.icon-prev.carousel-control-prev-icon{
+            background-color: black;
+            border-radius: 5px;
+            height: 30px;
+            width: 30px;
+        }
+        /deep/ span.icon-next.carousel-control-next-icon{
+            background-color: black;
+            border-radius: 5px;
+            height: 30px;
+            width: 30px;
+        }
+	}
+}
+/* 
+*  tablet portrait
+*/
+@media (min-width: 768px) and (max-width: 1023px){
+
+	.slideshow{
+		/deep/ div.carousel > ol.carousel-indicators{
+			bottom: 0;
+		}
+		// carosuel height
+		/deep/ div.carousel > div.carousel-inner{
+			height: 60vh;
+			border-radius: 0.25rem;
+
+			.carousel-caption{
+				bottom: 0;
+			}
+
+			slide{
+				height: 60vh;
+                img{
+                    height: 60vh;
+                    display: block;
+                    margin: 0 auto;
+					cursor: pointer;
+				}
+			}
+		}
+
+		/deep/ span.icon-prev.carousel-control-prev-icon{
+            background-color: black;
+            border-radius: 5px;
+            height: 30px;
+            width: 30px;
+        }
+        /deep/ span.icon-next.carousel-control-next-icon{
+            background-color: black;
+            border-radius: 5px;
+            height: 30px;
+            width: 30px;
+        }
+
+	}
+}
+/* 
+*  phone landscape
+*/
+@media (min-width: 667px) and (max-width: 767px){
+
+    .container-fluid {
+        margin-top: 110px;
+    }
+
+	.slideshow{
+		/deep/ div.carousel > ol.carousel-indicators{
+			bottom: 0;
+		}
+		// carosuel height
+		/deep/ div.carousel > div.carousel-inner{
+			height: calc(100% - 100px);
+			border-radius: 0.25rem;
+
+			.carousel-caption{
+				bottom: 0;
+			}
+
+			slide{
+				height: calc(100% - 100px);
+                img{
+                    height: calc(100% - 100px);
+                    display: block;
+                    margin: 0 auto;
+					cursor: pointer;
+				}
+			}
+
+			.carousel-caption h3{
+				font-size: 1rem;
+			}
+		}
+
+		/deep/ span.icon-prev.carousel-control-prev-icon{
+            background-color: black;
+            border-radius: 5px;
+            height: 30px;
+            width: 30px;
+        }
+        /deep/ span.icon-next.carousel-control-next-icon{
+            background-color: black;
+            border-radius: 5px;
+            height: 30px;
+            width: 30px;
+        }
+
+	}
+}
+/* 
+*  phone portrait
+*/
+@media (max-width: 375px){
+
+    .container-fluid {
+        margin-top: 110px;
+    }
+
+	.slideshow{
+		/deep/ div.carousel > ol.carousel-indicators{
+			bottom: 0;
+		}
+		// carosuel height
+		/deep/ div.carousel > div.carousel-inner{
+			height: 60vh;
+			border-radius: 0.25rem;
+
+			.carousel-caption{
+				bottom: 0;
+			}
+			
+			slide{
+				height: 60vh;
+                img{
+                    height: 60vh;
+                    display: block;
+                    margin: 0 auto;
+					cursor: pointer;
+				}
+				.carousel-caption h3{
+					font-size: 1rem;
+				}
+
+			}
+
+		}
+
+        /deep/ span.icon-prev.carousel-control-prev-icon{
+            background-color: black;
+            border-radius: 5px;
+            height: 30px;
+            width: 30px;
+        }
+        /deep/ span.icon-next.carousel-control-next-icon{
+            background-color: black;
+            border-radius: 5px;
+            height: 30px;
+            width: 30px;
+        }
+		
+	}
+
+}
+
+
+
+
