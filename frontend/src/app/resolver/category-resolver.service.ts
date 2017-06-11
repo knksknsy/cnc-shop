@@ -8,16 +8,16 @@
 
 import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
-import { ProductsService } from '../services/products.service';
 import { Observable } from 'rxjs//Observable';
+import { CategoryService } from '../services/category.service';
 
 @Injectable()
 export class CategoryResolverService {
 
-  constructor(private productsService: ProductsService) { }
+  constructor(private categoryService: CategoryService) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
-    return this.productsService.getProductCategories();
+    return this.categoryService.getCategories();
   }
 
 }
