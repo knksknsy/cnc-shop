@@ -9,7 +9,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var colorSchema = Schema({
+var colorSchema = new Schema({
     name: String,
     hexcode: String
 });
