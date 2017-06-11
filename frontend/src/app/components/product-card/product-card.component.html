@@ -1,0 +1,18 @@
+<div class="card card-inverse">
+  <img class="card-img" [src]="product.image">
+  <div class="card-img-overlay">
+    <div class="row">
+			<div class="col">
+				<button class="btn btn-outline-primary cart" (click)="addToCart()">
+					<span class="fa fa-cart-plus"></span>
+				</button>
+			</div>
+		</div>
+    <div class="bg-blur">
+      <h4 class="card-title" (click)="openDetails()">{{product.name}}</h4>
+      <small class="text-muted">Artikelnummer {{product.id}}</small>
+      <br>
+      <small class="text-muted">Preis {{product.price}}</small>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+.card-inverse {
+    height: 45vh;
+    overflow: hidden;
+    // background-color: #fff;
+    img {
+        height: 45vh;
+		display: block;
+		margin: 0 auto;
+    }
+
+	.card-img-overlay {
+		padding: 0;
+        .row{
+            .col {
+                padding: 0;
+                .cart {
+                    border-radius: 0;
+                    border-top-right-radius: 0.25rem;
+                    border-bottom-left-radius: 0.25rem;
+                    border-top-color: transparent;
+                    border-right-color: transparent;
+                }
+            }
+			position: absolute;
+			top: initial !important;
+			right: 15px !important;
+		}
+		.bg-blur{
+			background-color: rgba(0,0,0,0.5);
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			height: 30%;
+			padding: 10px;
+			cursor: pointer;
+
+			h4{
+				// height: 100%;
+                font-size: 1rem;
+				margin: 0;
+				text-align: center
+			}
+			small {
+				color: #fff !important;
+			}
+		}
+	}
+}
