@@ -7,8 +7,9 @@
 */
 
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
-var categoriesSchema = new mongoose.Schema({
+var categoriesSchema = Schema({
     name: String,
     image: String,
 });

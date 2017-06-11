@@ -9,28 +9,22 @@
 
 const express = require('express');
 const router = express.Router();
+
 var jwt = require('express-jwt');
 const secret = require('../config/db.config').secret;
 var auth = jwt({
   secret: secret,
   userProperty: 'payload'
 });
-
-var products = require('./products');
-var colors = require('./colors');
-
 var ctrlProfile = require('../controllers/profile');
 var ctrlAuth = require('../controllers/authentication');
 
+var products = require('./products/products');
+var colors = require('./colors/colors');
+
 router.get('/', (req, res) => {
-    res.send('api works');
+  return res.send('api works');
 });
-
-// products
-router.use('/products', products);
-
-// colors
-router.use('/colors', colors);
 
 // profile
 router.get('/profile', auth, ctrlProfile.profileRead);
@@ -38,5 +32,11 @@ router.get('/profile', auth, ctrlProfile.profileRead);
 // authentication
 router.post('/register', ctrlAuth.register);
 router.post('/login', ctrlAuth.login);
+
+// products
+router.use('/products', products);
+
+// colors
+router.use('/colors', colors);
 
 module.exports = router;
