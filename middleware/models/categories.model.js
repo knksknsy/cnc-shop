@@ -10,7 +10,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var categoriesSchema = new Schema({
-    name: String,
+    name: { type: String, unique: true },
     image: String,
 });
 

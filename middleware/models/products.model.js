@@ -17,19 +17,19 @@ var connection = mongoose.createConnection(dbURI);
 autoIncrement.initialize(connection);
 
 var productSchema = new Schema({
-    p_id: String,
-    p_name: String,
-    p_image: String,
-    p_quantity: { type: Number, required: false },
-    p_description: String,
-    p_information: { type: [String], required: false },
-    p_price: Number,
-    p_category: String
+    id: { type: Number, unique: true },
+    name: { type: String, unique: true },
+    image: String,
+    quantity: { type: Number, required: false },
+    description: String,
+    information: { type: [String], required: false },
+    price: Number,
+    category: String
 });
 
 productSchema.plugin(autoIncrement.plugin, {
     model: 'Products',
-    field: 'p_id',
+    field: 'id',
     startAt: 543210,
     incrementBy: 1
 });

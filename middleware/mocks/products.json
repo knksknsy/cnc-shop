@@ -1,10 +1,10 @@
 {
     "data": [
         {
-            "p_name": "CAP'N CAN Artist Acrylic Spray 400 ml",
-            "p_image": "/assets/products/cans/cnc_can.png",
-            "p_description": "Mit der CAP'N CAN Artist Acrylic bekommt man nicht nur ein reines, schnelltrocknendes Acrylat, sondern auch eine variable Ventileinstellung mit nur einem Cap. Dadurch lassen sich unterschiedlich feine oder breite Striche ziehen. Die streichfähige Farbe lässt sich außerdem mit einem Pinsel oder einem Spachtel auftragen und besitzt eine hohe UV-Beständigkeit.",
-            "p_information": [
+            "name": "CAP'N CAN Artist Acrylic Spray 400 ml",
+            "image": "/assets/products/cans/cnc_can.png",
+            "description": "Mit der CAP'N CAN Artist Acrylic bekommt man nicht nur ein reines, schnelltrocknendes Acrylat, sondern auch eine variable Ventileinstellung mit nur einem Cap. Dadurch lassen sich unterschiedlich feine oder breite Striche ziehen. Die streichfähige Farbe lässt sich außerdem mit einem Pinsel oder einem Spachtel auftragen und besitzt eine hohe UV-Beständigkeit.",
+            "information": [
                 "Acrylbasis (100% reines Acrylat)",
                 "hochdeckend",
                 "permanent",
@@ -15,14 +15,14 @@
                 "Strichbreiten: 4 – 200 mm mit einem Sprühkopf",
                 "400 ml"
             ],
-            "p_price": 7.95,
-            "p_category": "cans"
+            "price": 7.95,
+            "category": "cans"
         },
         {
-            "p_name": "CAP'N CAN Artist Neon Spray 400 ml",
-            "p_image": "/assets/products/cans/cnc_can.png",
-            "p_description": "Die Neonfarben der CAP'N CAN Special Series knallen so richtig. Die fluoreszierende, hochpigmentierte Farbe deckt auf fast allen Untergründen und eignet sich somit für diverse Kunstanwendungen. In Kombination mit dem CAP'N CAN UV-Varnish lässt sie sich außerdem versiegeln und die eingeschränkte UV-Beständigkeit verbessern.",
-            "p_information": [
+            "name": "CAP'N CAN Artist Neon Spray 400 ml",
+            "image": "/assets/products/cans/cnc_can.png",
+            "description": "Die Neonfarben der CAP'N CAN Special Series knallen so richtig. Die fluoreszierende, hochpigmentierte Farbe deckt auf fast allen Untergründen und eignet sich somit für diverse Kunstanwendungen. In Kombination mit dem CAP'N CAN UV-Varnish lässt sie sich außerdem versiegeln und die eingeschränkte UV-Beständigkeit verbessern.",
+            "information": [
                 "Acrylbasis",
                 "fluoreszierende, hochpigmentierte Neonfarben",
                 "matt",
@@ -32,14 +32,14 @@
                 "Strichbreiten: 4 – 200 mm mit einem Sprühkopf",
                 "Füllmenge: 400 ml"
             ],
-            "p_price": 9.95,
-            "p_category": "cans"
+            "price": 9.95,
+            "category": "cans"
         },
         {
-            "p_name": "CAP'N CAN Artist Chalk Spray 400 ml",
-            "p_image": "/assets/products/cans/cnc_can.png",
-            "p_description": "Das hochpigmentierte Kreidespray ist ideal für temporäre Anwendungen auf lackierbaren Untergründen. Zur Entfernung wird die Farbe einfach mit Wasser abgewischt. Für einen permanenten Halt kann die Farbe außerdem mit dem CAP'N CAN UV-Varnish versiegelt werden.",
-            "p_information": [
+            "name": "CAP'N CAN Artist Chalk Spray 400 ml",
+            "image": "/assets/products/cans/cnc_can.png",
+            "description": "Das hochpigmentierte Kreidespray ist ideal für temporäre Anwendungen auf lackierbaren Untergründen. Zur Entfernung wird die Farbe einfach mit Wasser abgewischt. Für einen permanenten Halt kann die Farbe außerdem mit dem CAP'N CAN UV-Varnish versiegelt werden.",
+            "information": [
                 "hochpigmentierte Kreide-Pigmentfarbe",
                 "matt",
                 "hochdeckend",
@@ -49,14 +49,14 @@
                 "streichfähig und spachtelbar",
                 "Füllmenge: 400 ml"
             ],
-            "p_price": 9.95,
-            "p_category": "cans"
+            "price": 9.95,
+            "category": "cans"
         },
         {
-            "p_name": "CAP'N CAN Artist Effect Spray 400 ml",
-            "p_image": "/assets/products/cans/cnc_can.png",
-            "p_description": "Ob Dekorationen oder Kunstanwendungen auf der Leinwand: dieser hochglänzende Effektlack besitzt eine hohe Deckkraft und ist schnelltrocknend. Er eignet sich speziell für Dekorationen im Innenbereich – eine Lackversiegelung ist dabei nicht notwendig.",
-            "p_information": [
+            "name": "CAP'N CAN Artist Effect Spray 400 ml",
+            "image": "/assets/products/cans/cnc_can.png",
+            "description": "Ob Dekorationen oder Kunstanwendungen auf der Leinwand: dieser hochglänzende Effektlack besitzt eine hohe Deckkraft und ist schnelltrocknend. Er eignet sich speziell für Dekorationen im Innenbereich – eine Lackversiegelung ist dabei nicht notwendig.",
+            "information": [
                 "hochpigmentierter Dekorationslack",
                 "hochglänzend",
                 "hochdeckend",
@@ -65,14 +65,14 @@
                 "für fast alle Untergründe",
                 "Füllmenge: 400 ml"
             ],
-            "p_price": 9.95,
-            "p_category": "cans"
+            "price": 9.95,
+            "category": "cans"
         },
         {
-            "p_name": "CAP'N CAN Artist Metallic Spray 400 ml",
-            "p_image": "/assets/products/cans/cnc_can.png",
-            "p_description": "Die hochpigmentierte CAP'N CAN Metallic bietet abriebfeste und permanente Ergebnisse für jegliche Kunstanwendung. Mit einer Veredelung mit dem CAP'N CAN-Varnish ist der Lack außerdem UV- und Wetterbeständig. Die Besonderheit: Bei einer richtigen Grundierung (CAP'N CAN Styropor), kann sogar Styropor mit dem Lack besprüht und veredelt werden. Das perfekte Tool – für alle Bastler, Dekorateure und kreative Künstler.",
-            "p_information": [
+            "name": "CAP'N CAN Artist Metallic Spray 400 ml",
+            "image": "/assets/products/cans/cnc_can.png",
+            "description": "Die hochpigmentierte CAP'N CAN Metallic bietet abriebfeste und permanente Ergebnisse für jegliche Kunstanwendung. Mit einer Veredelung mit dem CAP'N CAN-Varnish ist der Lack außerdem UV- und Wetterbeständig. Die Besonderheit: Bei einer richtigen Grundierung (CAP'N CAN Styropor), kann sogar Styropor mit dem Lack besprüht und veredelt werden. Das perfekte Tool – für alle Bastler, Dekorateure und kreative Künstler.",
+            "information": [
                 "hochpigmentierter Metallic-Lack",
                 "glänzend",
                 "hochdeckend",
@@ -85,14 +85,14 @@
                 "Strichbreiten: 4 – 200 mm mit einem Sprühkopf",
                 "Füllmenge: 400 ml"
             ],
-            "p_price": 9.95,
-            "p_category": "cans"
+            "price": 9.95,
+            "category": "cans"
         },
         {
-            "p_name": "CAP'N CAN Artist Phosphor Spray 400 ml",
-            "p_image": "/assets/products/cans/cnc_can.png",
-            "p_description": "Events, Dekorationen, Markierungen – oder für einen temporären Effekt: das CAP'N CAN Phosphor Spray ist ein Nachleuchteffektspray mit Phosphorpigmenten. So können Markierungen gesetzt und Stellen hervorgehoben werden. Nach Auftrag leuchtet das Spray in ausgewählter Farbe nach.",
-            "p_information": [
+            "name": "CAP'N CAN Artist Phosphor Spray 400 ml",
+            "image": "/assets/products/cans/cnc_can.png",
+            "description": "Events, Dekorationen, Markierungen – oder für einen temporären Effekt: das CAP'N CAN Phosphor Spray ist ein Nachleuchteffektspray mit Phosphorpigmenten. So können Markierungen gesetzt und Stellen hervorgehoben werden. Nach Auftrag leuchtet das Spray in ausgewählter Farbe nach.",
+            "information": [
                 "hochpigmentierter Metallic-Lack",
                 "glänzend",
                 "hochdeckend",
@@ -105,63 +105,63 @@
                 "Strichbreiten: 4 – 200 mm mit einem Sprühkopf",
                 "Füllmenge: 400 ml"
             ],
-            "p_price": 19.95,
-            "p_category": "cans"
+            "price": 19.95,
+            "category": "cans"
         },
         {
-            "p_name": "CAP'N CAN Artist Acrylic Spray Pack",
-            "p_image": "/assets/products/cans/cnc_can_pack.png",
-            "p_quantity": 6,
-            "p_description": "Dieses Pack enthält 6 geruchlose CAP'N CAN Artist Acrylic Sprühdosen 400 ml.",
-            "p_price": 39.95,
-            "p_category": "cans"
+            "name": "CAP'N CAN Artist Acrylic Spray Pack",
+            "image": "/assets/products/cans/cnc_can_pack.png",
+            "quantity": 6,
+            "description": "Dieses Pack enthält 6 geruchlose CAP'N CAN Artist Acrylic Sprühdosen 400 ml.",
+            "price": 39.95,
+            "category": "cans"
         },
         {
-            "p_name": "CAP'N CAN Artist Neon Spray Pack",
-            "p_image": "/assets/products/cans/cnc_can_pack.png",
-            "p_quantity": 6,
-            "p_description": "Dieses Pack enthält 6 geruchlose CAP'N CAN Artist Neon Sprühdosen 400 ml.",
-            "p_price": 49.95,
-            "p_category": "cans"
+            "name": "CAP'N CAN Artist Neon Spray Pack",
+            "image": "/assets/products/cans/cnc_can_pack.png",
+            "quantity": 6,
+            "description": "Dieses Pack enthält 6 geruchlose CAP'N CAN Artist Neon Sprühdosen 400 ml.",
+            "price": 49.95,
+            "category": "cans"
         },
         {
-            "p_name": "CAP'N CAN Artist Chalk Spray Pack",
-            "p_image": "/assets/products/cans/cnc_can_pack.png",
-            "p_quantity": 6,
-            "p_description": "Dieses Pack enthält 6 geruchlose CAP'N CAN Artist Chalk Sprühdosen 400 ml.",
-            "p_price": 49.95,
-            "p_category": "cans"
+            "name": "CAP'N CAN Artist Chalk Spray Pack",
+            "image": "/assets/products/cans/cnc_can_pack.png",
+            "quantity": 6,
+            "description": "Dieses Pack enthält 6 geruchlose CAP'N CAN Artist Chalk Sprühdosen 400 ml.",
+            "price": 49.95,
+            "category": "cans"
         },
         {
-            "p_name": "CAP'N CAN Artist Effect Spray Pack",
-            "p_image": "/assets/products/cans/cnc_can_pack.png",
-            "p_quantity": 6,
-            "p_description": "Dieses Pack enthält 6 geruchlose CAP'N CAN Artist Effect Sprühdosen 400 ml.",
-            "p_price": 49.95,
-            "p_category": "cans"
+            "name": "CAP'N CAN Artist Effect Spray Pack",
+            "image": "/assets/products/cans/cnc_can_pack.png",
+            "quantity": 6,
+            "description": "Dieses Pack enthält 6 geruchlose CAP'N CAN Artist Effect Sprühdosen 400 ml.",
+            "price": 49.95,
+            "category": "cans"
         },
         {
-            "p_name": "CAP'N CAN Artist Metallic Spray Pack",
-            "p_image": "/assets/products/cans/cnc_can_pack.png",
-            "p_quantity": 6,
-            "p_description": "Dieses Pack enthält 6 geruchlose CAP'N CAN Artist Metallic Sprühdosen 400 ml.",
-            "p_price": 49.95,
-            "p_category": "cans"
+            "name": "CAP'N CAN Artist Metallic Spray Pack",
+            "image": "/assets/products/cans/cnc_can_pack.png",
+            "quantity": 6,
+            "description": "Dieses Pack enthält 6 geruchlose CAP'N CAN Artist Metallic Sprühdosen 400 ml.",
+            "price": 49.95,
+            "category": "cans"
         },
         {
-            "p_name": "CAP'N CAN Artist Phosphor Spray Pack",
-            "p_image": "/assets/products/cans/cnc_can_pack.png",
-            "p_quantity": 6,
-            "p_description": "Dieses Pack enthält 6 geruchlose CAP'N CAN Artist Phosphor Sprühdosen 400 ml.",
-            "p_price": 109.95,
-            "p_category": "cans"
+            "name": "CAP'N CAN Artist Phosphor Spray Pack",
+            "image": "/assets/products/cans/cnc_can_pack.png",
+            "quantity": 6,
+            "description": "Dieses Pack enthält 6 geruchlose CAP'N CAN Artist Phosphor Sprühdosen 400 ml.",
+            "price": 109.95,
+            "category": "cans"
         },
 
         {
-            "p_name": "CAP'N CAN Artist Marker 2 mm",
-            "p_image": "/assets/products/marker_refills/cnc_marker_2mm.png",
-            "p_description": "Hochdeckend und UV-beständig auf fast allen Untergründen: Das nachhaltige CAP'N CAN Acryl-Markersystem wurde zum Nachfüllen gebaut und ist stets zuverlässig in all seinen Funktionen. Der geringe Verschleiß und die Vielzahl der möglichen Anwendungen geben diesen Markern einen echten Mehrwert. Ob Surfbretter, Leinwände, Kühlschränke, Graffiti oder Sneakers: nichts ist unmöglich. Individuelle Nuancen und Farbtöne können ganz einfach selber angemischt werden. Effektfarben machen das Kolorieren dabei zu einer spannenden Sache. Darf in keinem Künstlersortiment fehlen",
-            "p_information": [
+            "name": "CAP'N CAN Artist Marker 2 mm",
+            "image": "/assets/products/marker_refills/cnc_marker_2mm.png",
+            "description": "Hochdeckend und UV-beständig auf fast allen Untergründen: Das nachhaltige CAP'N CAN Acryl-Markersystem wurde zum Nachfüllen gebaut und ist stets zuverlässig in all seinen Funktionen. Der geringe Verschleiß und die Vielzahl der möglichen Anwendungen geben diesen Markern einen echten Mehrwert. Ob Surfbretter, Leinwände, Kühlschränke, Graffiti oder Sneakers: nichts ist unmöglich. Individuelle Nuancen und Farbtöne können ganz einfach selber angemischt werden. Effektfarben machen das Kolorieren dabei zu einer spannenden Sache. Darf in keinem Künstlersortiment fehlen",
+            "information": [
                 "Acrylbasis",
                 "seidenmatt",
                 "hochdeckend",
@@ -181,14 +181,14 @@
                 "bestens für Airbrush geeignet",
                 "kompatibel mit CAP'N CAN Sprühfarben und Markern"
             ],
-            "p_price": 3.50,
-            "p_category": "marker_refills"
+            "price": 3.50,
+            "category": "marker_refills"
         },
         {
-            "p_name": "CAP'N CAN Artist Marker 4 mm",
-            "p_image": "/assets/products/marker_refills/cnc_marker_4mm.png",
-            "p_description": "Hochdeckend und UV-beständig auf fast allen Untergründen: Das nachhaltige CAP'N CAN Acryl-Markersystem wurde zum Nachfüllen gebaut und ist stets zuverlässig in all seinen Funktionen. Der geringe Verschleiß und die Vielzahl der möglichen Anwendungen geben diesen Markern einen echten Mehrwert. Ob Surfbretter, Leinwände, Kühlschränke, Graffiti oder Sneakers: nichts ist unmöglich. Individuelle Nuancen und Farbtöne können ganz einfach selber angemischt werden. Effektfarben machen das Kolorieren dabei zu einer spannenden Sache. Darf in keinem Künstlersortiment fehlen",
-            "p_information": [
+            "name": "CAP'N CAN Artist Marker 4 mm",
+            "image": "/assets/products/marker_refills/cnc_marker_4mm.png",
+            "description": "Hochdeckend und UV-beständig auf fast allen Untergründen: Das nachhaltige CAP'N CAN Acryl-Markersystem wurde zum Nachfüllen gebaut und ist stets zuverlässig in all seinen Funktionen. Der geringe Verschleiß und die Vielzahl der möglichen Anwendungen geben diesen Markern einen echten Mehrwert. Ob Surfbretter, Leinwände, Kühlschränke, Graffiti oder Sneakers: nichts ist unmöglich. Individuelle Nuancen und Farbtöne können ganz einfach selber angemischt werden. Effektfarben machen das Kolorieren dabei zu einer spannenden Sache. Darf in keinem Künstlersortiment fehlen",
+            "information": [
                 "Acrylbasis",
                 "seidenmatt",
                 "hochdeckend",
@@ -208,14 +208,14 @@
                 "bestens für Airbrush geeignet",
                 "kompatibel mit CAP'N CAN Sprühfarben und Markern"
             ],
-            "p_price": 4.50,
-            "p_category": "marker_refills"
+            "price": 4.50,
+            "category": "marker_refills"
         },
         {
-            "p_name": "CAP'N CAN Artist Marker 4-8 mm",
-            "p_image": "/assets/products/marker_refills/cnc_marker_4-8mm.png",
-            "p_description": "Hochdeckend und UV-beständig auf fast allen Untergründen: Das nachhaltige CAP'N CAN Acryl-Markersystem wurde zum Nachfüllen gebaut und ist stets zuverlässig in all seinen Funktionen. Der geringe Verschleiß und die Vielzahl der möglichen Anwendungen geben diesen Markern einen echten Mehrwert. Ob Surfbretter, Leinwände, Kühlschränke, Graffiti oder Sneakers: nichts ist unmöglich. Individuelle Nuancen und Farbtöne können ganz einfach selber angemischt werden. Effektfarben machen das Kolorieren dabei zu einer spannenden Sache. Darf in keinem Künstlersortiment fehlen",
-            "p_information": [
+            "name": "CAP'N CAN Artist Marker 4-8 mm",
+            "image": "/assets/products/marker_refills/cnc_marker_4-8mm.png",
+            "description": "Hochdeckend und UV-beständig auf fast allen Untergründen: Das nachhaltige CAP'N CAN Acryl-Markersystem wurde zum Nachfüllen gebaut und ist stets zuverlässig in all seinen Funktionen. Der geringe Verschleiß und die Vielzahl der möglichen Anwendungen geben diesen Markern einen echten Mehrwert. Ob Surfbretter, Leinwände, Kühlschränke, Graffiti oder Sneakers: nichts ist unmöglich. Individuelle Nuancen und Farbtöne können ganz einfach selber angemischt werden. Effektfarben machen das Kolorieren dabei zu einer spannenden Sache. Darf in keinem Künstlersortiment fehlen",
+            "information": [
                 "Acrylbasis",
                 "seidenmatt",
                 "hochdeckend",
@@ -235,40 +235,40 @@
                 "bestens für Airbrush geeignet",
                 "kompatibel mit CAP'N CAN Sprühfarben und Markern"
             ],
-            "p_price": 6.25,
-            "p_category": "marker_refills"
+            "price": 6.25,
+            "category": "marker_refills"
         },
 
         {
-            "p_name": "CAP'N CAN Artist Marker 2 mm Pack",
-            "p_image": "/assets/products/marker_refills/cnc_marker_2mm_pack.png",
-            "p_quantity": 6,
-            "p_description": "Die 6er Box ist mit den Basic-Farben der CAP'N CAN Marker ausgestattet und wird in einer Clearbox-Verpackung mit Produktinformationen auf der Vorder- und Rückseite geliefert.",
-            "p_price": 16.95,
-            "p_category": "marker_refills"
+            "name": "CAP'N CAN Artist Marker 2 mm Pack",
+            "image": "/assets/products/marker_refills/cnc_marker_2mm_pack.png",
+            "quantity": 6,
+            "description": "Die 6er Box ist mit den Basic-Farben der CAP'N CAN Marker ausgestattet und wird in einer Clearbox-Verpackung mit Produktinformationen auf der Vorder- und Rückseite geliefert.",
+            "price": 16.95,
+            "category": "marker_refills"
         },
         {
-            "p_name": "CAP'N CAN Artist Marker 4 mm Pack",
-            "p_image": "/assets/products/marker_refills/cnc_marker_4mm_pack.png",
-            "p_quantity": 6,
-            "p_description": "Die 6er Box ist mit den Basic-Farben der CAP'N CAN Marker ausgestattet und wird in einer Clearbox-Verpackung mit Produktinformationen auf der Vorder- und Rückseite geliefert.",
-            "p_price": 22.95,
-            "p_category": "marker_refills"
+            "name": "CAP'N CAN Artist Marker 4 mm Pack",
+            "image": "/assets/products/marker_refills/cnc_marker_4mm_pack.png",
+            "quantity": 6,
+            "description": "Die 6er Box ist mit den Basic-Farben der CAP'N CAN Marker ausgestattet und wird in einer Clearbox-Verpackung mit Produktinformationen auf der Vorder- und Rückseite geliefert.",
+            "price": 22.95,
+            "category": "marker_refills"
         },
         {
-            "p_name": "CAP'N CAN Artist Marker 4-8 mm Pack",
-            "p_image": "/assets/products/marker_refills/cnc_marker_4-8mm_pack.png",
-            "p_quantity": 6,
-            "p_description": "Die 6er Box ist mit den Basic-Farben der CAP'N CAN Marker ausgestattet und wird in einer Clearbox-Verpackung mit Produktinformationen auf der Vorder- und Rückseite geliefert.",
-            "p_price": 33.45,
-            "p_category": "marker_refills"
+            "name": "CAP'N CAN Artist Marker 4-8 mm Pack",
+            "image": "/assets/products/marker_refills/cnc_marker_4-8mm_pack.png",
+            "quantity": 6,
+            "description": "Die 6er Box ist mit den Basic-Farben der CAP'N CAN Marker ausgestattet und wird in einer Clearbox-Verpackung mit Produktinformationen auf der Vorder- und Rückseite geliefert.",
+            "price": 33.45,
+            "category": "marker_refills"
         },
 
         {
-            "p_name": "CAP'N CAN Refill 180 ml",
-            "p_image": "/assets/products/marker_refills/cnc_refill.png",
-            "p_description": "CAP'N CAN Acryl-Markersystem bietet das umfangreichste Acryl-Farbspektrum auf dem Markt. Die Farbe zeichnet sich besonders durch ihre hohe Deckkraft, auf nahezu allen Untergründen aus. Dabei ist es egal, ob die Farbe mit einem Marker, Pinsel, Stempel oder einer Airbrush Pistole aufgetragen wird. Die Farben sind UV-beständig. Die 180 ml-Flasche ist perfekt für alle, die großflächig arbeiten und viel Farbe brauchen. Der praktische Ausgussstutzen macht eine exakte und saubere Dosierung möglich. Der Refill eignet sich nicht nur zum Wiederbefüllen der CAP'N CAN-Marker, sondern ist inzwischen auch sehr beliebt unter Airbrush-Künstlern.",
-            "p_information": [
+            "name": "CAP'N CAN Refill 180 ml",
+            "image": "/assets/products/marker_refills/cnc_refill.png",
+            "description": "CAP'N CAN Acryl-Markersystem bietet das umfangreichste Acryl-Farbspektrum auf dem Markt. Die Farbe zeichnet sich besonders durch ihre hohe Deckkraft, auf nahezu allen Untergründen aus. Dabei ist es egal, ob die Farbe mit einem Marker, Pinsel, Stempel oder einer Airbrush Pistole aufgetragen wird. Die Farben sind UV-beständig. Die 180 ml-Flasche ist perfekt für alle, die großflächig arbeiten und viel Farbe brauchen. Der praktische Ausgussstutzen macht eine exakte und saubere Dosierung möglich. Der Refill eignet sich nicht nur zum Wiederbefüllen der CAP'N CAN-Marker, sondern ist inzwischen auch sehr beliebt unter Airbrush-Künstlern.",
+            "information": [
                 "Acrylbasis",
                 "hochdeckend",
                 "permanent",
@@ -276,82 +276,82 @@
                 "für fast alle Untergründe (Untergrund auf Eignung testen)",
                 "mischbar"
             ],
-            "p_price": 16.95,
-            "p_category": "marker_refills"
+            "price": 16.95,
+            "category": "marker_refills"
         },
 
         {
-            "p_name": "CAP'N CAN T-Shirt M",
-            "p_image": "/assets/products/accessories_merchandise/cnc_shirt.png",
-            "p_description": "Der All-Time Fave ist in NEUEN FARBEN verfügbar! Weiß und Grau sind ab jetzt erhältlich.",
-            "p_information": [
+            "name": "CAP'N CAN T-Shirt M",
+            "image": "/assets/products/accessories_merchandise/cnc_shirt.png",
+            "description": "Der All-Time Fave ist in NEUEN FARBEN verfügbar! Weiß und Grau sind ab jetzt erhältlich.",
+            "information": [
                 "Beste Qualität",
                 "Material: 100% Baumwolle",
                 "Größe: M",
                 "Logo Print auf der Brust und am Nacken"
             ],
-            "p_price": 19.95,
-            "p_category": "accessories_merchandise"
+            "price": 19.95,
+            "category": "accessories_merchandise"
         },
         {
-            "p_name": "CAP'N CAN T-Shirt L",
-            "p_image": "/assets/products/accessories_merchandise/cnc_shirt.png",
-            "p_description": "Der All-Time Fave ist in NEUEN FARBEN verfügbar! Weiß und Grau sind ab jetzt erhältlich.",
-            "p_information": [
+            "name": "CAP'N CAN T-Shirt L",
+            "image": "/assets/products/accessories_merchandise/cnc_shirt.png",
+            "description": "Der All-Time Fave ist in NEUEN FARBEN verfügbar! Weiß und Grau sind ab jetzt erhältlich.",
+            "information": [
                 "Beste Qualität",
                 "Material: 100% Baumwolle",
                 "Größe: L",
                 "Logo Print auf der Brust und am Nacken"
             ],
-            "p_price": 19.95,
-            "p_category": "accessories_merchandise"
+            "price": 19.95,
+            "category": "accessories_merchandise"
         },
         {
-            "p_name": "CAP'N CAN T-Shirt XL",
-            "p_image": "/assets/products/accessories_merchandise/cnc_shirt.png",
-            "p_description": "Der All-Time Fave ist in NEUEN FARBEN verfügbar! Weiß und Grau sind ab jetzt erhältlich.",
-            "p_information": [
+            "name": "CAP'N CAN T-Shirt XL",
+            "image": "/assets/products/accessories_merchandise/cnc_shirt.png",
+            "description": "Der All-Time Fave ist in NEUEN FARBEN verfügbar! Weiß und Grau sind ab jetzt erhältlich.",
+            "information": [
                 "Beste Qualität",
                 "Material: 100% Baumwolle",
                 "Größe: XL",
                 "Logo Print auf der Brust und am Nacken"
             ],
-            "p_price": 19.95,
-            "p_category": "accessories_merchandise"
+            "price": 19.95,
+            "category": "accessories_merchandise"
         },
         {
-            "p_name": "CAP'N CAN Basecap",
-            "p_image": "/assets/products/accessories_merchandise/cnc_basecap.png",
-            "p_description": "CAP'N CAN Basecap",
-            "p_information": [
+            "name": "CAP'N CAN Basecap",
+            "image": "/assets/products/accessories_merchandise/cnc_basecap.png",
+            "description": "CAP'N CAN Basecap",
+            "information": [
                 "Form ahnlich New Era Cap",
                 "weiße CAP'N CAN Logo-Stickerei (Front)",
                 "Einheitsgröße"
             ],
-            "p_price": 7.99,
-            "p_category": "accessories_merchandise"
+            "price": 7.99,
+            "category": "accessories_merchandise"
         },
 
         {
-            "p_name": "CAP'N CAN Artist Cap",
-            "p_image": "/assets/products/accessories_merchandise/cnc_cap.png",
-            "p_description": "CAP'N CANs Caps haben einen Strich mit klaren Kanten, die nicht so schnell verstopfen. Die Strichbreite liegt bei 1 - 3 cm. CAP'N CANs Caps sind geeignet für Details und saubere Linien.",
-            "p_information": [
+            "name": "CAP'N CAN Artist Cap",
+            "image": "/assets/products/accessories_merchandise/cnc_cap.png",
+            "description": "CAP'N CANs Caps haben einen Strich mit klaren Kanten, die nicht so schnell verstopfen. Die Strichbreite liegt bei 1 - 3 cm. CAP'N CANs Caps sind geeignet für Details und saubere Linien.",
+            "information": [
                 "Standard Cap für CAP'N CAN Artist Sprühdosen mit 400 ml"
             ],
-            "p_price": 2.50,
-            "p_category": "accessories_merchandise"
+            "price": 2.50,
+            "category": "accessories_merchandise"
         },
         {
-            "p_name": "CAP'N CAN Artist Cap Pack",
-            "p_image": "/assets/products/accessories_merchandise/cnc_cap_pack.png",
-            "p_quantity": 6,
-            "p_description": "Diese sechs CAP'N CANs Caps haben einen Strich mit klaren Kanten, die nicht so schnell verstopfen. Die Strichbreite liegt bei 1 - 3 cm. CAP'N CANs Caps sind geeignet für Details und saubere Linien.",
-            "p_information": [
+            "name": "CAP'N CAN Artist Cap Pack",
+            "image": "/assets/products/accessories_merchandise/cnc_cap_pack.png",
+            "quantity": 6,
+            "description": "Diese sechs CAP'N CANs Caps haben einen Strich mit klaren Kanten, die nicht so schnell verstopfen. Die Strichbreite liegt bei 1 - 3 cm. CAP'N CANs Caps sind geeignet für Details und saubere Linien.",
+            "information": [
                 "6 Standard Caps für CAP'N CAN Artist Sprühdosen mit 400 ml"
             ],
-            "p_price": 12.95,
-            "p_category": "accessories_merchandise"
+            "price": 12.95,
+            "category": "accessories_merchandise"
         }  
     ]
 }
