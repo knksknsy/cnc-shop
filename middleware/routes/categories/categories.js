@@ -10,23 +10,23 @@ const express = require('express');
 const router = express.Router();
 
 var mongoose = require('mongoose');
-var Colors = mongoose.model('Colors');
+var Categories = mongoose.model('Categories');
 
-// add array of hex values
 router.post('/add', (req, res, next) => {
-    var colors = [];
+    var categories = [];
     if (!req.body.data) {
-        return res.status(500).json({ 'message': 'No body defined' });
+        // return res.status(500).json({ 'message': 'No body defined' });
+        return next(err);
     }
-    colors = req.body.data;
-    colors.forEach((color) => {
-        if (!color.name || !color.hexcode) {
-            return res.status(500).json({ 'message': 'Color is corrupt.' });
+    categories = req.body.data;
+    categories.forEach((category) => {
+        if (!category.name || !category.image) {
+            return res.status(500).json({ 'message': 'Category is corrupt.' });
         }
-        Colors.create(
+        Categories.create(
             {
-                name: color.name,
-                hexcode: color.hexcode
+                name: category.name,
+                image: category.image
             },
             (err) => {
                 if (err) {
@@ -38,16 +38,15 @@ router.post('/add', (req, res, next) => {
     return res.send(200);
 });
 
-// get all colors
 router.get('/all', (req, res, next) => {
-    Colors
+    Categories
         .find()
-        .select('-_id name hexcode')
-        .exec((err, colors) => {
+        .select('-_id name image')
+        .exec((err, categories) => {
             if (err) {
                 return next(err);
             }
-            return res.send(colors);
+            return res.send(categories);
         });
 });
 

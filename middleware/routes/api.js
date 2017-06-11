@@ -20,6 +20,7 @@ var ctrlProfile = require('../controllers/profile');
 var ctrlAuth = require('../controllers/authentication');
 
 var products = require('./products/products');
+var categories = require('./categories/categories');
 var colors = require('./colors/colors');
 
 router.get('/', (req, res) => {
@@ -35,6 +36,9 @@ router.post('/login', ctrlAuth.login);
 
 // products
 router.use('/products', products);
+
+// categories
+router.use('/categories', categories);
 
 // colors
 router.use('/colors', colors);
