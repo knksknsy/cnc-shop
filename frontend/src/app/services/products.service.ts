@@ -24,22 +24,17 @@ export class ProductsService {
   }
 
   getProductDetails(id: string) {
-    return this.http.get(`${this.API}/products/` + id)
+    return this.http.get(`${this.API}/products/details/` + id)
       .map(res => res.json());
   }
 
   getProductsByCategory(category: string) {
-    return this.http.get(`${this.API}/products/` + category)
+    return this.http.get(`${this.API}/products/category/` + category)
       .map(res => res.json());
   }
 
   getPopularProducts() {
     return this.http.get(`${this.API}/products/popular`)
-      .map(res => res.json());
-  }
-
-  getProductCategories() {
-    return this.http.get(`${this.API}/products/categories`)
       .map(res => res.json());
   }
 

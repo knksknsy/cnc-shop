@@ -48,6 +48,8 @@ import { StaticBilderComponent } from './components/static-bilder/static-bilder.
 
 // Services
 import { ProductsService } from './services/products.service';
+import { ColorService } from './services/color.service';
+import { CategoryService } from './services/category.service';
 import { AuthenticationService } from './services/authentication.service';
 
 // Guards
@@ -87,7 +89,7 @@ import { CategoriesComponent } from './components/categories/categories.componen
     CarouselModule.forRoot(),
     AppRoutingModule
   ],
-  providers: [ProductsService, AuthenticationService, AuthGuard],
+  providers: [ProductsService, CategoryService, ColorService, AuthenticationService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
