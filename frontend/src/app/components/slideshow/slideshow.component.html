@@ -1,7 +1,13 @@
 <div class="container-fluid">
-  <carousel *ngIf="popularProducts" [ngClass]="{ 'list-modal-active': isCarouselPaused }" [interval]="carouselInterval">
+  <carousel *ngIf="popularProducts" class="slideshow" [ngClass]="{ 'list-modal-active': isCarouselPaused }" [interval]="carouselInterval">
     <slide *ngFor="let product of popularProducts">
-      <img [src]="product.image" class="img-responsive" (click)="openView(product.id)" />
+      <img [src]="product.image" class="img-responsive" />
+      <div class="carousel-caption" (click)="openView(product.id)">
+        <h3>{{product.name}}</h3>
+        <small>Artikelnummer {{product.id}}</small>
+        <br>
+        <small>Preis {{product.price}}</small>
+      </div>
     </slide>
   </carousel>
 </div>
