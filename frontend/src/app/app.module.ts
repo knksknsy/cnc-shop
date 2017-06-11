@@ -34,10 +34,13 @@ import { LoginModalComponent } from './components/login-modal/login-modal.compon
 
 import { HomeComponent } from './components/home/home.component';
 import { SlideshowComponent } from './components/slideshow/slideshow.component';
+import { CategoriesGridComponent } from './components/categories-grid/categories-grid.component';
 import { CategoryCardComponent } from './components/category-card/category-card.component';
 
 import { ProductsViewComponent } from './components/products-view/products-view.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { ProductsGridComponent } from './components/products-grid/products-grid.component';
+import { ProductCardComponent } from './components/product-card/product-card.component';
 
 import { ProfileComponent } from './components/profile/profile.component';
 
@@ -54,7 +57,6 @@ import { AuthenticationService } from './services/authentication.service';
 
 // Guards
 import { AuthGuard } from './guards/auth.guard';
-import { CategoriesComponent } from './components/categories/categories.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +77,9 @@ import { CategoriesComponent } from './components/categories/categories.componen
     ProductDetailsComponent,
     CategoryCardComponent,
     ProductsViewComponent,
-    CategoriesComponent
+    CategoriesGridComponent,
+    ProductsGridComponent,
+    ProductCardComponent
   ],
   imports: [
     BrowserModule,

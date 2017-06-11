@@ -17,6 +17,7 @@ import {ActivatedRoute} from '@angular/router';
 export class ProductsViewComponent implements OnInit {
   public productCategories;
   public products;
+  public category: string;
 
   constructor(private route: ActivatedRoute) { }
 
@@ -24,6 +25,7 @@ export class ProductsViewComponent implements OnInit {
     this.route.params.forEach(params => {
       this.products = this.route.snapshot.data['products'];
       this.productCategories = this.route.snapshot.data['categories'];
+      this.category = params['category'];
     });
   }
 
