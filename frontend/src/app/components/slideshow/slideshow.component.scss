@@ -18,13 +18,15 @@
 			.item{
 				width: 100%;
 
-				img{
+				img {
 					position: relative;
 					bottom: 25px;
                     height: 60vh;
                     display: block;
                     margin: 0 auto;
 					cursor: pointer;
+					-webkit-filter: drop-shadow(20px 20px 15px rgba(0, 0, 0, 0.68));
+			        filter: drop-shadow(20px 20px 15px rgba(0, 0, 0, 0.68));
 				}
 
 				.carousel-caption{
@@ -98,11 +100,13 @@
 
 			slide{
 				height: 60vh;
-                img{
+                img {
                     height: 60vh;
                     display: block;
                     margin: 0 auto;
 					cursor: pointer;
+					-webkit-filter: drop-shadow(20px 20px 15px rgba(0, 0, 0, 0.68));
+        			filter: drop-shadow(20px 20px 15px rgba(0, 0, 0, 0.68));
 				}
 			}
 		}
@@ -146,11 +150,13 @@
 
 			slide{
 				height: calc(100% - 100px);
-                img{
+                img {
                     height: calc(100% - 100px);
                     display: block;
                     margin: 0 auto;
 					cursor: pointer;
+					-webkit-filter: drop-shadow(20px 20px 15px rgba(0, 0, 0, 0.68));
+        			filter: drop-shadow(20px 20px 15px rgba(0, 0, 0, 0.68));
 				}
 			}
 
@@ -198,11 +204,13 @@
 			
 			slide{
 				height: 60vh;
-                img{
+                img {
                     height: 60vh;
                     display: block;
                     margin: 0 auto;
 					cursor: pointer;
+					-webkit-filter: drop-shadow(20px 20px 15px rgba(0, 0, 0, 0.68));
+       				filter: drop-shadow(20px 20px 15px rgba(0, 0, 0, 0.68));
 				}
 				.carousel-caption h3{
 					font-size: 1rem;

@@ -1,3 +1,43 @@
-<p>
-  product-details works!
-</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4">
+      <img [src]="details.image" class="img-fluid" [ngClass]="{pulse: pulse}" [alt]="details.name">
+    </div>
+    <div class="col-md-8">
+      <div class="row">
+        <div class="col">
+          <h1 class="display-4">{{details.name}}</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <span class="text-muted">Artikelnummer {{details.id}}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <span><strong>Beschreibung</strong></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <span>{{details.description}}</span>
+        </div>
+      </div>
+      <div *ngIf="details.information">
+        <div class="row">
+          <div class="col">
+            <span><strong>Produktinformationen</strong></span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <ul>
+              <li *ngFor="let info of details.information">{{info}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -16,12 +16,17 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProductDetailsComponent implements OnInit {
   details: any = [];
+  public pulse: boolean = true;
 
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.params.forEach(params => {
+      window.scrollTo(0,0);
       this.details = this.route.snapshot.data['details'];
+      setTimeout(() => {
+        this.pulse = false;
+      }, 3000);
     });
   }
 
