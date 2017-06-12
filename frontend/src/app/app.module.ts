@@ -19,6 +19,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
 // Modules
 import { AppRoutingModule } from './app-routing.module';
@@ -57,6 +58,7 @@ import { AuthenticationService } from './services/authentication.service';
 
 // Guards
 import { AuthGuard } from './guards/auth.guard';
+import { ColorDropdownComponent } from './components/color-dropdown/color-dropdown.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +81,8 @@ import { AuthGuard } from './guards/auth.guard';
     ProductsViewComponent,
     CategoriesGridComponent,
     ProductsGridComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    ColorDropdownComponent
   ],
   imports: [
     BrowserModule,
@@ -91,6 +94,7 @@ import { AuthGuard } from './guards/auth.guard';
     TabsModule.forRoot(),
     CollapseModule.forRoot(),
     CarouselModule.forRoot(),
+    TooltipModule.forRoot(),
     AppRoutingModule
   ],
   providers: [ProductsService, CategoryService, ColorService, AuthenticationService, AuthGuard],

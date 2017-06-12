@@ -15,19 +15,34 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./product-details.component.scss']
 })
 export class ProductDetailsComponent implements OnInit {
-  details: any = [];
+  public details: any = [];
+  public colors: any = [];
   public pulse: boolean = true;
+  public cartDisabled: boolean = true;
 
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.params.forEach(params => {
       window.scrollTo(0,0);
-      this.details = this.route.snapshot.data['details'];
       setTimeout(() => {
         this.pulse = false;
       }, 3000);
+      this.details = this.route.snapshot.data['details'];
+      this.colors = this.route.snapshot.data['colors'];
     });
+  }
+
+  selectColor(ev: any) {
+    if (ev.selectedColors) {
+      this.cartDisabled = false;
+    } else if (!ev) {
+      this.cartDisabled = true;
+    }
+  }
+
+  addToCart() {
+    console.log('added to cart');
   }
 
 }
