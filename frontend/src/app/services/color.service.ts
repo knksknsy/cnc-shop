@@ -17,7 +17,7 @@ export class ColorService {
 
   constructor(private http: Http) { }
 
-  getCategories() {
+  getColors() {
     return this.http.get(`${this.API}/colors/all`)
       .map(res => res.json());
   }

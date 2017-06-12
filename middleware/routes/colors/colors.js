@@ -20,13 +20,14 @@ router.post('/add', (req, res, next) => {
     }
     colors = req.body.data;
     colors.forEach((color) => {
-        if (!color.name || !color.hexcode) {
+        if (!color.name || !color.hexcode || color.selected === undefined) {
             return res.status(500).json({ 'message': 'Color is corrupt.' });
         }
         Colors.create(
             {
                 name: color.name,
-                hexcode: color.hexcode
+                hexcode: color.hexcode,
+                selected: false
             },
             (err) => {
                 if (err) {
@@ -42,7 +43,7 @@ router.post('/add', (req, res, next) => {
 router.get('/all', (req, res, next) => {
     Colors
         .find()
-        .select('-_id name hexcode')
+        .select('-_id name hexcode selected')
         .exec((err, colors) => {
             if (err) {
                 return next(err);
