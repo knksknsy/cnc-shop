@@ -11,11 +11,16 @@
 const express = require('express');
 const path = require('path');
 const http = require('http');
-//const https = require('https');
+const https = require('https');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const passport = require('passport');
+const fs = require("fs");
+const config = {
+    key: fs.readFileSync('./certs/privkey.pem'),
+    cert: fs.readFileSync('./certs/fullchain.pem')
+};
 
 require('./models/db.model');
 require('./config/passport');
@@ -90,10 +95,20 @@ app.use(function (err, req, res, next) {
   });
 });
 
-// Get port from environment and store in Express
-const port = process.env.PORT || '3000';
-app.set('port', port);
+// Get http port from environment and store in Express
+const phttp = process.env.PORT || '3000';
+app.set('phttp', phttp);
 
 // Create HTTP server
-const server = http.createServer(app);
-server.listen(port, () => console.log(`API running on host:${port}`));
+const server1 = http.createServer(app);
+server1.listen(phttp, () => console.log(`API running on host:${phttp}`));
+
+https.createServer(config, app).listen(8000)
+
+// Get https port from environment and store in Express
+//const phttps = process.env.PORT || '8000';
+//app.set('phttps', phttps);
+
+// Create HTTPs server
+//const server2 = https.createServer(app);
+//server2.listen(phttps, () => console.log(`API running on host:${phttps}`));

@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --host 0.0.0.0 --port 4200 --disable-host-check",
+    "start": "ng serve --host 0.0.0.0 --port 4200 --disable-host-check --ssl 1 --ssl-key certs/privkey.pem --ssl-cert certs/fullchain.pem",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
