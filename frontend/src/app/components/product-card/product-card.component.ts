@@ -28,7 +28,7 @@ export class ProductCardComponent {
     this._product = product;
   }
 
-  openCategory() {
+  openDetails() {
     this.router.navigate(['/products/details', this.product.id]);
   }
 

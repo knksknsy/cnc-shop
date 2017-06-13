@@ -6,6 +6,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+Make sure to populate the database before starting the development server. For this purpose you can find a postman collection in /middleware/postman/Cap'n Can.postman_collection.json.
+
+Import this file to your postman and call the /add endpoints in this order:
+* categories/categories/add
+* colors/colors/add
+* products/products/add
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
