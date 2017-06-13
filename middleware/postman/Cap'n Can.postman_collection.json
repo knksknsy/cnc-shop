@@ -12,7 +12,7 @@
 			"description": "",
 			"item": [
 				{
-					"name": "add",
+					"name": "/categories/add",
 					"request": {
 						"url": "http://localhost:3000/categories/add",
 						"method": "POST",
@@ -32,7 +32,7 @@
 					"response": []
 				},
 				{
-					"name": "all",
+					"name": "/categories/all",
 					"request": {
 						"url": "http://localhost:3000/categories/all",
 						"method": "GET",
@@ -49,7 +49,7 @@
 			"description": "",
 			"item": [
 				{
-					"name": "add",
+					"name": "/colors/add",
 					"request": {
 						"url": "http://localhost:3000/colors/add",
 						"method": "POST",
@@ -67,6 +67,17 @@
 						"description": "Add new colors to the shop."
 					},
 					"response": []
+				},
+				{
+					"name": "/colors/all",
+					"request": {
+						"url": "http://localhost:3000/colors/all",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "Get all available colors."
+					},
+					"response": []
 				}
 			]
 		},
@@ -75,7 +86,7 @@
 			"description": "",
 			"item": [
 				{
-					"name": "add",
+					"name": "/products/add",
 					"request": {
 						"url": "http://localhost:3000/products/add",
 						"method": "POST",
@@ -95,7 +106,7 @@
 					"response": []
 				},
 				{
-					"name": "all",
+					"name": "/products/all",
 					"request": {
 						"url": "http://localhost:3000/products/all",
 						"method": "GET",
@@ -106,7 +117,7 @@
 					"response": []
 				},
 				{
-					"name": "popular",
+					"name": "/products/popular",
 					"request": {
 						"url": "http://localhost:3000/products/popular",
 						"method": "GET",
@@ -117,7 +128,7 @@
 					"response": []
 				},
 				{
-					"name": "category/:category",
+					"name": "/products/category/:category",
 					"request": {
 						"url": {
 							"raw": "http://localhost:3000/products/category/:category",
@@ -148,7 +159,7 @@
 					"response": []
 				},
 				{
-					"name": "details/:id",
+					"name": "/products/details/:id",
 					"request": {
 						"url": {
 							"raw": "http://localhost:3000/products/details/:id",

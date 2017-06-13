@@ -23,6 +23,7 @@ export class ProductsViewComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.forEach(params => {
+      window.scrollTo(0,0);
       this.products = this.route.snapshot.data['products'];
       this.productCategories = this.route.snapshot.data['categories'];
       this.category = params['category'];
