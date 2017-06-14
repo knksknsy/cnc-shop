@@ -1,9 +1,11 @@
 <nav class="navbar fixed-top navbar-inverse bg-inverse">
   <div class="row">
     <div class="col-md-6">
-      <a role="button" (click)="menuCollapsed = !menuCollapsed; lockBodyScroll()" class="menu-button btn-margin-right"><span class="{{!menuCollapsed ? 'fa fa-bars' : 'fa fa-times'}}"></span></a>
       <a class="navbar-brand" routerLink="/">
         <img src="/assets/logo/head.png" width="30" height="30" class="d-inline-block align-top" />
+      </a>
+      <a role="button" (click)="menuCollapsed = !menuCollapsed; lockBodyScroll()" class="menu-button btn-margin-right">
+        <span class="{{!menuCollapsed ? 'fa fa-bars' : 'fa fa-times'}}"></span>
       </a>
     </div>
     <div class="col-md-6">
