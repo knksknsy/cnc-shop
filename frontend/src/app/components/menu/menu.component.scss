@@ -1,5 +1,19 @@
+// .card {
+//     background-color: lightgray !important;
+//     .card-block {
+//         background-color: lightgray !important;
+//     }
+// }
+
 .row {
-    .col-sm-3 {
+    .col-sm-6 {
         text-align: center;
     }
+    background-color: #fff; 
+}
+
+a:active, a:hover{
+    background-color: #2E90C0 !important;
+    color: white;
+    text-decoration: none;
 }
