@@ -1,8 +1,8 @@
-<div class="card card-inverse" (click)="openCategory()">
-  <img class="card-img" [src]="data.image">
+<div class="card card-inverse">
+  <img class="card-img pulse" [src]="data.image">
   <div class="card-img-overlay">
     <div class="bg-blur">
-      <h4 class="card-title">{{data.name}}</h4>
+      <h4 class="card-title" (click)="openCategory()">{{data.name}}</h4>
     </div>
   </div>
 </div>

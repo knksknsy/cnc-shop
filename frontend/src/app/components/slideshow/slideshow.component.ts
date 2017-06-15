@@ -39,7 +39,7 @@ export class SlideshowComponent implements OnInit {
   }
 
   openView(id: string) {
-    this.router.navigate(['/products/details'], id);
+    this.router.navigate(['/products/details', id]);
   }
 
 }

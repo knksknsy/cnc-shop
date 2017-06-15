@@ -13,11 +13,11 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class ColorService {
 
-  API = 'http://localhost:3000';
+  API = 'https://localhost:8000';
 
   constructor(private http: Http) { }
 
-  getCategories() {
+  getColors() {
     return this.http.get(`${this.API}/colors/all`)
       .map(res => res.json());
   }

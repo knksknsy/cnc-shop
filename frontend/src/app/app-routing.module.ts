@@ -21,6 +21,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { ProductsResolverService } from './resolver/products-resolver.service';
 import { ProductDetailsResolverService } from './resolver/product-details-resolver.service';
 import { CategoryResolverService } from './resolver/category-resolver.service';
+import { ColorsResolverService } from './resolver/colors-resolver.service';
 
 const appRoutes: Routes = [
     {
@@ -42,7 +43,8 @@ const appRoutes: Routes = [
         path: 'products/details/:id',
         component: ProductDetailsComponent,
         resolve: {
-            details: ProductDetailsResolverService
+            details: ProductDetailsResolverService,
+            colors: ColorsResolverService
         }
     }
     // { 
@@ -68,7 +70,8 @@ const appRoutes: Routes = [
         AuthGuard,
         ProductsResolverService,
         ProductDetailsResolverService,
-        CategoryResolverService
+        CategoryResolverService,
+        ColorsResolverService
     ]
 })
 export class AppRoutingModule { }

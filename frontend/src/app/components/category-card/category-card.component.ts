@@ -29,7 +29,7 @@ export class CategoryCardComponent {
   }
 
   openCategory() {
-    this.router.navigate(['/products/category', this.data.category]);
+    this.router.navigate(['/products/category', this.data.name]);
   }
 
 }

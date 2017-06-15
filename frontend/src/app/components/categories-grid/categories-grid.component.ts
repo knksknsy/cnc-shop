@@ -9,11 +9,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-categories',
-  templateUrl: './categories.component.html',
-  styleUrls: ['./categories.component.scss']
+  selector: 'app-categories-grid',
+  templateUrl: './categories-grid.component.html',
+  styleUrls: ['./categories-grid.component.scss']
 })
-export class CategoriesComponent implements OnInit {
+export class CategoriesGridComponent implements OnInit {
   private _categories;
 
   @Input()

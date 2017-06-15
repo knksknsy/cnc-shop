@@ -2,6 +2,10 @@
 @import 'variables'; 
 @import '../node_modules/bootstrap/scss/bootstrap';
 
+body {
+	background-color: lightgray;
+}
+
 .modal-backdrop {
     z-index: 1010;
 }
@@ -24,3 +28,4 @@
 		}
 	}
 }
+

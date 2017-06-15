@@ -2,10 +2,12 @@
     height: 35vh;
     overflow: hidden;
     // background-color: #fff;
-    img {
+    img, .pulse {
         height: 35vh;
 		display: block;
 		margin: 0 auto;
+		-webkit-filter: drop-shadow(20px 20px 15px rgba(0, 0, 0, 0.68));
+        filter: drop-shadow(20px 20px 15px rgba(0, 0, 0, 0.68));
     }
 
 	.card-img-overlay {
