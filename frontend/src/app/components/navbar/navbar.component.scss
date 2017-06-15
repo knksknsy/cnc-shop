@@ -1,15 +1,90 @@
-.i18n, .cart, .user {
-	padding-right: 15px;
+.container-burger {
+	display: flex;
+}
+.burger-lines{
+	padding-right: 1rem;
+}
+.row-burger {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #fff;
+  text-align: center;
+  max-width: auto; 
+
 }
 
-.menu-button{
-    margin-right: 15px;
-	font-size: 1.5rem;
-	position: relative;
-	top: 1px;
-	.fa-bars, .fa-times {
-		color: #fff;
-	}
+.burger .line{
+  width: 32px;
+  height: 5px;
+  background-color: #fff;
+  display: block;
+  margin: 8px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.burger:hover{
+  cursor: pointer;
+}
+
+
+#burger{
+  position: relative;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+#burger.is-active{
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  z-index: 1;
+  
+}
+
+
+// Balkenlänge
+#burger.is-active .line{
+  width: 32px;
+  // Farbe vom x
+  background-color: #fff;
+
+}
+
+// Balken 1
+#burger.is-active .line:nth-child(1){
+  -webkit-transform: translateY(14px);
+  -ms-transform: translateY(14px);
+  -o-transform: translateY(14px);
+  //transform: translateY(14px);
+  transform: translate(0,14px);
+}
+
+// hier verschwindet der 2. Balken
+#burger.is-active .line:nth-child(2){
+  opacity: 0;
+}
+
+// Balken 3
+#burger.is-active .line:nth-child(3){
+  -webkit-transform: translateY(-12px) rotate(90deg);
+  -ms-transform: translateY(-12px) rotate(90deg);
+  -o-transform: translateY(-12px) rotate(90deg);
+  //transform: translateY(-14px) rotate(90deg);
+  transform: translate(0,-12px) rotate(90deg);
+
+
+}
+
+/*Logo*/
+
+img {
+	width: 36px;
+	height: 36px;
 }
 
 .card.card-block.card-header{
@@ -18,8 +93,94 @@
 	width: 100%;
 	height: 33vh !important;
 	border-radius: 0px;
-	background-color: #fff !important;
 }
+
+/*Searchbar expandable*/
+
+.search-form .input-group {
+  float: right !important;
+  transition: all 0.35s, border-radius 0s;
+  width: 74px;
+  //height: 38px;
+  background-color: #fff;
+
+  border: none;
+
+
+}
+
+.search-form .input-group input.form-control::-webkit-input-placeholder {
+  display: none;
+}
+.search-form .input-group input.form-control:-moz-placeholder {
+  /* Firefox 18- */
+  display: none;
+}
+.search-form .input-group input.form-control::-moz-placeholder {
+  /* Firefox 19+ */
+  display: none;
+}
+.search-form .input-group input.form-control:-ms-input-placeholder {
+  display: none;
+}
+.search-form .input-group:hover,
+.search-form .input-group.hover {
+  width: 100%;
+  z-index: 2;
+  
+}
+
+input#search.form-control{
+
+	min-width: 0px !important;
+	z-index: -2;
+
+}
+
+.input-group{
+	width: 0;
+
+}
+
+
+.fa-search {
+    color: #2e90c0;
+}
+
+.btn {
+    border-color: #2e90c0;
+
+        &:hover {
+	        background-color: #2e90c0;
+
+				&.btn-outline-primary{
+					border-top-left-radius: 0;
+					border-bottom-left-radius: 0;
+			}
+
+        .fa {
+            color: #F27433;
+            
+        }
+    }
+}
+
+button {
+	border-color: #2e90c0;
+	&.btn.btn-outline-primary{
+		border-top-left-radius: 0.25rem;
+		border-bottom-left-radius: 0.25rem;
+	}
+    
+}
+
+
+/*From Kaan*/
+
+.i18n, .cart, .user {
+	padding-right: 15px;
+}
+
 
 /* media queries
 *  tablet landscape
@@ -54,5 +215,6 @@
 @media (max-width: 375px){
 	.card.card-block.card-header{
 		height: 86vh !important;
+		
 	}
 }
