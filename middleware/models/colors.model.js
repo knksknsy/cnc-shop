@@ -11,7 +11,8 @@ var Schema = mongoose.Schema;
 
 var colorSchema = new Schema({
     name: { type: String, unique: true },
-    hexcode: String
+    hexcode: String,
+    selected: Boolean
 });
 
 mongoose.model('Colors', colorSchema);

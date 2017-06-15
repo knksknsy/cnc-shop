@@ -13,7 +13,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class CategoryService {
 
-  API = 'http://localhost:3000';
+  API = 'https://localhost:8000';
 
   constructor(private http: Http) { }
 

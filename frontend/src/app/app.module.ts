@@ -19,6 +19,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
 // Modules
 import { AppRoutingModule } from './app-routing.module';
@@ -34,10 +35,13 @@ import { LoginModalComponent } from './components/login-modal/login-modal.compon
 
 import { HomeComponent } from './components/home/home.component';
 import { SlideshowComponent } from './components/slideshow/slideshow.component';
+import { CategoriesGridComponent } from './components/categories-grid/categories-grid.component';
 import { CategoryCardComponent } from './components/category-card/category-card.component';
 
 import { ProductsViewComponent } from './components/products-view/products-view.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { ProductsGridComponent } from './components/products-grid/products-grid.component';
+import { ProductCardComponent } from './components/product-card/product-card.component';
 
 import { ProfileComponent } from './components/profile/profile.component';
 
@@ -54,7 +58,7 @@ import { AuthenticationService } from './services/authentication.service';
 
 // Guards
 import { AuthGuard } from './guards/auth.guard';
-import { CategoriesComponent } from './components/categories/categories.component';
+import { ColorDropdownComponent } from './components/color-dropdown/color-dropdown.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +79,10 @@ import { CategoriesComponent } from './components/categories/categories.componen
     ProductDetailsComponent,
     CategoryCardComponent,
     ProductsViewComponent,
-    CategoriesComponent
+    CategoriesGridComponent,
+    ProductsGridComponent,
+    ProductCardComponent,
+    ColorDropdownComponent
   ],
   imports: [
     BrowserModule,
@@ -87,6 +94,7 @@ import { CategoriesComponent } from './components/categories/categories.componen
     TabsModule.forRoot(),
     CollapseModule.forRoot(),
     CarouselModule.forRoot(),
+    TooltipModule.forRoot(),
     AppRoutingModule
   ],
   providers: [ProductsService, CategoryService, ColorService, AuthenticationService, AuthGuard],

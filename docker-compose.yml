@@ -11,6 +11,7 @@ services:
     build: ./middleware # build from Dockerfile in directory
     ports:
       - "3000:3000"
+      - "8000:8000"
     links:
       - backend
     container_name: middleware

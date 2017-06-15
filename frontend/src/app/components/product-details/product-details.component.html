@@ -1,3 +1,71 @@
-<p>
-  product-details works!
-</p>
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-md-5">
+      <img [src]="details.image" class="img-fluid" [ngClass]="{pulse: pulse}" [alt]="details.name">
+    </div>
+
+    <div class="col-md-7">
+
+      <div class="row">
+        <div class="col">
+          <h1 class="display-4">{{details.name}}</h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <span class="text-muted">Artikelnummer {{details.id}}</span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <p>Preis {{details.price}}</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <span><strong>Beschreibung</strong></span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <span>{{details.description}}</span>
+        </div>
+      </div>
+
+      <div *ngIf="details.information">
+        <div class="row">
+          <div class="col">
+            <span><strong>Produktinformationen</strong></span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <ul>
+              <li *ngFor="let info of details.information">{{info}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <button class="btn btn-primary cart" [disabled]="cartDisabled" (click)="addToCart()">
+              <span class="fa fa-cart-plus"></span>
+            </button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <app-color-dropdown [colors]="colors" [limit]="details.quantity" (onSelect)="selectColor($event)"></app-color-dropdown>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

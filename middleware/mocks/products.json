@@ -15,6 +15,7 @@
                 "Strichbreiten: 4 – 200 mm mit einem Sprühkopf",
                 "400 ml"
             ],
+            "quantity": 1,
             "price": 7.95,
             "category": "cans"
         },
@@ -32,6 +33,7 @@
                 "Strichbreiten: 4 – 200 mm mit einem Sprühkopf",
                 "Füllmenge: 400 ml"
             ],
+            "quantity": 1,
             "price": 9.95,
             "category": "cans"
         },
@@ -49,6 +51,7 @@
                 "streichfähig und spachtelbar",
                 "Füllmenge: 400 ml"
             ],
+            "quantity": 1,
             "price": 9.95,
             "category": "cans"
         },
@@ -65,6 +68,7 @@
                 "für fast alle Untergründe",
                 "Füllmenge: 400 ml"
             ],
+            "quantity": 1,
             "price": 9.95,
             "category": "cans"
         },
@@ -85,6 +89,7 @@
                 "Strichbreiten: 4 – 200 mm mit einem Sprühkopf",
                 "Füllmenge: 400 ml"
             ],
+            "quantity": 1,
             "price": 9.95,
             "category": "cans"
         },
@@ -105,6 +110,7 @@
                 "Strichbreiten: 4 – 200 mm mit einem Sprühkopf",
                 "Füllmenge: 400 ml"
             ],
+            "quantity": 1,
             "price": 19.95,
             "category": "cans"
         },
@@ -181,6 +187,7 @@
                 "bestens für Airbrush geeignet",
                 "kompatibel mit CAP'N CAN Sprühfarben und Markern"
             ],
+            "quantity": 1,
             "price": 3.50,
             "category": "marker_refills"
         },
@@ -208,6 +215,7 @@
                 "bestens für Airbrush geeignet",
                 "kompatibel mit CAP'N CAN Sprühfarben und Markern"
             ],
+            "quantity": 1,
             "price": 4.50,
             "category": "marker_refills"
         },
@@ -235,6 +243,7 @@
                 "bestens für Airbrush geeignet",
                 "kompatibel mit CAP'N CAN Sprühfarben und Markern"
             ],
+            "quantity": 1,
             "price": 6.25,
             "category": "marker_refills"
         },
@@ -276,6 +285,7 @@
                 "für fast alle Untergründe (Untergrund auf Eignung testen)",
                 "mischbar"
             ],
+            "quantity": 1,
             "price": 16.95,
             "category": "marker_refills"
         },
@@ -290,6 +300,7 @@
                 "Größe: M",
                 "Logo Print auf der Brust und am Nacken"
             ],
+            "quantity": 1,
             "price": 19.95,
             "category": "accessories_merchandise"
         },
@@ -303,6 +314,7 @@
                 "Größe: L",
                 "Logo Print auf der Brust und am Nacken"
             ],
+            "quantity": 1,
             "price": 19.95,
             "category": "accessories_merchandise"
         },
@@ -316,6 +328,7 @@
                 "Größe: XL",
                 "Logo Print auf der Brust und am Nacken"
             ],
+            "quantity": 1,
             "price": 19.95,
             "category": "accessories_merchandise"
         },
@@ -328,6 +341,7 @@
                 "weiße CAP'N CAN Logo-Stickerei (Front)",
                 "Einheitsgröße"
             ],
+            "quantity": 1,
             "price": 7.99,
             "category": "accessories_merchandise"
         },
@@ -339,6 +353,7 @@
             "information": [
                 "Standard Cap für CAP'N CAN Artist Sprühdosen mit 400 ml"
             ],
+            "quantity": 1,
             "price": 2.50,
             "category": "accessories_merchandise"
         },

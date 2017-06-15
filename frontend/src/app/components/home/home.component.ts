@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.forEach(params => {
+      window.scrollTo(0,0);
       this.productCategories = this.route.snapshot.data['categories'];
     });
   }
