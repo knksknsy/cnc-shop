@@ -1,14 +1,20 @@
 <div class="row">
-  <div class="col-sm-3">
-    <h3 (click)="openView('cans')">cans</h3>
+  <div class="col-sm-6 text-center">
+    <!--<h3 class="shop">{Bezeichnung}</h3>-->
+    <h3 class="shop">SHOP</h3>
+    <div class="navbar-nav">
+      <a class="dropdown-item" href="#" (click)="openView('cans')">Dosen</a>
+      <a class="dropdown-item" href="#">Marker & Refills</a>
+      <a class="dropdown-item" href="#" (click)="openView('accessories_merchandise')">Zubehör & Merchandise</a>
+    </div>
   </div>
-  <div class="col-sm-3">
-    <h3 (click)="openView('marker_refills')">marker_refills</h3>
-  </div>
-  <div class="col-sm-3">
-    <h3 (click)="openView('accessories_merchandise')">accessories_merchandise</h3>
-  </div>
-  <div class="col-sm-3">
-    <h3 (click)="openView('customize')">customize</h3>
+  <div class="col-sm-6 text-center">
+    <!--<h3>{Bezeichnung}</h3>-->
+    <h3>ANWENDUNGEN</h3>
+   <div class="navbar-nav">
+      <a class="dropdown-item" href="#">Graffiti</a>
+      <a class="dropdown-item" href="#">Schablonen</a>
+    </div>
   </div>
 </div>
+

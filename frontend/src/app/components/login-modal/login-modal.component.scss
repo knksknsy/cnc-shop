@@ -31,3 +31,25 @@
         }
     }    
 }
+
+.fa-user {
+    color: #2e90c0;
+}
+
+.btn {
+    border-color: #2e90c0;
+    
+        &:hover {
+	        background-color: #2e90c0;
+
+        .fa {
+            color: #F27433;
+            
+        }
+    }
+}
+
+button {
+	border-color: #2e90c0;
+    
+}
