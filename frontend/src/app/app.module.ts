@@ -52,6 +52,7 @@ import { ShoppingcartComponent } from './components/shoppingcart/shoppingcart.co
 import { StaticBilderComponent } from './components/static-bilder/static-bilder.component';
 
 import { VideosComponent } from './components/videos/videos.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 // Services
 import { ProductsService } from './services/products.service';
@@ -62,6 +63,7 @@ import { AuthenticationService } from './services/authentication.service';
 // Guards
 import { AuthGuard } from './guards/auth.guard';
 import { ColorDropdownComponent } from './components/color-dropdown/color-dropdown.component';
+
 
 
 @NgModule({
@@ -87,7 +89,8 @@ import { ColorDropdownComponent } from './components/color-dropdown/color-dropdo
     ProductsGridComponent,
     ProductCardComponent,
     ColorDropdownComponent,
-    VideosComponent
+    VideosComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
