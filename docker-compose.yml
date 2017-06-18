@@ -19,5 +19,6 @@ services:
   frontend:
     build: ./frontend # build from Dockerfile in directory
     ports:
-      - "4200:4200"
+      - "443:4200"
     container_name: frontend
+
