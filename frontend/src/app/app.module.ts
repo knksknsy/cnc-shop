@@ -2,6 +2,7 @@
 *  Copyright (C) 2017
 *
 *   Kaan K.
+*  Eli K.
 *
 *  MIT License
 */
@@ -50,6 +51,8 @@ import { CapsComponent } from './components/caps/caps.component';
 import { ShoppingcartComponent } from './components/shoppingcart/shoppingcart.component';
 import { StaticBilderComponent } from './components/static-bilder/static-bilder.component';
 
+import { VideosComponent } from './components/videos/videos.component';
+
 // Services
 import { ProductsService } from './services/products.service';
 import { ColorService } from './services/color.service';
@@ -59,6 +62,7 @@ import { AuthenticationService } from './services/authentication.service';
 // Guards
 import { AuthGuard } from './guards/auth.guard';
 import { ColorDropdownComponent } from './components/color-dropdown/color-dropdown.component';
+
 
 @NgModule({
   declarations: [
@@ -82,7 +86,8 @@ import { ColorDropdownComponent } from './components/color-dropdown/color-dropdo
     CategoriesGridComponent,
     ProductsGridComponent,
     ProductCardComponent,
-    ColorDropdownComponent
+    ColorDropdownComponent,
+    VideosComponent
   ],
   imports: [
     BrowserModule,
