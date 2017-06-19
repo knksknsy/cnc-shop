@@ -2,6 +2,17 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.6.
 
+## Docker RUN Devel vs Remote Server
+
+get your own IP with `ifconfig` and change it with the remote server-adress `46.38.255.109` in the following files:
+
+protractor.conf.js > baseUrl: 'http://46.38.255.109:4200/',
+src/app/services/authentication.service.ts  > API = 'https://46.38.255.109:8000';
+src/app/services/category.service.ts  > API = 'https://46.38.255.109:8000';
+src/app/services/color.service.ts  > API = 'https://46.38.255.109:8000';
+src/app/services/products.service.ts  > API = 'https://46.38.255.109:8000';
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
