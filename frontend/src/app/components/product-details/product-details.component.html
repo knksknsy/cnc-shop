@@ -15,19 +15,19 @@
 
       <div class="row">
         <div class="col">
-          <span class="text-muted">Artikelnummer {{details.id}}</span>
+          <span class="text-muted">{{ "DETAILS_ITEM_NO" | translate }} {{details.id}}</span>
         </div>
       </div>
 
       <div class="row">
         <div class="col">
-          <p>Preis {{details.price}}</p>
+          <p>{{ "DETAILS_PRICE" | translate }} {{details.price}}</p>
         </div>
       </div>
 
       <div class="row">
         <div class="col">
-          <span><strong>Beschreibung</strong></span>
+          <span><strong>{{ "DETAILS_DESC" | translate }}</strong></span>
         </div>
       </div>
 
@@ -40,7 +40,7 @@
       <div *ngIf="details.information">
         <div class="row">
           <div class="col">
-            <span><strong>Produktinformationen</strong></span>
+            <span><strong>{{ "DETAILS_INFO" | translate }}</strong></span>
           </div>
         </div>
         <div class="row">

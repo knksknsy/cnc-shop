@@ -1,7 +1,7 @@
-<button type="button" class="btn" (click)="isCollapsed = !isCollapsed">Farbauswahl</button>
+<button type="button" class="btn" (click)="isCollapsed = !isCollapsed"> {{ "COLOR_PICKER" | translate }} </button>
 
 <div (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsed" class="container">
-  <h6>Ausgewählte Farben: {{colorCounter}}</h6>
+  <h6>{{ "COLOR_SELECTED" | translate }} {{colorCounter}}</h6>
   <div *ngFor="let color of colors" class="btn-primary color-button" [ngClass]="{checked: color.selected}" [style.backgroundColor]="color.hexcode" [tooltip]="color.name" placement="top">
     <label>
       <input type="checkbox" (change)="selectColor($event, color)"/>

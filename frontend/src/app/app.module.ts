@@ -2,6 +2,7 @@
 *  Copyright (C) 2017
 *
 *   Kaan K.
+*   Artur B.
 *  Eli K.
 *
 *  MIT License
@@ -11,7 +12,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule, Http } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
 // ngx-bootstrap Modules
@@ -64,7 +65,13 @@ import { AuthenticationService } from './services/authentication.service';
 import { AuthGuard } from './guards/auth.guard';
 import { ColorDropdownComponent } from './components/color-dropdown/color-dropdown.component';
 
+// Translations
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
+export function createTranslateLoader(http: Http) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [
@@ -103,7 +110,14 @@ import { ColorDropdownComponent } from './components/color-dropdown/color-dropdo
     CollapseModule.forRoot(),
     CarouselModule.forRoot(),
     TooltipModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [Http]
+      }
+    })
   ],
   providers: [ProductsService, CategoryService, ColorService, AuthenticationService, AuthGuard],
   bootstrap: [AppComponent]

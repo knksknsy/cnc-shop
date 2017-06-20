@@ -2,12 +2,14 @@
 *  Copyright (C) 2017
 *
 *   Kaan K.
+*   Artur B.
 *
 *  MIT License
 */
 
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -15,9 +17,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = `Cap'n Can`;
+  title = `cap'n can`;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private translate: TranslateService) {
+    translate.setDefaultLang('en');
+  }
 
   searchQuery(query) {
     this.router.navigate(['/search', query.searchQuery]);
