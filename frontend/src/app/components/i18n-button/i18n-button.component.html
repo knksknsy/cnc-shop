@@ -4,7 +4,7 @@
   </button>
 
   <ul *dropdownMenu class="dropdown-menu" role="menu">
-    <li role="menuitem"><a class="dropdown-item" href="#">{{ "LANG_DE" | translate }}</a></li>
-    <li role="menuitem"><a class="dropdown-item" href="#">{{ "LANG_EN" | translate }}</a></li>
+    <li role="menuitem" class="dropdown-item" (click)="translateToGerman()">{{ "LANG_DE" | translate }}</li>
+    <li role="menuitem" class="dropdown-item" (click)="translateToEnglish()">{{ "LANG_EN" | translate }}</li>
   </ul>
 </div>
