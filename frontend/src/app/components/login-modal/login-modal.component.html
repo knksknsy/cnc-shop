@@ -13,14 +13,14 @@
           <tab heading="Login">
             <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
               <div class="form-group row first-row">
-                <label class="sr-only">Email address</label>
+                <label class="sr-only">{{ "LOGIN_MAIL" | translate }}</label>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                   <div class="input-group-addon"><span class="fa fa-at"></span></div>
                   <input formControlName="loginEmail" type="email" class="form-control" placeholder="Email address" required autofocus>
                 </div>
               </div>
               <div class="form-group row">
-                <label class="sr-only">Password</label>
+                <label class="sr-only">{{ "LOGIN_PSW" | translate }}</label>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                   <div class="input-group-addon"><span class="fa fa-unlock-alt"></span></div>
                   <input formControlName="loginPassword" type="password" class="form-control" placeholder="Password" required>
@@ -28,7 +28,7 @@
               </div>
               <div class="row">
                 <div class="col">
-                  <button class="btn btn-outline-primary btn-block" type="submit">Sign in</button>
+                  <button class="btn btn-outline-primary btn-block" type="submit">{{ "LOGIN_SIGN" | translate }}</button>
                 </div>
               </div>
             </form>
@@ -37,21 +37,21 @@
           <tab heading="Register">
             <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
               <div class="form-group row first-row">
-                <label class="sr-only">Name</label>
+                <label class="sr-only">{{ "LOGIN_NAME" | translate }}</label>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                   <div class="input-group-addon"><span class="fa fa-at"></span></div>
                   <input formControlName="registerName" class="form-control" placeholder="Name" required autofocus>
                 </div>
               </div>
               <div class="form-group row first-row">
-                <label class="sr-only">Email address</label>
+                <label class="sr-only">{{ "LOGIN_MAIL" | translate }}</label>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                   <div class="input-group-addon"><span class="fa fa-at"></span></div>
                   <input formControlName="registerEmail" type="email" class="form-control" placeholder="Email address" required autofocus>
                 </div>
               </div>
               <div class="form-group row">
-                <label class="sr-only">Password</label>
+                <label class="sr-only">{{ "LOGIN_PSW" | translate }}</label>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                   <div class="input-group-addon"><span class="fa fa-unlock-alt"></span></div>
                   <input formControlName="registerPassword" type="password" class="form-control" placeholder="Password" required>
@@ -59,7 +59,7 @@
               </div>
               <div class="row">
                 <div class="col">
-                  <button class="btn btn-outline-primary btn-block" type="submit">Register</button>
+                  <button class="btn btn-outline-primary btn-block" type="submit">{{ "LOGIN_REGISTER" | translate }}</button>
                 </div>
               </div>
             </form>

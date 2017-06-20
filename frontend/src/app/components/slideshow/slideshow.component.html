@@ -4,9 +4,9 @@
       <img [src]="product.image" class="img-responsive" />
       <div class="carousel-caption" (click)="openView(product.id)">
         <h3>{{product.name}}</h3>
-        <small>Artikelnummer {{product.id}}</small>
+        <small>{{ "SLIDE_NAME" | translate }} {{product.id}}</small>
         <br>
-        <small>Preis {{product.price}}</small>
+        <small>{{ "SLIDE_PRICE" | translate }} {{product.price}}</small>
       </div>
     </slide>
   </carousel>
