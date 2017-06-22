@@ -1,12 +1,19 @@
-.modal-dialog {
-    margin-right: 15px;
-    margin-top: 70px;
+.modal {
+    .modal-dialog {
+        margin-right: 15px;
+        margin-top: 70px;
+        .moda-body {
+            .form-control {
+                width: 75%;
+            }
+        }
+    }
 }
 .fa-shopping-cart {
     color: #2e90c0;
 }
 
-.btn {
+.btn-outline-primary {
     border-color: #2e90c0;
     
         &:hover {
@@ -19,7 +26,17 @@
     }
 }
 
-button {
-	border-color: #2e90c0;
-    
+.badge {
+    display: inline-block;
+    padding: 0.5em 0.5em;
+    font-size: 75%;
+    font-weight: bold;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.5rem;
+    margin-right: 5px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.68);
 }

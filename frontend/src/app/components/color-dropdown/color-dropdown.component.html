@@ -4,9 +4,7 @@
   <h6>Ausgewählte Farben: {{colorCounter}}</h6>
   <div *ngFor="let color of colors" class="btn-primary color-button" [ngClass]="{checked: color.selected}" [style.backgroundColor]="color.hexcode" [tooltip]="color.name" placement="top">
     <label>
-      <input type="checkbox" (change)="selectColor($event, color)"/>
+      <input type="checkbox" [(ngModel)]="color.selected" (change)="selectColor($event, color)" [disabled]="selectedColors.length === limit && !color.selected"/>
     </label>
   </div>
 </div>
-
-<!--(click)="selectColor(color)"-->

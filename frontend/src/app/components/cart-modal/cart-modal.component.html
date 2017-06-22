@@ -7,8 +7,34 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
 
-      <div class="modal-header">Cart Header</div>
-      <div class="modal-body">Cart Content</div>
+      <div class="modal-body">
+
+        <div class="row">
+          <div class="col-4">Article</div>
+          <div class="col-2">Price</div>
+          <div class="col-2">Quantity</div>
+          <div class="col-2">Subtotal</div>
+          <div class="col-2"></div>
+        </div>
+
+        <div class="row" *ngFor="let cartItem of shoppingCartService.cart">
+          <div class="col-4">
+            <img [src]="cartItem.product.image" class="img-thumbnail rounded float-left" />
+            <div>{{cartItem.product.name}} <span *ngFor="let color of cartItem.colors" class="badge" [ngStyle]="{'background-color': color.hexcode}"></span></div>
+            <div class="text-muted">{{cartItem.product.id}}</div>
+          </div>
+          <div class="col-2">{{cartItem.product.price}}</div>
+          <div class="col-2">
+            <input class="form-control" [ngModel]="cartItem.quantity" (ngModelChange)="validate($event, cartItem)" OnlyInteger="true" type="number" min="1" step="1" />
+          </div>
+          <div class="col-2">{{cartItem.product.price * cartItem.quantity}}</div>
+          <div class="col-2">
+            <button type="button" class="btn btn-danger" (click)="removeItem(cartItem)">
+              <span class="fa fa-trash"></span>
+            </button>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>

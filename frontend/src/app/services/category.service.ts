@@ -8,6 +8,8 @@
 
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+import { ICategory } from '../interfaces/category';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 @Injectable()
@@ -17,7 +19,7 @@ export class CategoryService {
 
   constructor(private http: Http) { }
 
-  getCategories() {
+  getCategories(): Observable<Array<ICategory>> {
     return this.http.get(`${this.API}/categories/all`)
       .map(res => res.json());
   }
