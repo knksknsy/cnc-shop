@@ -29,7 +29,12 @@ export class LoginModalComponent implements OnInit {
   });
 
   public registerForm = this.formBuilder.group({
-    registerName: ["", Validators.required], 
+    registerName: ["", Validators.required],
+    registerSurname: ["", Validators.required],
+    registerStreet: ["", Validators.required],
+    registerPostcode: ["", Validators.required],
+    registerCity: ["", Validators.required],
+    registerState: ["", Validators.required],
     registerEmail: ["", Validators.required],
     registerPassword: ["", Validators.required]
   });
@@ -56,18 +61,47 @@ export class LoginModalComponent implements OnInit {
   }
 
   onLogin(event) {
-    this.authenticationService.login({ email: this.loginForm.value.loginEmail, password: this.loginForm.value.loginPassword })
-      .subscribe((next) => {
-        console.log(next);
-        this.hideModal();
+    let body = {
+      user: {
+        email: this.loginForm.value.loginEmail,
+        password: this.loginForm.value.loginPassword
+      }
+    }
+    this.authenticationService.login(body)
+      .subscribe((success) => {
+        if (success) {
+          this.hideModal();
+        } else {
+          // show login error
+        }
       });
   }
 
   onRegister(event) {
-    this.authenticationService.register({ name: this.registerForm.value.registerName, email: this.registerForm.value.registerEmail, password: this.registerForm.value.registerPassword })
-      .subscribe((next) => {
-        console.log(next);
-        this.hideModal();
+    let body = {
+      user: {
+        email: this.registerForm.value.registerEmail,
+        name: this.registerForm.value.registerName,
+        surname: this.registerForm.value.registerSurname,
+        street: this.registerForm.value.registerStreet,
+        postcode: this.registerForm.value.registerPostcode,
+        city: this.registerForm.value.registerCity,
+        state: this.registerForm.value.registerState,
+        password: this.registerForm.value.registerPassword
+      }
+    }
+    this.authenticationService.register(body)
+      .subscribe((success: any) => {
+        if (success && !success.message) {
+          this.authenticationService.login({ user: { email: this.registerForm.value.registerEmail, password: this.registerForm.value.registerPassword } })
+            .subscribe((success) => {
+              if (success) {
+                this.hideModal();
+              }
+            })
+        } else if (success.message) {
+          // show register error
+        }
       });
   }
 
