@@ -10,15 +10,7 @@
 const express = require('express');
 const router = express.Router();
 
-var jwt = require('express-jwt');
-const secret = require('../config/db.config').secret;
-var auth = jwt({
-  secret: secret,
-  userProperty: 'payload'
-});
-var ctrlProfile = require('../controllers/profile');
-var ctrlAuth = require('../controllers/authentication');
-
+var user = require('./user/user');
 var products = require('./products/products');
 var categories = require('./categories/categories');
 var colors = require('./colors/colors');
@@ -28,12 +20,8 @@ router.get('/', (req, res) => {
   return res.send('api works');
 });
 
-// profile
-router.get('/profile', auth, ctrlProfile.profileRead);
-
-// authentication
-router.post('/register', ctrlAuth.register);
-router.post('/login', ctrlAuth.login);
+// user
+router.use('/user', user);
 
 // products
 router.use('/products', products);

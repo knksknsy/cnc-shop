@@ -15,15 +15,15 @@ const https = require('https');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-const passport = require('passport');
+var sessions = require("client-sessions");
+const cookie = require("./config/db.config").cookie;
 const fs = require("fs");
 const config = {
-    key: fs.readFileSync('./certs/privkey.pem'),
-    cert: fs.readFileSync('./certs/fullchain.pem')
+  key: fs.readFileSync('./certs/privkey.pem'),
+  cert: fs.readFileSync('./certs/fullchain.pem')
 };
 
 require('./models/db.model');
-require('./config/passport');
 
 // Get our API routes
 const api = require('./routes/api');
@@ -41,11 +41,29 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../frontend/dist')));
 app.use(express.static(path.join(__dirname, '../frontend/src')));
 
+//Setting up sessions
+app.use(sessions({
+  cookieName: cookie.name,
+  secret: cookie.secret,
+  duration: 24 * 60 * 60 * 1000, //24 h
+  activeDuration: 10 * 60 * 1000, //10 min
+  cookie: {
+    httpOnly: true
+  }
+}));
+
 // Cross Origin middleware
 app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
+  const origin = req.get('origin');
+  res.header("Access-Control-Allow-Origin", origin);
+  res.header("Access-Control-Allow-Credentials", "true");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+  if (req.method === 'OPTIONS') {
+    res.sendStatus(204);
+  } else {
+    next();
+  }
 });
 
 // Set api routes

@@ -7,7 +7,8 @@
 */
 
 import { Injectable } from '@angular/core';
-import { Http, Headers, Response } from '@angular/http';
+import { Http, Headers, Response, RequestOptions } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 @Injectable()
@@ -18,24 +19,43 @@ export class AuthenticationService {
   constructor(private http: Http) { }
 
   register(user) {
-    return this.http.post(`${this.API}/register`, user)
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    let options = new RequestOptions({ headers: headers, withCredentials: true });
+    return this.http.post(`${this.API}/user/register`, user, options)
       .map((res: Response) => {
-        res.json();
-      });
-  }
-
-  login(user) {
-    return this.http.post(`${this.API}/login`, user)
-      .map((res: Response) => {
-        let user = res.json();
-        if (user && user.token) {
-          localStorage.setItem('currentUser', JSON.stringify(user));
+        if (res.status === 200) {
+          return true;
+        } else {
+          return res.json();
         }
       });
   }
 
+  login(user) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    let options = new RequestOptions({ headers: headers, withCredentials: true });
+    return this.http.post(`${this.API}/user/login`, user, options)
+      .map((res: Response) => {
+        if (res.status === 200) {
+          return true;
+        }
+        return false;
+      });
+  }
+
   logout() {
-    localStorage.removeItem('currentUser');
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    let options = new RequestOptions({ headers: headers, withCredentials: true });
+    return this.http.post(`${this.API}/user/logout`, options)
+      .map((res: Response) => {
+        if (res.status === 200) {
+          return true;
+        }
+        return false;
+      })
   }
 
 }
