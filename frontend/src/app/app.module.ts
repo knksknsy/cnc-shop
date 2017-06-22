@@ -43,6 +43,7 @@ import { ProductsViewComponent } from './components/products-view/products-view.
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { ProductsGridComponent } from './components/products-grid/products-grid.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
+import { ColorDropdownComponent } from './components/color-dropdown/color-dropdown.component';
 
 import { ProfileComponent } from './components/profile/profile.component';
 
@@ -59,12 +60,11 @@ import { ProductsService } from './services/products.service';
 import { ColorService } from './services/color.service';
 import { CategoryService } from './services/category.service';
 import { AuthenticationService } from './services/authentication.service';
+import { ShoppingCartService } from './services/shopping-cart.service';
 
 // Guards
 import { AuthGuard } from './guards/auth.guard';
-import { ColorDropdownComponent } from './components/color-dropdown/color-dropdown.component';
-
-
+import { OnlyIntegerDirective } from './directives/only-integer.directive';
 
 @NgModule({
   declarations: [
@@ -90,7 +90,8 @@ import { ColorDropdownComponent } from './components/color-dropdown/color-dropdo
     ProductCardComponent,
     ColorDropdownComponent,
     VideosComponent,
-    FooterComponent
+    FooterComponent,
+    OnlyIntegerDirective
   ],
   imports: [
     BrowserModule,
@@ -105,7 +106,14 @@ import { ColorDropdownComponent } from './components/color-dropdown/color-dropdo
     TooltipModule.forRoot(),
     AppRoutingModule
   ],
-  providers: [ProductsService, CategoryService, ColorService, AuthenticationService, AuthGuard],
+  providers: [
+    ProductsService,
+    CategoryService,
+    ColorService,
+    AuthenticationService,
+    ShoppingCartService,
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

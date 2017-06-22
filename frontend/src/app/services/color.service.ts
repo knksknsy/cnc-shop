@@ -8,6 +8,8 @@
 
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+import { IColor } from '../interfaces/color';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 @Injectable()
@@ -17,7 +19,7 @@ export class ColorService {
 
   constructor(private http: Http) { }
 
-  getColors() {
+  getColors(): Observable<Array<IColor>> {
     return this.http.get(`${this.API}/colors/all`)
       .map(res => res.json());
   }

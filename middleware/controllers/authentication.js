@@ -8,6 +8,7 @@
 
 var passport = require('passport');
 var mongoose = require('mongoose');
+const uuid = require('uuid/v4')
 var User = mongoose.model('Users');
 
 module.exports.register = function(req, res) {
@@ -15,6 +16,7 @@ module.exports.register = function(req, res) {
 
     user.name = req.body.name;
     user.email = req.body.email;
+    user.orderId = uuid();
 
     user.setPassword(req.body.password);
 

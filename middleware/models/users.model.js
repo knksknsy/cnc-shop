@@ -22,6 +22,7 @@ var userSchema = new Schema({
         type: String,
         required: true
     },
+    orderId: {type: String, required: false},
     hash: String,
     salt: String
 });

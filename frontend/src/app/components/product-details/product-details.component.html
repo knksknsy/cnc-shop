@@ -2,7 +2,8 @@
   <div class="row">
 
     <div class="col-md-5">
-      <img [src]="details.image" class="img-fluid" [ngClass]="{pulse: pulse}" [alt]="details.name">
+      <!--<img [src]="details.image" class="img-fluid" [ngClass]="{pulse: pulse}" [alt]="details.name">-->
+      <img [src]="details.image" class="img-fluid" [alt]="details.name">
     </div>
 
     <div class="col-md-7">
@@ -62,7 +63,7 @@
 
       <div class="row">
         <div class="col">
-          <app-color-dropdown [colors]="colors" [limit]="details.quantity" (onSelect)="selectColor($event)"></app-color-dropdown>
+          <app-color-dropdown [colors]="colors" [limit]="details.quantity" [reset]="resetSelectedColors" (onSelect)="selectColor($event)"></app-color-dropdown>
         </div>
       </div>
 
