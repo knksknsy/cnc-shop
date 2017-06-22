@@ -24,11 +24,10 @@ export class MenuComponent implements OnInit {
   }
 
   openView(route: string) {
-    route = '/' + route;
     let body = document.getElementsByTagName('body')[0];
     body.classList.remove("stopScrolling");
     this.onMenuItemSelected.emit();
-    // this.router.navigate(['route']);
+    this.router.navigate(['products/category', route]);
   }
 
 }
