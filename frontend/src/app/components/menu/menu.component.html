@@ -1,11 +1,12 @@
 <div class="row">
+
   <div class="col-sm-6 text-center">
     <!--<h3 class="shop">{Bezeichnung}</h3>-->
     <h3 class="shop">SHOP</h3>
     <div class="navbar-nav">
-      <a class="dropdown-item" href="#" (click)="openView('cans')">Dosen</a>
-      <a class="dropdown-item" href="#">Marker & Refills</a>
-      <a class="dropdown-item" href="#" (click)="openView('accessories_merchandise')">Zubehör & Merchandise</a>
+      <a class="dropdown-item" (click)="openView('cans')">{{ "MENU_CANS" | translate }}</a>
+      <a class="dropdown-item" (click)="openView('marker_refills')">{{ "MENU_MARKER" | translate }}</a>
+      <a class="dropdown-item" (click)="openView('accessories_merchandise')">{{ "MENU_ACC" | translate }}</a>
     </div>
   </div>
   <div class="col-sm-6 text-center">
@@ -17,4 +18,3 @@
     </div>
   </div>
 </div>
-

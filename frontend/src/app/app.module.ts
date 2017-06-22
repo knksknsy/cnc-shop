@@ -2,6 +2,7 @@
 *  Copyright (C) 2017
 *
 *   Kaan K.
+*   Artur B.
 *  Eli K.
 *
 *  MIT License
@@ -11,7 +12,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule, Http } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
 // ngx-bootstrap Modules
@@ -41,9 +42,9 @@ import { CategoryCardComponent } from './components/category-card/category-card.
 
 import { ProductsViewComponent } from './components/products-view/products-view.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { ColorDropdownComponent } from './components/color-dropdown/color-dropdown.component';
 import { ProductsGridComponent } from './components/products-grid/products-grid.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
-import { ColorDropdownComponent } from './components/color-dropdown/color-dropdown.component';
 
 import { ProfileComponent } from './components/profile/profile.component';
 
@@ -65,6 +66,14 @@ import { ShoppingCartService } from './services/shopping-cart.service';
 // Guards
 import { AuthGuard } from './guards/auth.guard';
 import { OnlyIntegerDirective } from './directives/only-integer.directive';
+
+// Translations
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+export function createTranslateLoader(http: Http) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [
@@ -104,7 +113,14 @@ import { OnlyIntegerDirective } from './directives/only-integer.directive';
     CollapseModule.forRoot(),
     CarouselModule.forRoot(),
     TooltipModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [Http]
+      }
+    })
   ],
   providers: [
     ProductsService,
