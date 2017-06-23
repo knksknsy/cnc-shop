@@ -35,7 +35,7 @@ router.post('/add', (req, res, next) => {
             }
         )
     });
-    return res.send(200);
+    return res.sendStatus(200);
 });
 
 router.get('/all', (req, res, next) => {
