@@ -46,7 +46,6 @@ router.post('/', (req, res, next) => {
                     var sum = 0;
                     Rx.Observable.from(req.body.orders)
                         .flatMap((item) => {
-                            console.log('item', item);
                             if (!item.quantity || item.quantity <= 0) {
                                 return next(err);
                             }

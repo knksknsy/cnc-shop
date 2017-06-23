@@ -62,7 +62,6 @@ router.post('/login', (req, res, next) => {
     }
     var suppliedUser = req.body.user;
     User.findOne({ email: suppliedUser.email }, (err, foundUser) => {
-        console.log('foundUser', foundUser);
         if (err) {
             return next(err);
         }
@@ -80,7 +79,7 @@ router.post('/login', (req, res, next) => {
 });
 
 // logout
-router.post('/logout', (req, res, next) => {
+router.get('/logout', (req, res, next) => {
     if (req.mySession && req.mySession.user) {
         req.mySession.reset();
     }
