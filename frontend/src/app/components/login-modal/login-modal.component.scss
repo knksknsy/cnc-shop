@@ -53,3 +53,14 @@ button {
 	border-color: #2e90c0;
     
 }
+
+.menu-drop {
+    border-top-right-radius: 0.25rem !important;
+    border-bottom-right-radius: 0.25rem !important;
+}
+
+.dropdown-item {
+    &:hover {
+        cursor: pointer;
+    }
+}

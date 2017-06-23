@@ -33,11 +33,9 @@ export class NavbarComponent implements OnInit {
   ngOnInit() { }
 
   public collapsed(event: any): void {
-    console.log(event);
   }
 
   public expanded(event: any): void {
-    console.log(event);
   }
 
   // make body position fixed (no scrolling) when menu is opened
