@@ -1,4 +1,7 @@
 {
+  "cans": "Cans",
+  "marker_refills": "Marker & Refills",
+  "accessories_merchandise": "Accessories & Merchandise",
   "_comment": "translatesection: components/accessoires",
   "ACC_LIST": "Accessoires List",
   "ACC_PRODUCT_NAME": "Product Name",
