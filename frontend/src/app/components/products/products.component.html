@@ -11,26 +11,10 @@
         <h3>{{ product.name }}</h3>
         <h4> {{ "PRODUCT_DESC" | translate }} </h4>
         <p> {{product.description}}</p>
-        <p class="card-text">{{product.price | currency : 'EUR' : true}}</p>
+        <p class="card-text">{{product.price | currency: 'EUR':true:'1.2-2'}}</p>
         <p><a href="#" class="btn btn-primary" role="button">{{ "PRODUCT_DETAILS" | translate }}</a> <a href="#" class="btn btn-default" role="button">Shopping cart</a></p>
       </div>
     </div>
   </div>
 
 </div>
-
-
-<!--<button type="button" class="btn btn-default" (click)="getProducts()">Get Products</button>
-<div class="container">
-  <div class="row" *ngFor="let product of products">
-    <div class="card card-block">
-      <h4 class="card-title">{{ product.name }}</h4>
-      <p class="card-text">{{product.description}}</p>
-      <p class="card-text">{{product.price | currency : 'EUR' : true}}</p>
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
-    </div>
-  </div>
-</div>
-<hr>
--->
