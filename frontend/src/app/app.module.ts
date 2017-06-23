@@ -47,11 +47,7 @@ import { ProductsGridComponent } from './components/products-grid/products-grid.
 import { ProductCardComponent } from './components/product-card/product-card.component';
 
 import { ProfileComponent } from './components/profile/profile.component';
-
-import { AccessoiresComponent } from './components/accessoires/accessoires.component';
-import { CapsComponent } from './components/caps/caps.component';
-import { ShoppingcartComponent } from './components/shoppingcart/shoppingcart.component';
-import { StaticBilderComponent } from './components/static-bilder/static-bilder.component';
+import { OrderHistoryComponent } from './components/order-history/order-history.component';
 
 import { VideosComponent } from './components/videos/videos.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -70,6 +66,7 @@ import { OnlyIntegerDirective } from './directives/only-integer.directive';
 // Translations
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { OrderHistoryResolverComponent } from './resolver/order-history-resolver/order-history-resolver.component';
 
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -81,13 +78,9 @@ export function createTranslateLoader(http: Http) {
     ProductsViewComponent,
     LoginModalComponent,
     ProfileComponent,
-    AccessoiresComponent,
-    CapsComponent,
     HomeComponent,
     NavbarComponent,
     SlideshowComponent,
-    ShoppingcartComponent,
-    StaticBilderComponent,
     MenuComponent,
     I18nButtonComponent,
     CartModalComponent,
@@ -100,7 +93,9 @@ export function createTranslateLoader(http: Http) {
     ColorDropdownComponent,
     VideosComponent,
     FooterComponent,
-    OnlyIntegerDirective
+    OnlyIntegerDirective,
+    OrderHistoryComponent,
+    OrderHistoryResolverComponent
   ],
   imports: [
     BrowserModule,

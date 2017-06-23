@@ -9,12 +9,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AccessoiresComponent } from './components/accessoires/accessoires.component';
-import { CapsComponent } from './components/caps/caps.component';
-import { ShoppingcartComponent } from './components/shoppingcart/shoppingcart.component';
 import { ProductsViewComponent } from './components/products-view/products-view.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { HomeComponent } from './components/home/home.component';
+import { OrderHistoryComponent } from './components/order-history/order-history.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 import { AuthGuard } from './guards/auth.guard';
 
@@ -22,6 +21,8 @@ import { ProductsResolverService } from './resolver/products-resolver.service';
 import { ProductDetailsResolverService } from './resolver/product-details-resolver.service';
 import { CategoryResolverService } from './resolver/category-resolver.service';
 import { ColorsResolverService } from './resolver/colors-resolver.service';
+import { OrderHistoryResolverService } from './resolver/order-history-resolver.service';
+import { ProfileResolverService } from './resolver/profile-resolver.service';
 
 const appRoutes: Routes = [
     {
@@ -45,6 +46,22 @@ const appRoutes: Routes = [
         resolve: {
             details: ProductDetailsResolverService,
             colors: ColorsResolverService
+        }
+    },
+    {
+        path: 'user/history',
+        component: OrderHistoryComponent,
+        canActivate: [AuthGuard],
+        resolve: {
+            history: OrderHistoryResolverService
+        }
+    },
+    {
+        path: 'user/profile',
+        component: ProfileComponent,
+        canActivate: [AuthGuard],
+        resolve: {
+            profile: ProfileResolverService
         }
     }
     // { 

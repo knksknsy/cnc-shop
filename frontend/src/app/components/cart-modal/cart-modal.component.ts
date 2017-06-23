@@ -37,6 +37,7 @@ export class CartModalComponent {
   }
 
   public onHidden(): void {
+    this.orderError = null;
     this.isModalShown = false;
   }
 
