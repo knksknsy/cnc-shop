@@ -4,7 +4,7 @@
           <div class="container-burger">
             <div class="row-burger" (click)="menuCollapsed = !menuCollapsed; lockBodyScroll()">
               <div class="burger-lines">
-                <div class="burger" id="burger" [ngClass]="{'is-active' : isOpen}" (click)="isOpen=!isOpen">
+                <div class="burger" id="burger" [ngClass]="{'is-active' : menuCollapsed}">
                   <span class="line"></span>
                   <span class="line"></span>
                   <span class="line"></span>
