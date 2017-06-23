@@ -26,3 +26,4 @@ require('./categories.model');
 require('./products.model');
 require('./users.model');
 require('./colors.model');
+require('./orders.model.js');

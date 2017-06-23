@@ -2,14 +2,14 @@
   <span class="fa fa-shopping-cart" aria-hidden="true"></span>
 </button>
 
-<div *ngIf="isModalShown" [config]="{ show: true }" (onHidden)="onHidden()" bsModal #autoShownModal="bs-modal" class="modal fade"
+<div *ngIf="isModalShown" [config]="{ show: true }" (onHidden)="onHidden()" bsModal #autoShownModal="bs-modal" class="modal fade cart-modal"
   tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
 
       <div class="modal-body">
 
-        <div class="row">
+        <div *ngIf="shoppingCartService.cart.length" class="row cart-header">
           <div class="col-4">Article</div>
           <div class="col-2">Price</div>
           <div class="col-2">Quantity</div>
@@ -17,23 +17,43 @@
           <div class="col-2"></div>
         </div>
 
-        <div class="row" *ngFor="let cartItem of shoppingCartService.cart">
-          <div class="col-4">
-            <img [src]="cartItem.product.image" class="img-thumbnail rounded float-left" />
-            <div>{{cartItem.product.name}} <span *ngFor="let color of cartItem.colors" class="badge" [ngStyle]="{'background-color': color.hexcode}"></span></div>
-            <div class="text-muted">{{cartItem.product.id}}</div>
-          </div>
-          <div class="col-2">{{cartItem.product.price}}</div>
-          <div class="col-2">
-            <input class="form-control" [ngModel]="cartItem.quantity" (ngModelChange)="validate($event, cartItem)" OnlyInteger="true" type="number" min="1" step="1" />
-          </div>
-          <div class="col-2">{{cartItem.product.price * cartItem.quantity}}</div>
-          <div class="col-2">
-            <button type="button" class="btn btn-danger" (click)="removeItem(cartItem)">
-              <span class="fa fa-trash"></span>
-            </button>
+        <div *ngIf="!shoppingCartService.cart.length" class="row cart-info">
+          <span>Cart is empty</span>
+        </div>
+
+        <div *ngIf="shoppingCartService.cart.length">
+          <div class="row cart-body" *ngFor="let cartItem of shoppingCartService.cart; let index = index">
+            <div class="col-4">
+              <img [src]="cartItem.product.image" class="img-thumbnail rounded float-left" />
+              <div>{{cartItem.product.name}} <span *ngFor="let color of cartItem.colors" class="badge" [ngStyle]="{'background-color': color.hexcode}"></span></div>
+              <div class="text-muted">{{cartItem.product.id}}</div>
+            </div>
+            <div class="col-2">{{cartItem.product.price}}</div>
+            <div class="col-2 form-group" #input id="input-{{index}}">
+              <input class="form-control" [ngModel]="cartItem.quantity" (ngModelChange)="validate($event, index, cartItem)" OnlyInteger="true"
+                type="number" min="1" step="1" />
+            </div>
+            <div class="col-2">{{cartItem.quantity ? cartItem.product.price * cartItem.quantity : '--'}}</div>
+            <div class="col-2">
+              <button type="button" class="btn btn-danger" (click)="removeItem(cartItem)">
+                <span class="fa fa-trash"></span>
+              </button>
+            </div>
           </div>
         </div>
+
+        <div class="row order">
+          <div class="col-2">
+            <button class="btn btn-primary pull-left" type="button" (click)="placeOrder()" [disabled]="!orderActive">
+              Place order <span class="fa fa-cart-arrow-down"></span>
+            </button>
+          </div>
+          <div class="col-10">
+            <span *ngIf="orderError" class="text-danger pull-right">Order could not be placed due to an error.</span>
+            <span *ngIf="orderError === false" class="text-success pull-right">Order has been placed successfully.</span>
+          </div>
+        </div>
+
       </div>
 
     </div>
