@@ -29,6 +29,12 @@ require('./models/db.model');
 const api = require('./routes/api');
 const app = express();
 
+// log to file access.log
+app.use(logger('common', {
+  stream: fs.createWriteStream('./access.log', { flag: 'a' })
+}));
+
+// dev logger
 app.use(logger('dev'));
 
 // Parsers for POST data
