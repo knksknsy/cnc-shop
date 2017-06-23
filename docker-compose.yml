@@ -3,22 +3,54 @@ services:
 
   backend:
     image: mongo:latest # build from DockerHub
+    container_name: backend
     ports:
       - "27017:27017"
-    container_name: backend
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "420k"
+        max-file: "13"
 
   middleware:
     build: ./middleware # build from Dockerfile in directory
+    container_name: middleware
     ports:
       - "3000:3000"
       - "8000:8000"
     links:
       - backend
-    container_name: middleware
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "420k"
+        max-file: "13"
 
   frontend:
     build: ./frontend # build from Dockerfile in directory
-    ports:
-      - "443:4200"
     container_name: frontend
+    ports:
+      - "4200:4200"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "420k"
+        max-file: "13"
 
+#  rproxy: # Further Impl. but mostly done
+#    image: nginx:latest # build from DockerHub
+#    container_name: rproxy
+#    restart: always
+#    ports:
+#      - "80:80"
+#      - "443:443"
+#    dns:
+#      - 127.0.0.11 # Docker DNS resolver
+#      - 192.168.1.1
+#      - 8.8.8.8
+#    links:
+#      - frontend
+#      - middleware
+#    volumes:
+#      - ./config/certs:/etc/nginx/certs
+#      - ./config/nginx.conf:/etc/nginx/conf.d/default.conf:ro
