@@ -23,7 +23,7 @@
         <div class="col">
           <form [formGroup]="searchForm" (ngSubmit)="onSearch()" class="search-form">
             <div class="input-group bg-inverse">
-              <input formControlName="searchQuery" type="search" class="form-control" placeholder="search" id="search">
+              <input formControlName="searchQuery" type="search" class="form-control" placeholder="{{ 'NAV_SEARCH' | translate }}" id="search">
                 <span class="input-group-btn">
                     <button class="btn btn-outline-primary" type="submit">  
                           <span class="fa fa-search">

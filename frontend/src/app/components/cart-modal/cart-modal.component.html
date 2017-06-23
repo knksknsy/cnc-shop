@@ -2,7 +2,7 @@
   <span class="fa fa-shopping-cart" aria-hidden="true"></span>
 </button>
 
-<div *ngIf="isModalShown" [config]="{ show: true }" (onHidden)="onHidden()" bsModal #autoShownModal="bs-modal" class="modal fade cart-modal"
+<div *ngIf="isModalShown" [config]="{ show: true }" (onHidden)="onHidden()" (onShow)="onShow()" bsModal #autoShownModal="bs-modal" class="modal fade cart-modal"
   tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
@@ -17,7 +17,7 @@
           <div class="col-2"></div>
         </div>
 
-        <div *ngIf="!shoppingCartService.cart.length" class="row cart-info">
+        <div *ngIf="emptyCart" class="row cart-info">
           <span>Cart is empty</span>
         </div>
 
@@ -44,7 +44,7 @@
 
         <div class="row order">
           <div class="col-2">
-            <button class="btn btn-primary pull-left" type="button" (click)="placeOrder()" [disabled]="!orderActive">
+            <button class="btn btn-primary pull-left" type="button" (click)="placeOrder()" [disabled]="!orderActive" [hidden]="emptyCart">
               Place order <span class="fa fa-cart-arrow-down"></span>
             </button>
           </div>

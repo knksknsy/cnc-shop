@@ -1,12 +1,13 @@
 /**
 *  Copyright (C) 2017
 *
-*   Kaan K.
+*  Artur bergen <ab176@hdm-stuttgart.de>
 *
 *  MIT License
 */
 
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-i18n-button',
@@ -15,7 +16,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class I18nButtonComponent implements OnInit {
 
-  constructor() { }
+  constructor(public translate: TranslateService) { }
+
+  translateToEnglish(){
+    this.translate.use('en');
+  }
+  translateToGerman(){
+    this.translate.use('de');
+  }
 
   ngOnInit() {
   }

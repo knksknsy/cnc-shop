@@ -1,7 +1,11 @@
 {
   "name": "frontend",
   "version": "0.0.1",
+  "description": "Frontend for cnc-shop.",
   "license": "MIT",
+  "author": [
+    "Artur B."
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve --host 0.0.0.0 --port 4200 --disable-host-check --ssl 1 --ssl-key certs/privkey.pem --ssl-cert certs/fullchain.pem",
@@ -20,6 +24,8 @@
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
+    "@ngx-translate/core": "^7.0.0",
+    "@ngx-translate/http-loader": "^0.1.0",
     "animate.css": "3.5.2",
     "bootstrap": "4.0.0-alpha.6",
     "core-js": "^2.4.1",

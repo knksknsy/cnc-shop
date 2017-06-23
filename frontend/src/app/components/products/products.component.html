@@ -1,18 +1,18 @@
 
-<h1 align="center" >Products: Dosen - List </h1>
+<h1 align="center" >{{ "PRODUCT_LIST" | translate }}</h1>
 
 <div class="row" *ngFor="let product of products">
- 
+
 
   <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
       <img src="../../../assets/Bilder/Dosen.jpg" alt="..." style="width:90%; height:230px;">
       <div class="caption">
         <h3>{{ product.name }}</h3>
-        <h4> Description: </h4>
+        <h4> {{ "PRODUCT_DESC" | translate }} </h4>
         <p> {{product.description}}</p>
         <p class="card-text">{{product.price | currency : 'EUR' : true}}</p>
-        <p><a href="#" class="btn btn-primary" role="button">View Details</a> <a href="#" class="btn btn-default" role="button">Shopping cart</a></p>
+        <p><a href="#" class="btn btn-primary" role="button">{{ "PRODUCT_DETAILS" | translate }}</a> <a href="#" class="btn btn-default" role="button">Shopping cart</a></p>
       </div>
     </div>
   </div>

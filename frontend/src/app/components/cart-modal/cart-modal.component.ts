@@ -23,6 +23,7 @@ export class CartModalComponent implements OnInit {
   public isModalShown: boolean = false;
   public orderActive: boolean = true;
   public orderError: boolean;
+  public emptyCart: boolean;
 
   constructor(private shoppingCartService: ShoppingCartService) { }
 
@@ -39,6 +40,14 @@ export class CartModalComponent implements OnInit {
 
   public onHidden(): void {
     this.isModalShown = false;
+  }
+
+  public onShow(): void {
+    if (this.shoppingCartService.cart.length < 1) {
+      this.emptyCart = true
+    } else {
+      this.emptyCart = false
+    }
   }
 
   removeItem(cartItem: ICartItem) {

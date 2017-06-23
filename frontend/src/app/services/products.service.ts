@@ -2,6 +2,7 @@
 *  Copyright (C) 2017
 *
 *   Kaan K.
+*  Artur B.
 *
 *  MIT License
 */
@@ -14,9 +15,7 @@ import { IProduct } from '../interfaces/product';
 
 @Injectable()
 export class ProductsService {
-
   API = 'https://localhost:8000';
-  //  API = 'http://46.38.255.109:3000';
 
   constructor(private http: Http) { }
 

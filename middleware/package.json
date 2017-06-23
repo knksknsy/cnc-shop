@@ -15,6 +15,15 @@
     "start": "node server.js"
   },
   "dependencies": {
+    "@types/jasmine": "2.5.38",
+    "jasmine-core": "~2.5.2",
+    "jasmine-spec-reporter": "~3.2.0",
+    "karma": "~1.4.1",
+    "karma-chrome-launcher": "~2.1.1",
+    "karma-cli": "~1.0.1",
+    "karma-coverage-istanbul-reporter": "^0.2.0",
+    "karma-jasmine": "~1.1.0",
+    "karma-jasmine-html-reporter": "^0.2.2",
     "body-parser": "1.17.2",
     "client-sessions": "^0.8.0",
     "cookie-parser": "1.4.3",
