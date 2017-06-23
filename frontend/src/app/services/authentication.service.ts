@@ -15,7 +15,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class AuthenticationService {
 
- API = 'https://localhost:8000';
+  API = 'https://localhost:8000';
   // API = 'https://46.38.255.109:8000';
 
   constructor(private http: Http) { }
@@ -48,17 +48,14 @@ export class AuthenticationService {
   }
 
   isLoggedIn() {
-    return this.http.get(`${this.API}/user/isLoggedIn`, { withCredentials: true})
+    return this.http.get(`${this.API}/user/isLoggedIn`, { withCredentials: true })
       .map((res) => {
         return res.json().loggedIn;
       });
   }
 
   logout() {
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    let options = new RequestOptions({ headers: headers, withCredentials: true });
-    return this.http.post(`${this.API}/user/logout`, options)
+    return this.http.get(`${this.API}/user/logout`, { withCredentials: true })
       .map((res: Response) => {
         if (res.status === 200) {
           return true;

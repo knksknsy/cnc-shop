@@ -6,7 +6,7 @@
 *  MIT License
 */
 
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ModalDirective } from 'ngx-bootstrap/modal';
 import { TabsetComponent } from 'ngx-bootstrap/tabs/tabset.component';
@@ -18,11 +18,12 @@ import { ShoppingCartService } from '../../services/shopping-cart.service';
   templateUrl: './login-modal.component.html',
   styleUrls: ['./login-modal.component.scss']
 })
-export class LoginModalComponent {
+export class LoginModalComponent implements OnInit {
   @ViewChild('autoShownModal') public autoShownModal: ModalDirective;
   @ViewChild('staticTabs') staticTabs: TabsetComponent;
 
   public isModalShown: boolean = false;
+  public isLoggedIn: boolean;
 
   public loginForm = this.formBuilder.group({
     loginEmail: ["", Validators.required],
@@ -41,6 +42,13 @@ export class LoginModalComponent {
   });
 
   constructor(private formBuilder: FormBuilder, private authenticationService: AuthenticationService, private shoppingCartService: ShoppingCartService) { }
+
+  ngOnInit() {
+    this.authenticationService.isLoggedIn()
+      .subscribe((loggedIn) => {
+        this.isLoggedIn = loggedIn;
+      });
+  }
 
   public showModal(): void {
     this.isModalShown = true;
@@ -68,8 +76,12 @@ export class LoginModalComponent {
     this.authenticationService.login(body)
       .subscribe((success) => {
         if (success) {
-          this.shoppingCartService.setLocalStorageKey();
-          this.hideModal();
+          this.authenticationService.isLoggedIn()
+            .subscribe((loggedIn) => {
+              this.isLoggedIn = loggedIn;
+              this.shoppingCartService.setLocalStorageKey();
+              this.hideModal();
+            });
         } else {
           // show login error
         }
@@ -102,6 +114,21 @@ export class LoginModalComponent {
           // show register error
         }
       });
+  }
+
+  onLogout() {
+    this.authenticationService.logout()
+      .subscribe((res) => {
+        this.isLoggedIn = false;
+      });
+  }
+
+  openProfile() {
+
+  }
+
+  openOrderHistory() {
+
   }
 
 }
