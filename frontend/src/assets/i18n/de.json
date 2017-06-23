@@ -1,4 +1,7 @@
 {
+  "cans": "Dosen",
+  "marker_refills": "Stifte & Tinte",
+  "accessories_merchandise": "Zubehör & Werbeartikel",
   "_comment": "translatesection: components/accessoires",
   "ACC_LIST": "Accessoires List",
   "ACC_PRODUCT_NAME": "Produktname",
