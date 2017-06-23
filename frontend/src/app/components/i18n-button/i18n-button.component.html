@@ -1,9 +1,9 @@
-<div class="btn-group" dropdown container="body">
+<div class="btn-group" dropdown>
   <button dropdownToggle type="button" class="btn btn-outline-primary dropdownToggle">
     <span class="fa fa-globe" aria-hidden="true"></span>
   </button>
 
-  <ul *dropdownMenu class="dropdown-menu" role="menu">
+  <ul *dropdownMenu class="dropdown-menu" role="menu" container="body">
     <li role="menuitem" class="dropdown-item" (click)="translateToGerman()">{{ "LANG_DE" | translate }}</li>
     <li role="menuitem" class="dropdown-item" (click)="translateToEnglish()">{{ "LANG_EN" | translate }}</li>
   </ul>
