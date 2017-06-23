@@ -23,7 +23,7 @@ var ordersSchema = new Schema({
         }]
     }],
     sum: { type: Number, required: true },
-    datetime: Date
+    datetime: { type: Date, default: Date.now }
 });
 
 mongoose.model('Orders', ordersSchema);
