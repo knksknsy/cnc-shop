@@ -20,7 +20,7 @@ export class VideosComponent implements OnInit {
   url: any;
   url1: any;
   video: any = {id: 'bCgGzxXF_Ac'};
-  video1:any = {id: 'bCgGzxXF_Ac'};
+  video1:any = {id: 'Pv-Do30-P8A'};
   baseUrl: string = 'https://www.youtube.com/embed/';
   baseUrl1: string = 'https://www.youtube.com/embed/';
 
