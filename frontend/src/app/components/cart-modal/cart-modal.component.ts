@@ -6,8 +6,9 @@
 *  MIT License
 */
 
-import { Component, OnInit, ViewChild, ViewChildren } from '@angular/core';
+import { Component, ViewChild, ViewChildren, Output, EventEmitter } from '@angular/core';
 import { ShoppingCartService } from '../../services/shopping-cart.service';
+import { AuthGuard } from '../../guards/auth.guard';
 import { ModalDirective } from 'ngx-bootstrap/modal/modal.component';
 import { ICartItem } from '../../interfaces/cart-item';
 
@@ -16,8 +17,8 @@ import { ICartItem } from '../../interfaces/cart-item';
   templateUrl: './cart-modal.component.html',
   styleUrls: ['./cart-modal.component.scss']
 })
-export class CartModalComponent implements OnInit {
-
+export class CartModalComponent {
+  @Output() openLogin: EventEmitter<any> = new EventEmitter();
   @ViewChild('autoShownModal') public autoShownModal: ModalDirective;
   @ViewChildren('input') inputs;
   public isModalShown: boolean = false;
@@ -25,10 +26,7 @@ export class CartModalComponent implements OnInit {
   public orderError: boolean;
   public emptyCart: boolean;
 
-  constructor(private shoppingCartService: ShoppingCartService) { }
-
-  ngOnInit() {
-  }
+  constructor(private shoppingCartService: ShoppingCartService, private authGuard: AuthGuard) { }
 
   public showModal(): void {
     this.isModalShown = true;
@@ -43,6 +41,10 @@ export class CartModalComponent implements OnInit {
   }
 
   public onShow(): void {
+    this.checkCart();
+  }
+
+  checkCart() {
     if (this.shoppingCartService.cart.length < 1) {
       this.emptyCart = true
     } else {
@@ -75,13 +77,23 @@ export class CartModalComponent implements OnInit {
   }
 
   placeOrder() {
-    this.shoppingCartService.order(this.shoppingCartService.cart)
-      .subscribe((success) => {
-        if (success) {
-          this.orderError = false;
-          this.shoppingCartService.clearCart();
+    this.authGuard.canActivate()
+      .subscribe((loggedIn) => {
+        if (loggedIn) {
+          this.shoppingCartService.order(this.shoppingCartService.cart)
+            .subscribe((success) => {
+              if (success) {
+                this.orderError = false;
+                this.shoppingCartService.clearCart();
+                this.checkCart();
+                this.emptyCart = true;
+              } else {
+                this.orderError = true;
+              }
+            });
         } else {
-          this.orderError = true;
+          this.hideModal();
+          this.openLogin.emit();
         }
       });
   }

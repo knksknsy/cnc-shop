@@ -6,7 +6,7 @@
 *  MIT License
 */
 
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
@@ -15,6 +15,7 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+  @ViewChild('login') loginModal;
   @Output() search: EventEmitter<any> = new EventEmitter<any>();
   public menuCollapsed: boolean = false;
 
@@ -47,5 +48,9 @@ export class NavbarComponent implements OnInit {
     } else {
       body.classList.remove('stopScrolling');
     }
+  }
+
+  openLogin() {
+    this.loginModal.isModalShown = true;
   }
 }
