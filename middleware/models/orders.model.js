@@ -22,7 +22,8 @@ var ordersSchema = new Schema({
             hexcode: { type: String, required: true }
         }]
     }],
-    sum: { type: Number, required: true }
+    sum: { type: Number, required: true },
+    datetime: Date
 });
 
 mongoose.model('Orders', ordersSchema);

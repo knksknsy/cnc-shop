@@ -79,7 +79,8 @@ router.post('/', (req, res, next) => {
                             Orders.create({
                                 user: user._id,
                                 items: orderItems,
-                                sum: sum
+                                sum: sum,
+                                datatime: new Date()
                             },
                                 (err, order) => {
                                     if (err) {
@@ -93,8 +94,37 @@ router.post('/', (req, res, next) => {
                                 return res.status(200).json({ message: 'Order successfully placed' });
                             }
                         });
+                } else {
+                    return res.sendStatus(403);
                 }
             });
+    } else {
+        return res.sendStatus(401);
+    }
+});
+
+router.get('/history', (req, res, next) => {
+    if (req.mySession && req.mySession.user) {
+        User.findOne({ email: req.mySession.user })
+            .exec((err, user) => {
+                if (err) {
+                    return next(err);
+                }
+                if (user) {
+                    Orders.find({ user: user._id })
+                        .select('-_id -user -__v')
+                        .exec((err, orders) => {
+                            if (err) {
+                                return next(err);
+                            }
+                            return res.send(orders);
+                        });
+                } else {
+                    return res.sendStatus(403);
+                }
+            });
+    } else {
+        return res.sendStatus(401);
     }
 });
 

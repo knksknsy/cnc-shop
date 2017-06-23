@@ -14,6 +14,7 @@ import { ProductDetailsComponent } from './components/product-details/product-de
 import { HomeComponent } from './components/home/home.component';
 import { OrderHistoryComponent } from './components/order-history/order-history.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 import { AuthGuard } from './guards/auth.guard';
 
@@ -63,17 +64,15 @@ const appRoutes: Routes = [
         resolve: {
             profile: ProfileResolverService
         }
+    },
+    {
+        path: '404',
+        component: NotFoundComponent
+    },
+    {
+        path: '**',
+        redirectTo: '/404'
     }
-    // { 
-    //   path: '',
-    //   redirectTo: '/component_name',
-    //   pathMatch: 'full'
-    // }
-    // {
-    //   path: '/component_name',
-    //   component: ComponentName,
-    //   data: { property: 'idk' }
-    // }
 ]
 
 @NgModule({
@@ -88,7 +87,8 @@ const appRoutes: Routes = [
         ProductsResolverService,
         ProductDetailsResolverService,
         CategoryResolverService,
-        ColorsResolverService
+        ColorsResolverService,
+        OrderHistoryResolverService
     ]
 })
 export class AppRoutingModule { }
