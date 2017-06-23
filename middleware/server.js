@@ -29,14 +29,6 @@ require('./models/db.model');
 const api = require('./routes/api');
 const app = express();
 
-// log to file access.log
-app.use(logger('common', {
-  stream: fs.createWriteStream('./access.log', { flag: 'a' })
-}));
-
-// dev logger
-app.use(logger('dev'));
-
 // Parsers for POST data
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -75,11 +67,6 @@ app.use(function (req, res, next) {
 // Set api routes
 app.use('/', api);
 
-// // Catch all other routes and return the index file
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(__dirname, '../frontend/src/index.html'));
-// });
-
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   var err = new Error('Not Found');
@@ -107,7 +94,7 @@ if (app.get('env') === 'development') {
       error: err
     });
   });
-}
+};
 
 // production error handler
 // no stacktraces leaked to user
@@ -119,20 +106,20 @@ app.use(function (err, req, res, next) {
   });
 });
 
+// logging to a file
+// create a write stream (in append mode)
+var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), {flags: 'a'});
+//app.use(logger('dev', {stream: accessLogStream}));
+app.use(logger('dev', {stream: accessLogStream}));
+
 // Get http port from environment and store in Express
+// this is not used anymore!!!
 const phttp = process.env.PORT || '3000';
 app.set('phttp', phttp);
 
 // Create HTTP server
 const server1 = http.createServer(app);
-server1.listen(phttp, () => console.log(`API running on host:${phttp}`));
+//server1.listen(phttp, () => console.log(`API running on host:${phttp}`));
+server1.listen(phttp, () => logger(`API running on host:${phttp}`));
 
-https.createServer(config, app).listen(8000)
-
-// Get https port from environment and store in Express
-//const phttps = process.env.PORT || '8000';
-//app.set('phttps', phttps);
-
-// Create HTTPs server
-//const server2 = https.createServer(app);
-//server2.listen(phttps, () => console.log(`API running on host:${phttps}`));
+https.createServer(config, app).listen(8000);
