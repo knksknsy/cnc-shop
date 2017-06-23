@@ -12,7 +12,7 @@
       <h4 class="card-title" (click)="openDetails()">{{product.name}}</h4>
       <small class="text-muted">{{ "CARD_ITEM_NO" | translate }} {{product.id}}</small>
       <br>
-      <small class="text-muted">{{ "CARD_PRICE" | translate }} {{product.price}}</small>
+      <small class="text-muted">{{ "CARD_PRICE" | translate }} {{product.price | currency: 'EUR':true:'1.2-2'}}</small>
     </div>
   </div>
 </div>
