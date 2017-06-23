@@ -33,7 +33,7 @@
               <input class="form-control" [ngModel]="cartItem.quantity" (ngModelChange)="validate($event, index, cartItem)" OnlyInteger="true"
                 type="number" min="1" step="1" />
             </div>
-            <div class="col-2">{{cartItem.quantity ? cartItem.product.price * cartItem.quantity : '--' | currency: 'EUR':true:'1.2-2'}}</div>
+            <div class="col-2">{{cartItem.quantity ? (cartItem.product.price * cartItem.quantity | currency: 'EUR':true:'1.2-2') : '--'}}</div>
             <div class="col-2">
               <button type="button" class="btn btn-danger" (click)="removeItem(cartItem)">
                 <span class="fa fa-trash"></span>
