@@ -79,8 +79,7 @@ router.post('/', (req, res, next) => {
                             Orders.create({
                                 user: user._id,
                                 items: orderItems,
-                                sum: sum,
-                                datatime: new Date()
+                                sum: sum
                             },
                                 (err, order) => {
                                     if (err) {
