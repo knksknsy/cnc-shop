@@ -6,7 +6,7 @@
 *  MIT License
 */
 
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ModalDirective } from 'ngx-bootstrap/modal';
 import { TabsetComponent } from 'ngx-bootstrap/tabs/tabset.component';
@@ -18,7 +18,7 @@ import { ShoppingCartService } from '../../services/shopping-cart.service';
   templateUrl: './login-modal.component.html',
   styleUrls: ['./login-modal.component.scss']
 })
-export class LoginModalComponent implements OnInit {
+export class LoginModalComponent {
   @ViewChild('autoShownModal') public autoShownModal: ModalDirective;
   @ViewChild('staticTabs') staticTabs: TabsetComponent;
 
@@ -41,9 +41,6 @@ export class LoginModalComponent implements OnInit {
   });
 
   constructor(private formBuilder: FormBuilder, private authenticationService: AuthenticationService, private shoppingCartService: ShoppingCartService) { }
-
-  ngOnInit() {
-  }
 
   public showModal(): void {
     this.isModalShown = true;

@@ -47,6 +47,13 @@ export class AuthenticationService {
       });
   }
 
+  isLoggedIn() {
+    return this.http.get(`${this.API}/user/isLoggedIn`, { withCredentials: true})
+      .map((res) => {
+        return res.json().loggedIn;
+      });
+  }
+
   logout() {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');

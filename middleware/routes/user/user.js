@@ -87,4 +87,12 @@ router.post('/logout', (req, res, next) => {
     return res.status(200).json({ message: 'logout successful' });
 });
 
+router.get('/isLoggedIn', (req, res, next) => {
+    if (req.mySession && req.mySession.user) {
+        return res.send({ loggedIn: true });
+    } else {
+        return res.send({ loggedIn: false });
+    }
+});
+
 module.exports = router;
