@@ -6,7 +6,7 @@
 *  MIT License
 */
 
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewChildren } from '@angular/core';
 import { ShoppingCartService } from '../../services/shopping-cart.service';
 import { ModalDirective } from 'ngx-bootstrap/modal/modal.component';
 import { ICartItem } from '../../interfaces/cart-item';
@@ -19,7 +19,10 @@ import { ICartItem } from '../../interfaces/cart-item';
 export class CartModalComponent implements OnInit {
 
   @ViewChild('autoShownModal') public autoShownModal: ModalDirective;
+  @ViewChildren('input') inputs;
   public isModalShown: boolean = false;
+  public orderActive: boolean = true;
+  public orderError: boolean;
 
   constructor(private shoppingCartService: ShoppingCartService) { }
 
@@ -42,12 +45,36 @@ export class CartModalComponent implements OnInit {
     this.shoppingCartService.removeProduct(cartItem);
   }
 
-  validate(value: number, cartItem: ICartItem) {
-    if (value === null || value <= 0) {
-      value = 1;
+  validate(value: number, index: number, cartItem: ICartItem) {
+    let hasError: boolean = false;
+    this.inputs.toArray().forEach((element) => {
+      let inputValue = element.nativeElement.firstElementChild.value
+      if (inputValue === null || inputValue === undefined || inputValue <= 0) {
+        hasError = true;
+        element.nativeElement.classList.add('has-danger');
+      } else {
+        element.nativeElement.classList.remove('has-danger');
+      }
+    });
+    if (hasError) {
+      this.orderActive = false;
+    } else {
+      this.orderActive = true;
     }
     cartItem.quantity = value;
     this.shoppingCartService.editProduct(cartItem);
+  }
+
+  placeOrder() {
+    this.shoppingCartService.order(this.shoppingCartService.cart)
+      .subscribe((success) => {
+        if (success) {
+          this.orderError = false;
+          this.shoppingCartService.clearCart();
+        } else {
+          this.orderError = true;
+        }
+      });
   }
 
 }

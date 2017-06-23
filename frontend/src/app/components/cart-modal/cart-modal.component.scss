@@ -9,6 +9,7 @@
         }
     }
 }
+
 .fa-shopping-cart {
     color: #2e90c0;
 }
@@ -26,6 +27,28 @@
     }
 }
 
+.cart-header {
+    padding: 10px;
+    padding-top: 0;
+    border-bottom: solid 1px lightgray;
+    font-size: 1.5em;
+    font-weight: 300;
+}
+
+.cart-body {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-bottom: solid 1px lightgray;
+    img {
+        height: 80px;
+        margin-right: 15px;
+    }
+}
+
+.order {
+    margin-top: 10px;
+}
+
 .badge {
     display: inline-block;
     padding: 0.5em 0.5em;
@@ -39,4 +62,8 @@
     border-radius: 0.5rem;
     margin-right: 5px;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.68);
+}
+
+.cart-info {
+    padding-left: 15px;
 }

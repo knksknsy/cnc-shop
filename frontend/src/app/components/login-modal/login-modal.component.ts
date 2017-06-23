@@ -11,6 +11,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { ModalDirective } from 'ngx-bootstrap/modal';
 import { TabsetComponent } from 'ngx-bootstrap/tabs/tabset.component';
 import { AuthenticationService } from '../../services/authentication.service';
+import { ShoppingCartService } from '../../services/shopping-cart.service';
 
 @Component({
   selector: 'app-login-modal',
@@ -39,7 +40,7 @@ export class LoginModalComponent implements OnInit {
     registerPassword: ["", Validators.required]
   });
 
-  constructor(private formBuilder: FormBuilder, private authenticationService: AuthenticationService) { }
+  constructor(private formBuilder: FormBuilder, private authenticationService: AuthenticationService, private shoppingCartService: ShoppingCartService) { }
 
   ngOnInit() {
   }
@@ -70,6 +71,7 @@ export class LoginModalComponent implements OnInit {
     this.authenticationService.login(body)
       .subscribe((success) => {
         if (success) {
+          this.shoppingCartService.setLocalStorageKey();
           this.hideModal();
         } else {
           // show login error
