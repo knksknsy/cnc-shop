@@ -45,7 +45,7 @@ export class CartModalComponent {
   }
 
   checkCart() {
-    if (this.shoppingCartService.cart.length < 1) {
+    if (this.shoppingCartService.cart.length === 0) {
       this.emptyCart = true
     } else {
       this.emptyCart = false
@@ -54,6 +54,7 @@ export class CartModalComponent {
 
   removeItem(cartItem: ICartItem) {
     this.shoppingCartService.removeProduct(cartItem);
+    this.checkCart();
   }
 
   validate(value: number, index: number, cartItem: ICartItem) {
