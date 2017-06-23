@@ -25,7 +25,7 @@
           <div class="row cart-body" *ngFor="let cartItem of shoppingCartService.cart; let index = index">
             <div class="col-4">
               <img [src]="cartItem.product.image" class="img-thumbnail rounded float-left" />
-              <div>{{cartItem.product.name}} <span *ngFor="let color of cartItem.colors" class="badge" [ngStyle]="{'background-color': color.hexcode}"></span></div>
+              <div>{{cartItem.product.name}} <span *ngFor="let color of cartItem.colors" class="badge" [ngStyle]="{'background-color': color.hexcode}" [tooltip]="color.name" placement="top"></span></div>
               <div class="text-muted">{{cartItem.product.id}}</div>
             </div>
             <div class="col-2">{{cartItem.product.price | currency: 'EUR':true:'1.2-2'}}</div>
