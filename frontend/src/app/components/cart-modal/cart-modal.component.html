@@ -10,15 +10,15 @@
       <div class="modal-body">
 
         <div *ngIf="shoppingCartService.cart.length" class="row cart-header">
-          <div class="col-4">Article</div>
-          <div class="col-2">Price</div>
-          <div class="col-2">Quantity</div>
-          <div class="col-2">Subtotal</div>
+          <div class="col-4">{{ "CART_M_ARTICLE" | translate }}</div>
+          <div class="col-2">{{ "CART_M_PRICE" | translate }}</div>
+          <div class="col-2">{{ "CART_M_QUANTITY" | translate }}</div>
+          <div class="col-2">{{ "CART_M_TOTAL" | translate }}</div>
           <div class="col-2"></div>
         </div>
 
         <div *ngIf="emptyCart" class="row cart-info">
-          <span>Cart is empty</span>
+          <span>{{ "CART_M_EMPTY" | translate }}</span>
         </div>
 
         <div *ngIf="shoppingCartService.cart.length">
@@ -45,12 +45,12 @@
         <div class="row order">
           <div class="col-2">
             <button class="btn btn-primary pull-left" type="button" (click)="placeOrder()" [disabled]="!orderActive" [hidden]="emptyCart">
-              Place order <span class="fa fa-cart-arrow-down"></span>
+              {{ "CART_M_PLACE" | translate }} <span class="fa fa-cart-arrow-down"></span>
             </button>
           </div>
           <div class="col-10">
-            <span *ngIf="orderError" class="text-danger pull-right">Order could not be placed due to an error.</span>
-            <span *ngIf="orderError === false" class="text-success pull-right">Order has been placed successfully.</span>
+            <span *ngIf="orderError" class="text-danger pull-right">{{ "CART_M_ERROR" | translate }}</span>
+            <span *ngIf="orderError === false" class="text-success pull-right">{{ "CART_M_SUCCESS" | translate }}</span>
           </div>
         </div>
 
