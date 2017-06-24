@@ -2,8 +2,8 @@
   <span class="fa fa-shopping-cart" aria-hidden="true"></span>
 </button>
 
-<div *ngIf="isModalShown" [config]="{ show: true }" (onHidden)="onHidden()" (onShow)="onShow()" bsModal #autoShownModal="bs-modal" class="modal fade cart-modal"
-  tabindex="-1" role="dialog" aria-hidden="true">
+<div *ngIf="isModalShown" [config]="{ show: true }" (onHidden)="onHidden()" (onShow)="onShow()" bsModal #autoShownModal="bs-modal"
+  class="modal fade cart-modal" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
 
@@ -25,7 +25,9 @@
           <div class="row cart-body" *ngFor="let cartItem of shoppingCartService.cart; let index = index">
             <div class="col-4">
               <img [src]="cartItem.product.image" class="img-thumbnail rounded float-left" />
-              <div>{{cartItem.product.name}} <span *ngFor="let color of cartItem.colors" class="badge" [ngStyle]="{'background-color': color.hexcode}" [tooltip]="color.name" placement="top"></span></div>
+              <div>{{cartItem.product.name}}</div>
+              <div *ngFor="let color of cartItem.colors" class="badge" [ngStyle]="{'background-color': color.hexcode}" [tooltip]="color.name"
+                placement="top"></div>
               <div class="text-muted">{{cartItem.product.id}}</div>
             </div>
             <div class="col-2">{{cartItem.product.price | currency: 'EUR':true:'1.2-2'}}</div>
@@ -39,6 +41,12 @@
                 <span class="fa fa-trash"></span>
               </button>
             </div>
+          </div>
+        </div>
+
+        <div *ngIf="!emptyCart" class="row sum">
+          <div class="col">
+            <label class="pull-right">Total cost: {{totalCost | currency: 'EUR':true:'1.2-2'}}</label>
           </div>
         </div>
 

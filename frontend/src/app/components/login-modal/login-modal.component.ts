@@ -7,6 +7,7 @@
 */
 
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ModalDirective } from 'ngx-bootstrap/modal';
 import { TabsetComponent } from 'ngx-bootstrap/tabs/tabset.component';
@@ -41,7 +42,7 @@ export class LoginModalComponent implements OnInit {
     registerPassword: ["", Validators.required]
   });
 
-  constructor(private formBuilder: FormBuilder, private authenticationService: AuthenticationService, private shoppingCartService: ShoppingCartService) { }
+  constructor(private formBuilder: FormBuilder, private authenticationService: AuthenticationService, private shoppingCartService: ShoppingCartService, private router: Router) { }
 
   ngOnInit() {
     this.authenticationService.isLoggedIn()
@@ -128,7 +129,7 @@ export class LoginModalComponent implements OnInit {
   }
 
   openOrderHistory() {
-
+    this.router.navigate(['/user/history']);
   }
 
 }

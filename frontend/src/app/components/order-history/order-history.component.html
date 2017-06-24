@@ -1,1 +1,85 @@
-<pre>{{orderHistory|json}}</pre>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <h1>Order History</h1>
+        </div>
+    </div>
+    <div class="card" *ngFor="let order of orderHistory">
+        <!--<div class="card-block">
+            <h4 class="card-title">Order Id: {{order._id}}</h4>
+            <h6 class="card-subtitle mb-2 text-muted">Date: {{order.datetime}}</h6>
+            <p class="card-text">Total products: {{order.items.length}}</p>
+            <p class="card-text">Total cost: {{order.sum}}</p>
+        </div>-->
+        <div class="list-group list-group-flush">
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="col-6">
+                        <span><strong>Order Id</strong></span>
+                    </div>
+                    <div class="col-6">
+                        <span>{{order._id}}</span>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="col-6">
+                        <span><strong>Date of purchase</strong></span>
+                    </div>
+                    <div class="col-6">
+                        <span>{{order.datetime | date:'short'}}</span>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="col-6">
+                        <span><strong>Total products</strong></span>
+                    </div>
+                    <div class="col-6">
+                        <span>{{order.totalItems}}</span>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="col-6">
+                        <span><strong>Total cost</strong></span>
+                    </div>
+                    <div class="col-6">
+                        <span>{{order.sum | currency: 'EUR':true:'1.2-2'}}</span>
+                    </div>
+                </div>
+            </li>
+        </div>
+        <div class="card-footer">
+            <button type="button" class="btn btn-outline-primary pull-right" (click)="order.collapse = !order.collapse">
+                Details <span class="{{!order.collapse ? 'fa fa-chevron-down' : 'fa fa-chevron-up'}}"></span>
+            </button>
+        </div>
+        <div [collapse]="!order.collapse || order.collapse === false">
+            <div class="row cart-header">
+                <div class="col-6">Article</div>
+                <div class="col-2">Price</div>
+                <div class="col-2">Quantity</div>
+                <div class="col-2">Subtotal</div>
+            </div>
+            <div class="row cart-body" *ngFor="let item of order.items">
+                <div class="col-6">
+                    <img [src]="item.image" class="img-thumbnail rounded float-left" />
+                    <div>{{item.name}}</div>
+                    <div *ngFor="let color of item.colors" class="badge" [ngStyle]="{'background-color': color.hexcode}" [tooltip]="color.name"
+                        placement="top">
+                    </div>
+                    <div class="text-muted">{{item.id}}</div>
+                </div>
+                <div class="col-2">{{item.price | currency: 'EUR':true:'1.2-2'}}</div>
+                <div class="col-2 form-group">
+                    <label>{{item.quantity}}</label>
+                </div>
+                <div class="col-2">{{item.quantity ? (item.price * item.quantity | currency: 'EUR':true:'1.2-2') : '--'}}</div>
+            </div>
+        </div>
+    </div>
+</div>

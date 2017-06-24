@@ -16,7 +16,6 @@ var Orders = mongoose.model('Orders');
 var Products = mongoose.model('Products');
 
 router.get('/key', (req, res, next) => {
-    // todo: check user authentication
     if (req.mySession && req.mySession.user) {
         User.findOne({ email: req.mySession.user })
             .select('-_id orderId')
@@ -31,6 +30,7 @@ router.get('/key', (req, res, next) => {
     }
 });
 
+// place order
 router.post('/', (req, res, next) => {
     if (!req.body.orders) {
         return res.status(500).json({ message: 'Body invalid.' });
@@ -43,6 +43,7 @@ router.post('/', (req, res, next) => {
                 }
                 if (user) {
                     var orderItems = [];
+                    var totalItems = 0;
                     var sum = 0;
                     Rx.Observable.from(req.body.orders)
                         .flatMap((item) => {
@@ -60,6 +61,7 @@ router.post('/', (req, res, next) => {
                             });
                         })
                         .subscribe((next) => {
+                            totalItems += next.item.quantity;
                             sum += next.product.price * next.item.quantity;
                             orderItems.push({
                                 id: next.product.id,
@@ -79,7 +81,8 @@ router.post('/', (req, res, next) => {
                             Orders.create({
                                 user: user._id,
                                 items: orderItems,
-                                sum: sum
+                                sum: sum,
+                                totalItems: totalItems
                             },
                                 (err, order) => {
                                     if (err) {
@@ -111,7 +114,7 @@ router.get('/history', (req, res, next) => {
                 }
                 if (user) {
                     Orders.find({ user: user._id })
-                        .select('-_id -user -__v')
+                        .select('-user -__v')
                         .exec((err, orders) => {
                             if (err) {
                                 return next(err);
