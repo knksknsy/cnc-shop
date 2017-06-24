@@ -14,12 +14,6 @@ var User = mongoose.model('Users');
 
 const uuid = require('uuid/v4')
 
-var ctrlProfile = require('../../controllers/profile');
-var ctrlAuth = require('../../controllers/authentication');
-
-// profile
-// router.get('/profile', auth, ctrlProfile.profileRead);
-
 // register
 router.post('/register', (req, res, next) => {
     if (!req.body.user) {
@@ -42,8 +36,7 @@ router.post('/register', (req, res, next) => {
             user.city = req.body.user.city;
             user.state = req.body.user.state;
             user.orderId = uuid();
-
-            user.pre(req.body.user.password);
+            user.password = req.body.user.password;
 
             user.save((err, result) => {
                 if (err) {
@@ -69,11 +62,16 @@ router.post('/login', (req, res, next) => {
             return res.sendStatus(403);
         }
         if (foundUser) {
-            if (!foundUser.validPassword(suppliedUser.password)) {
-                return res.sendStatus(403);
-            }
-            req.mySession.user = foundUser.email;
-            return res.sendStatus(200);
+            foundUser.comparePassword(suppliedUser.password, (err, isMatch) => {
+                if (err) {
+                    return next(err);
+                }
+                if (!isMatch) {
+                    return res.sendStatus(403);
+                }
+                req.mySession.user = foundUser.email;
+                return res.sendStatus(200);
+            });
         }
     });
 });
