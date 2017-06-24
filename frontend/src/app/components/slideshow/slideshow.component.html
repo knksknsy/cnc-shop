@@ -1,8 +1,13 @@
 <div class="container-fluid">
+  <div class="row">
+        <div class="col">
+            <h1>{{ "SLIDESHOW_HEADER" | translate}}</h1>
+        </div>
+    </div>
   <carousel *ngIf="popularProducts" class="slideshow" [ngClass]="{ 'list-modal-active': isCarouselPaused }" [interval]="carouselInterval">
-    <slide *ngFor="let product of popularProducts">
+    <slide *ngFor="let product of popularProducts" (click)="openView(product.id)">
       <img [src]="product.image" class="img-responsive" />
-      <div class="carousel-caption" (click)="openView(product.id)">
+      <div class="carousel-caption">
         <h3>{{product.name}}</h3>
         <small>{{ "SLIDE_NAME" | translate }} {{product.id}}</small>
         <br />

@@ -1,5 +1,10 @@
 <div class="container-fluid">
     <div class="row">
+        <div class="col">
+            <h1>{{ "CATEGORY_HEADER" | translate}}</h1>
+        </div>
+    </div>
+    <div class="row">
         <div *ngFor="let category of categories" class="col-md">
             <app-category-card [data]="category"></app-category-card>
         </div>
