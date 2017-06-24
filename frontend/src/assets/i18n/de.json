@@ -39,6 +39,8 @@
   "MENU_MARKER": "Stifte & Tinte",
   "MENU_ACC": "Zubehör & Werbeartikel",
   "MENU_CUSTOM": "customiza",
+  "MENU_GRAFFITI": "Graffiti",
+  "MENU_STENCIL":"Schablonen",
   "_comment": "translatesection: components/navbar",
   "NAV_SEARCH": "Suche",
   "_comment": "translatesection: components/product-card",
