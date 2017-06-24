@@ -82,9 +82,15 @@
 
 /*Logo*/
 
-img {
+.logo-head {
 	width: 36px;
 	height: 36px;
+}
+.logo-font {
+	width: auto;
+	height: 36px;
+	margin-left: 2px;
+	// filter: invert(100%);
 }
 
 .card.card-block.card-header{
