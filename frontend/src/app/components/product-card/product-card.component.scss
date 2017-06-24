@@ -1,3 +1,6 @@
+.card.card-inverse:hover {
+	cursor: pointer; 
+}
 .card-inverse {
     height: 45vh;
     overflow: hidden;
@@ -12,21 +15,6 @@
 
 	.card-img-overlay {
 		padding: 0;
-        .row{
-            .col {
-                padding: 0;
-                .cart {
-                    border-radius: 0;
-                    border-top-right-radius: 0.25rem;
-                    border-bottom-left-radius: 0.25rem;
-                    border-top-color: transparent;
-                    border-right-color: transparent;
-                }
-            }
-			position: absolute;
-			top: initial !important;
-			right: 15px !important;
-		}
 		.bg-blur{
 			background-color: rgba(0,0,0,0.5);
 			position: absolute;
