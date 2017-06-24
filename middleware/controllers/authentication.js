@@ -17,7 +17,7 @@ module.exports.register = function(req, res) {
     user.email = req.body.email;
     user.orderId = uuid();
 
-    user.setPassword(req.body.password);
+    user.pre(req.body.password);
 
     user.save(function(err) {
         var token;

@@ -43,7 +43,7 @@ router.post('/register', (req, res, next) => {
             user.state = req.body.user.state;
             user.orderId = uuid();
 
-            user.setPassword(req.body.user.password);
+            user.pre(req.body.user.password);
 
             user.save((err, result) => {
                 if (err) {
