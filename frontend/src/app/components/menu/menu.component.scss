@@ -9,11 +9,25 @@
     .col-sm-6 {
         text-align: center;
     }
-    background-color: #fff; 
+    background-color: #fff;
 }
 
-a:active, a:hover{
+a:hover{
     background-color: #2E90C0 !important;
     color: white;
     text-decoration: none;
+}
+
+.dropdown-item {
+  // background-color: #4CAF50; /* Green */
+   border: none;
+   color: black;
+   padding: 4px 0px;
+  //  text-align: center;
+    text-decoration: none;
+  //  display: inline-block;
+   &:hover {
+     color: white;
+     background-color: #2E90C0 !important;
+   }
 }

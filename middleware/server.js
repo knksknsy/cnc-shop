@@ -10,9 +10,10 @@
 // Modul dependencies
 const express = require('express');
 const path = require('path');
-const http = require('http');
+//const http = require('http');
 const https = require('https');
-const logger = require('morgan');
+const morgan = require('morgan');
+const winston = require('winston');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 var sessions = require("client-sessions");
@@ -58,6 +59,7 @@ app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
   if (req.method === 'OPTIONS') {
+    logger.error('Middleware: 204 No Content');
     res.sendStatus(204);
   } else {
     next();
@@ -69,30 +71,32 @@ app.use('/', api);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
+  logger.error('Middleware:' + err.status + 'Not Found');
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
 
 // error handlers
-
 // Catch unauthorised errors
 app.use(function (err, req, res, next) {
   if (err.name === 'UnauthorizedError') {
+    logger.error('Middleware: 401 Unauthorizedd');
     res.status(401);
     res.json({ "message": err.name + ": " + err.message });
   }
 });
 
 // development error handler
-// will print stacktrace
+// will print stacktrace to file
 if (app.get('env') === 'development') {
   app.use(function (err, req, res, next) {
+    logger.error('Middleware: 500 Internal Server Error');
     res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: err
-    });
+    // res.render('error', {
+    //   message: err.message,
+    //   error: err
+    // });
   });
 };
 
@@ -106,20 +110,17 @@ app.use(function (err, req, res, next) {
   });
 });
 
-// logging to a file
-// create a write stream (in append mode)
+// log error/info/warings to file
 var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), {flags: 'a'});
-//app.use(logger('dev', {stream: accessLogStream}));
-app.use(logger('dev', {stream: accessLogStream}));
+//app.use(morgan('dev', {stream: accessLogStream}));
+app.use(morgan('combined', {stream: accessLogStream}));
+var logger = new winston.Logger({
+  level: 'error',
+  transports: [
+    new (winston.transports.Console)(),
+    new (winston.transports.File)({ filename: 'access.log' })
+  ]
+});
 
-// Get http port from environment and store in Express
-// this is not used anymore!!!
-const phttp = process.env.PORT || '3000';
-app.set('phttp', phttp);
-
-// Create HTTP server
-const server1 = http.createServer(app);
-//server1.listen(phttp, () => console.log(`API running on host:${phttp}`));
-server1.listen(phttp, () => logger(`API running on host:${phttp}`));
-
+// Create HTTPS server
 https.createServer(config, app).listen(8000);
