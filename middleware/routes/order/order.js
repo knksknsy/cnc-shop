@@ -16,7 +16,6 @@ var Orders = mongoose.model('Orders');
 var Products = mongoose.model('Products');
 
 router.get('/key', (req, res, next) => {
-    // todo: check user authentication
     if (req.mySession && req.mySession.user) {
         User.findOne({ email: req.mySession.user })
             .select('-_id orderId')
