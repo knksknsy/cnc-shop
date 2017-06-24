@@ -45,13 +45,15 @@
 
 	/deep/ span.icon-prev.carousel-control-prev-icon{
 		background-color: black;
-        border-radius: 5px;
+		filter: invert(100%);
+		// border-radius: 5px;
         height: 30px;
         width: 30px;
 	}
 	/deep/ span.icon-next.carousel-control-next-icon{
 		background-color: black;
-        border-radius: 5px;
+		filter: invert(100%);
+		// border-radius: 5px;
         height: 30px;
         width: 30px;
 	}
@@ -71,19 +73,21 @@
 		}
 		/deep/ span.icon-prev.carousel-control-prev-icon{
             background-color: black;
-            border-radius: 5px;
+						filter: invert(100%);
+            // border-radius: 5px;
             height: 30px;
             width: 30px;
         }
         /deep/ span.icon-next.carousel-control-next-icon{
             background-color: black;
-            border-radius: 5px;
+						filter: invert(100%);
+            // border-radius: 5px;
             height: 30px;
             width: 30px;
         }
 	}
 }
-/* 
+/*
 *  tablet portrait
 */
 @media (min-width: 768px) and (max-width: 1023px){
@@ -118,20 +122,22 @@
 
 		/deep/ span.icon-prev.carousel-control-prev-icon{
             background-color: black;
-            border-radius: 5px;
+						filter: invert(100%);
+            // border-radius: 5px;
             height: 30px;
             width: 30px;
         }
         /deep/ span.icon-next.carousel-control-next-icon{
             background-color: black;
-            border-radius: 5px;
+						filter: invert(100%);
+            // border-radius: 5px;
             height: 30px;
             width: 30px;
         }
 
 	}
 }
-/* 
+/*
 *  phone landscape
 */
 @media (min-width: 667px) and (max-width: 767px){
@@ -173,21 +179,23 @@
 		}
 
 		/deep/ span.icon-prev.carousel-control-prev-icon{
-            background-color: black;
-            border-radius: 5px;
+						background-color: black;
+						filter: invert(100%);
+            // border-radius: 5px;
             height: 30px;
             width: 30px;
         }
         /deep/ span.icon-next.carousel-control-next-icon{
             background-color: black;
-            border-radius: 5px;
+						filter: invert(100%);
+            // border-radius: 5px;
             height: 30px;
             width: 30px;
         }
 
 	}
 }
-/* 
+/*
 *  phone portrait
 */
 @media (max-width: 375px){
@@ -209,7 +217,7 @@
 			.carousel-caption{
 				bottom: 0;
 			}
-			
+
 			slide{
 				background-color: #fff;
 				height: 60vh;
@@ -231,21 +239,19 @@
 
         /deep/ span.icon-prev.carousel-control-prev-icon{
             background-color: black;
-            border-radius: 5px;
+						filter: invert(100%);
+            // border-radius: 5px;
             height: 30px;
             width: 30px;
         }
         /deep/ span.icon-next.carousel-control-next-icon{
             background-color: black;
-            border-radius: 5px;
+						filter: invert(100%);
+            // border-radius: 5px;
             height: 30px;
             width: 30px;
         }
-		
+
 	}
 
 }
-
-
-
-
