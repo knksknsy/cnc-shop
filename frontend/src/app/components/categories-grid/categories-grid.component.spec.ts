@@ -1,25 +1,19 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+/**
+*  Copyright (C) 2017
+*
+*  Eli K.
+*
+*  MIT License
+*/
+
+
 
 import { CategoriesGridComponent } from './categories-grid.component';
+describe ('CategoriesGrid Component:', ()=> {
 
-describe('CategoriesGridComponent', () => {
-  let component: CategoriesGridComponent;
-  let fixture: ComponentFixture<CategoriesGridComponent>;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ CategoriesGridComponent ]
-    })
-    .compileComponents();
-  }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(CategoriesGridComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
+  // Test if the component ' Categories-grid ' created ***********
   it('should be created', () => {
-    expect(component).toBeTruthy();
-  });
-});
+    let categoriwsGrid = new CategoriesGridComponent();
+    expect (categoriwsGrid).toBeTruthy ();
+  })
+})

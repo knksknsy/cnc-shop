@@ -1,4 +1,4 @@
-import { TestBed, inject } from '@angular/core/testing';
+/*import { TestBed, inject } from '@angular/core/testing';
 
 import { ProductsResolverService } from './products-resolver.service';
 
@@ -13,3 +13,4 @@ describe('ProductsResolverService', () => {
     expect(service).toBeTruthy();
   }));
 });
+*/
