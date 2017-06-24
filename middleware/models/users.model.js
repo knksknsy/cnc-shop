@@ -2,18 +2,20 @@
 *  Copyright (C) 2017
 *
 *   Kaan K.
+*   Artur B.
 *
 *  MIT License
 */
 
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var crypto = require('crypto');
-var jwt = require('jsonwebtoken');
-const secret = require('../config/db.config').secret;
+var bcrypt = require('bcryptjs'); // TODO: for a better performance we should use basic bcrypt, but this would have a bunch of dependencies
+
+var CRYPT_FACTOR = 11;
 
 var userSchema = new Schema({
     email: { type: String, unique: true, required: true },
+    password: { type: String, required: true },
     name: { type: String, required: true },
     surname: { type: String, required: true },
     street: { type: String, required: true },
@@ -21,18 +23,29 @@ var userSchema = new Schema({
     city: { type: String, required: true },
     state: { type: String, required: true },
     orderId: { type: String, required: false },
-    hash: String,
-    salt: String
 });
 
-userSchema.methods.setPassword = function (password) {
-    this.salt = crypto.randomBytes(16).toString('hex');
-    this.hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64, 'sha512').toString('hex');
-}
+// Generate hashed, salted and bcrypted passwords
+userSchema.pre('save', function (next) {
+    var user = this;
+    if (!user.isModified('password')) {
+        return next();
+    }
+    bcrypt.genSalt(CRYPT_FACTOR, function (err, salt) {
+        if (err) return next(err);
+        bcrypt.hash(user.password, salt, function (err, hash) {
+            if (err) return next(err);
+            user.password = hash;
+            next();
+        });
+    });
+});
 
-userSchema.methods.validPassword = function (password) {
-    var hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64, 'sha512').toString('hex');
-    return this.hash === hash;
-}
+userSchema.methods.comparePassword = function (password, callback) {
+    bcrypt.compare(password, this.password, function (err, isMatch) {
+        if (err) return callback(err);
+        callback(null, isMatch);
+    });
+};
 
-mongoose.model('Users', userSchema);
+module.exports = mongoose.model('Users', userSchema);

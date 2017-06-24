@@ -10,7 +10,7 @@
 // Modul dependencies
 const express = require('express');
 const path = require('path');
-const http = require('http');
+//const http = require('http');
 const https = require('https');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
@@ -75,7 +75,6 @@ app.use(function (req, res, next) {
 });
 
 // error handlers
-
 // Catch unauthorised errors
 app.use(function (err, req, res, next) {
   if (err.name === 'UnauthorizedError') {
@@ -109,17 +108,8 @@ app.use(function (err, req, res, next) {
 // logging to a file
 // create a write stream (in append mode)
 var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), {flags: 'a'});
-//app.use(logger('dev', {stream: accessLogStream}));
+//app.use(logger('combined', {stream: accessLogStream}));
 app.use(logger('dev', {stream: accessLogStream}));
 
-// Get http port from environment and store in Express
-// this is not used anymore!!!
-const phttp = process.env.PORT || '3000';
-app.set('phttp', phttp);
-
 // Create HTTP server
-const server1 = http.createServer(app);
-//server1.listen(phttp, () => console.log(`API running on host:${phttp}`));
-server1.listen(phttp, () => logger(`API running on host:${phttp}`));
-
 https.createServer(config, app).listen(8000);
