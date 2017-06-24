@@ -11,7 +11,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 // var crypto = require('crypto');
 //var jwt = require('jsonwebtoken');
-var bcrypt = require('bcryptjs'); // TODO: for a better performance we should use basic bcrypt
+var bcrypt = require('bcryptjs'); // TODO: for a better performance we should use basic bcrypt, but this would have a bunch of dependencies
 const secret = require('../config/db.config').secret;
 
 var CRYPT_FACTOR = 11;
@@ -55,7 +55,7 @@ userSchema.methods.comparePassword = function(password, callback) {
 
 module.exports = mongoose.model('Users', userSchema);
 
-// i think this should be also fine
+// crypto should not be used, latest github commit is about 6 years ago
 // userSchema.methods.setPassword = function (password) {
 //     this.salt = crypto.randomBytes(16).toString('hex');
 //     this.hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64, 'sha512').toString('hex');
