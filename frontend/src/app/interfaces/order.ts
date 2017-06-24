@@ -1,6 +1,7 @@
 import { IColor } from './color';
 
 export interface IOrder {
+    _id: string,
     items: [{
         id: number,
         name: string,
@@ -9,5 +10,7 @@ export interface IOrder {
         price: number,
         colors: Array<IColor>
     }],
-    sum: number
+    sum: number,
+    datetime: string,
+    collapse: boolean
 }

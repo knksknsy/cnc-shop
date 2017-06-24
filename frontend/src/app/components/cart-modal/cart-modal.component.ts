@@ -25,6 +25,7 @@ export class CartModalComponent {
   public orderActive: boolean = true;
   public orderError: boolean;
   public emptyCart: boolean;
+  public totalCost: number = 0;
 
   constructor(private shoppingCartService: ShoppingCartService, private authGuard: AuthGuard) { }
 
@@ -46,10 +47,14 @@ export class CartModalComponent {
   }
 
   checkCart() {
+    this.totalCost = 0;
     if (this.shoppingCartService.cart.length === 0) {
       this.emptyCart = true
     } else {
       this.emptyCart = false
+      this.shoppingCartService.cart.forEach((item) => {
+        this.totalCost += item.quantity * item.product.price;
+      });
     }
   }
 
@@ -76,6 +81,7 @@ export class CartModalComponent {
     }
     cartItem.quantity = value;
     this.shoppingCartService.editProduct(cartItem);
+    this.checkCart();
   }
 
   placeOrder() {
