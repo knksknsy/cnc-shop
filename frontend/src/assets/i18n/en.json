@@ -96,5 +96,8 @@
   "STATIC_LIST": "Products List:",
   "STATIC_CART": "Shopping Cart:",
   "_comment": "translatesection: components/videos",
-  "VIDEO_TUT": "Video Tutorials"
+  "VIDEO_TUT": "Video Tutorials",
+  "GRAFFITI_TUT": "Graffiti Turorials",
+  "GRAFFITI_h2": "Click the image to start the Turorials",
+  "PAGE_TITLE": "WELCOME TO OUR TUTORIAL PAGE"
 }
