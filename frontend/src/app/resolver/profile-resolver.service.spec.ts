@@ -2,7 +2,7 @@ import { TestBed, inject } from '@angular/core/testing';
 
 import { ProfileResolverService } from './profile-resolver.service';
 
-describe('ProfileResolverService', () => {
+describe('ProfileResolver Service', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [ProfileResolverService]
