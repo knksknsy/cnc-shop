@@ -3,6 +3,8 @@
 *
 *   Kaan K.
 *
+*  Eli K.
+*
 *  MIT License
 */
 
@@ -38,8 +40,5 @@ export class MenuComponent implements OnInit {
     this.router.navigate(['/', route]);
   }
 
-  /*goToTutorial() {
-    this.router.navigate(['/graffitiPage' ]);
-  }*/
 
 }
