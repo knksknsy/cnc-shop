@@ -98,6 +98,9 @@ export class CartModalComponent {
               } else {
                 this.orderError = true;
               }
+            }
+            , (err) => {
+              this.orderError = true;
             });
         } else {
           this.hideModal();

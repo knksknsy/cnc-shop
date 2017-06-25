@@ -14,7 +14,7 @@ var Products = mongoose.model('Products');
 var Categories = mongoose.model('Categories');
 
 // get all products
-router.get('/all', (req, res) => {
+router.get('/all', (req, res, next) => {
     Products
         .find()
         .select('-_id id name image price')
