@@ -13,7 +13,6 @@ import { ProductsViewComponent } from './components/products-view/products-view.
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { HomeComponent } from './components/home/home.component';
 import { OrderHistoryComponent } from './components/order-history/order-history.component';
-import { ProfileComponent } from './components/profile/profile.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
 import { AuthGuard } from './guards/auth.guard';
@@ -55,14 +54,6 @@ const appRoutes: Routes = [
         canActivate: [AuthGuard],
         resolve: {
             history: OrderHistoryResolverService
-        }
-    },
-    {
-        path: 'user/profile',
-        component: ProfileComponent,
-        canActivate: [AuthGuard],
-        resolve: {
-            profile: ProfileResolverService
         }
     },
     {
