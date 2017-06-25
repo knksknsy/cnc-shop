@@ -23,11 +23,23 @@ export class MenuComponent implements OnInit {
   ngOnInit() {
   }
 
+   
   openView(route: string) {
     let body = document.getElementsByTagName('body')[0];
     body.classList.remove("stopScrolling");
     this.onMenuItemSelected.emit();
     this.router.navigate(['products/category', route]);
   }
+
+  openViewTut(route: string) {
+    let body = document.getElementsByTagName('body')[0];
+    body.classList.remove("stopScrolling");
+    this.onMenuItemSelected.emit();
+    this.router.navigate(['/', route]);
+  }
+
+  /*goToTutorial() {
+    this.router.navigate(['/graffitiPage' ]);
+  }*/
 
 }
