@@ -24,6 +24,7 @@ const config = {
   cert: fs.readFileSync('./certs/fullchain.pem')
 };
 
+// Include db.model: Handles connection and includes db models
 require('./models/db.model');
 
 // Get our API routes
@@ -32,6 +33,7 @@ const app = express();
 
 // Parsers for POST data
 app.use(bodyParser.json());
+// Parse only URL encoded bodies
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(cookieParser());
@@ -40,14 +42,15 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../frontend/dist')));
 app.use(express.static(path.join(__dirname, '../frontend/src')));
 
-//Setting up sessions
+// Setting up sessions
 app.use(sessions({
   cookieName: cookie.name,
   secret: cookie.secret,
-  duration: 24 * 60 * 60 * 1000, //24 h
-  activeDuration: 10 * 60 * 1000, //10 min
+  duration: 2 * 60 * 60 * 1000, // 2 h
+  activeDuration: 10 * 60 * 1000, // 10 min
   cookie: {
-    httpOnly: true
+    ephemeral: true, // expires when browser closes
+    httpOnly: true // not accessible from javascript
   }
 }));
 
