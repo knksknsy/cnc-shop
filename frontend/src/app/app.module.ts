@@ -46,7 +46,6 @@ import { ColorDropdownComponent } from './components/color-dropdown/color-dropdo
 import { ProductsGridComponent } from './components/products-grid/products-grid.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 
-import { ProfileComponent } from './components/profile/profile.component';
 import { OrderHistoryComponent } from './components/order-history/order-history.component';
 
 import { VideosComponent } from './components/videos/videos.component';
@@ -78,7 +77,6 @@ export function createTranslateLoader(http: Http) {
     AppComponent,
     ProductsViewComponent,
     LoginModalComponent,
-    ProfileComponent,
     HomeComponent,
     NavbarComponent,
     SlideshowComponent,
