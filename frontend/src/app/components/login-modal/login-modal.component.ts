@@ -124,10 +124,6 @@ export class LoginModalComponent implements OnInit {
       });
   }
 
-  openProfile() {
-
-  }
-
   openOrderHistory() {
     this.router.navigate(['/user/history']);
   }
