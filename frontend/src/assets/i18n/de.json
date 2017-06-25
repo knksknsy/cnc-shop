@@ -100,15 +100,12 @@
   "STATIC_CART": "Warenkorb:",
   "_comment": "translatesection: components/videos",
   "VIDEO_TUT": "Video Tutorials",
-<<<<<<< HEAD
   "GRAFFITI_TUT": "Graffiti lernen",
   "GRAFFITI_h2": "Zum Turorial, hier klicken",
-  "PAGE_TITLE": "WILLKOMMEN AUF UNSERER TUTORIALSEITE"
-=======
+  "PAGE_TITLE": "WILLKOMMEN AUF UNSERER TUTORIALSEITE",
   "SORT_BUTTON_NAME": "Sortieren nach",
   "SORT_NAME_AZ": "Name: A-Z",
   "SORT_NAME_ZA": "Name: Z-A",
   "SORT_PRICE_ASC": "Preis: aufsteigend",
   "SORT_PRICE_DESC" : "Preis: absteigend"
->>>>>>> a17291c9cd520e5a989af9c81212663d32a9c6ff
 }
