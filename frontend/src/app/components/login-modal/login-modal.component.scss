@@ -67,8 +67,23 @@ button {
     border-bottom-right-radius: 0.25rem !important;
 }
 
-.dropdown-item {
-    &:hover {
-        cursor: pointer;
-    }
+
+.dropdown-menu {
+  background-color: #292b2c !important;
+  color: #2e90c0 !important;
+  top: 45px;
+  margin: 0;
+  padding: 30;
+  list-style: none;
 }
+.dropdown-item {
+  color: #F27433 !important;
+  &:hover {
+    background-color: #2e90c0;
+  }
+}
+// .dropdown-item {
+//     &:hover {
+//         cursor: pointer;
+//     }
+// }
