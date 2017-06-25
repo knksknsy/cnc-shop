@@ -1,3 +1,11 @@
+<!--
+*  Copyright (C) 2017
+*
+*   Kaan K.
+*
+*  MIT License
+-->
+
 <button type="button" class="btn" (click)="isCollapsed = !isCollapsed"> {{ "COLOR_PICKER" | translate }} </button>
 
 <div (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsed" class="container">

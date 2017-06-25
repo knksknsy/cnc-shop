@@ -26,6 +26,8 @@ export class AppComponent {
   }
 
   searchQuery(query) {
-    this.router.navigate(['/search', query.searchQuery]);
+    if (query.searchQuery) {
+      this.router.navigate(['/search', query.searchQuery]);
+    }
   }
 }

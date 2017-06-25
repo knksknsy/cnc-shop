@@ -33,7 +33,7 @@ router.post('/add', (req, res, next) => {
                     return next(err);
                 }
             }
-        )
+        );
     });
     return res.sendStatus(200);
 });

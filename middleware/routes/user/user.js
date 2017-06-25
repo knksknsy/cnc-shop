@@ -27,25 +27,25 @@ router.post('/register', (req, res, next) => {
             return res.status(500).json({ message: 'Email address is not available' });
         }
         if (!duplicate) {
-            var user = new User();
-            user.email = req.body.user.email;
-            user.name = req.body.user.name;
-            user.surname = req.body.user.surname;
-            user.street = req.body.user.street;
-            user.postcode = req.body.user.postcode;
-            user.city = req.body.user.city;
-            user.state = req.body.user.state;
-            user.orderId = uuid();
-            user.password = req.body.user.password;
-
-            user.save((err, result) => {
+            User.create({
+                email: req.body.user.email,
+                name: req.body.user.name,
+                surname: req.body.user.surname,
+                street: req.body.user.street,
+                postcode: req.body.user.postcode,
+                city: req.body.user.city,
+                state: req.body.user.state,
+                orderId: uuid(),
+                password: req.body.user.password,
+            },
+            (err) => {
                 if (err) {
                     return next(err);
                 }
                 return res.sendStatus(200);
-            });
+            })
         }
-    })
+    });
 });
 
 // login

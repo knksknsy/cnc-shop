@@ -9,11 +9,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { SearchProductsViewComponent } from './components/search-products-view/search-products-view.component';
 import { ProductsViewComponent } from './components/products-view/products-view.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { HomeComponent } from './components/home/home.component';
 import { OrderHistoryComponent } from './components/order-history/order-history.component';
-import { ProfileComponent } from './components/profile/profile.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
 import { AuthGuard } from './guards/auth.guard';
@@ -23,13 +23,21 @@ import { ProductDetailsResolverService } from './resolver/product-details-resolv
 import { CategoryResolverService } from './resolver/category-resolver.service';
 import { ColorsResolverService } from './resolver/colors-resolver.service';
 import { OrderHistoryResolverService } from './resolver/order-history-resolver.service';
-import { ProfileResolverService } from './resolver/profile-resolver.service';
+import { SearchProductsResolverService } from './resolver/search-products-resolver.service';
 
 const appRoutes: Routes = [
     {
         path: '',
         component: HomeComponent,
         resolve: {
+            categories: CategoryResolverService
+        }
+    },
+    {
+        path: 'search/:query',
+        component: SearchProductsViewComponent,
+        resolve: {
+            products: SearchProductsResolverService,
             categories: CategoryResolverService
         }
     },
@@ -58,14 +66,6 @@ const appRoutes: Routes = [
         }
     },
     {
-        path: 'user/profile',
-        component: ProfileComponent,
-        canActivate: [AuthGuard],
-        resolve: {
-            profile: ProfileResolverService
-        }
-    },
-    {
         path: '404',
         component: NotFoundComponent
     },
@@ -88,7 +88,8 @@ const appRoutes: Routes = [
         ProductDetailsResolverService,
         CategoryResolverService,
         ColorsResolverService,
-        OrderHistoryResolverService
+        OrderHistoryResolverService,
+        SearchProductsResolverService
     ]
 })
 export class AppRoutingModule { }

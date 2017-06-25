@@ -12,7 +12,7 @@ import { ColorService } from '../services/color.service';
 import { Observable } from 'rxjs//Observable';
 
 @Injectable()
-export class ColorsResolverService {
+export class ColorsResolverService implements Resolve<any> {
 
   constructor(private colorService: ColorService) { }
 
