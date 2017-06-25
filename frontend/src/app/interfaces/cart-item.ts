@@ -1,3 +1,11 @@
+/**
+*  Copyright (C) 2017
+*
+*   Kaan K.
+*
+*  MIT License
+*/
+
 import { IColor } from './color';
 
 export interface ICartItemProduct {

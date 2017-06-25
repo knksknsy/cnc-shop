@@ -1,24 +1,29 @@
+<!--
+*  Copyright (C) 2017
+*
+*   Kaan K.
+*
+*  MIT License
+-->
+
 <div class="row">
 
   <div class="col-sm-6 text-center">
-    <!--<h3 class="shop">{Bezeichnung}</h3>-->
     <h3 class="shop">SHOP</h3>
     <div class="navbar-nav">
       <!-- anker tags without href have some css issues -->
       <button class="dropdown-item" (click)="openView('cans')">{{ "MENU_CANS" | translate }}</button>
       <button class="dropdown-item" (click)="openView('marker_refills')">{{ "MENU_MARKER" | translate }}</button>
       <button class="dropdown-item" (click)="openView('accessories_merchandise')">{{ "MENU_ACC" | translate }}</button>
-      <!-- <a class="dropdown-item" (click)="openView('cans')">{{ "MENU_CANS" | translate }}</a>
-      <a class="dropdown-item" (click)="openView('marker_refills')">{{ "MENU_MARKER" | translate }}</a>
-      <a class="dropdown-item" (click)="openView('accessories_merchandise')">{{ "MENU_ACC" | translate }}</a> -->
     </div>
   </div>
+
   <div class="col-sm-6 text-center">
-    <!--<h3>{Bezeichnung}</h3>-->
     <h3>HOW TO</h3>
    <div class="navbar-nav">
       <button class="dropdown-item" (click)="openView('cans')">{{ "MENU_GRAFFITI" | translate }}</button>
       <button class="dropdown-item" (click)="openView('cans')">{{ "MENU_STENCIL" | translate }}</button>
     </div>
   </div>
+  
 </div>

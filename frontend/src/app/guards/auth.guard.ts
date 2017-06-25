@@ -22,7 +22,19 @@ export class AuthGuard implements CanActivate {
         if (loggedIn) {
           return loggedIn;
         }
+        this.router.navigate(['/']);
         return loggedIn;
       });
   }
+
+  canActivateWithoutRedirecting(): Observable<boolean> {
+    return this.authService.isLoggedIn()
+      .map((loggedIn) => {
+        if (loggedIn) {
+          return loggedIn;
+        }
+        return loggedIn;
+      })
+  }
+
 }
