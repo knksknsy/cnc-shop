@@ -24,15 +24,15 @@ export class LoginModalComponent implements OnInit {
   @ViewChild('autoShownModal') public autoShownModal: ModalDirective;
   @ViewChild('staticTabs') staticTabs: TabsetComponent;
 
-  private isModalShown: boolean = false;
-  private isLoggedIn: boolean;
+  public isModalShown: boolean = false;
+  public isLoggedIn: boolean;
 
-  private loginForm = this.formBuilder.group({
+  public loginForm = this.formBuilder.group({
     loginEmail: ["", Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9 .-@]{5,23}$')])],
     loginPassword: ["", Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9-_.:]{7,33}$')])]
   });
 
-  private registerForm = this.formBuilder.group({
+  public registerForm = this.formBuilder.group({
     registerName: ["", Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9äöüÄÖÜß -]{3,16}$')])],
     registerSurname: ["", Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9äöüÄÖÜß -]{3,23}$')])],
     registerStreet: ["", Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9äöüÄÖÜß .-]{5,23}$')])],
