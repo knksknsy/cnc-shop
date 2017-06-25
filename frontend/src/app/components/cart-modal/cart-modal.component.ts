@@ -85,7 +85,7 @@ export class CartModalComponent {
   }
 
   placeOrder() {
-    this.authGuard.canActivate()
+    this.authGuard.canActivateWithoutRedirecting()
       .subscribe((loggedIn) => {
         if (loggedIn) {
           this.shoppingCartService.order(this.shoppingCartService.cart)
