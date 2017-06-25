@@ -1,3 +1,11 @@
+/**
+*  Copyright (C) 2017
+*
+*   Kaan K.
+*
+*  MIT License
+*/
+
 import { Directive, ElementRef, Input, HostListener } from '@angular/core';
 
 @Directive({

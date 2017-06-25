@@ -46,7 +46,6 @@ import { ColorDropdownComponent } from './components/color-dropdown/color-dropdo
 import { ProductsGridComponent } from './components/products-grid/products-grid.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 
-import { ProfileComponent } from './components/profile/profile.component';
 import { OrderHistoryComponent } from './components/order-history/order-history.component';
 
 import { VideosComponent } from './components/videos/videos.component';
@@ -66,8 +65,8 @@ import { OnlyIntegerDirective } from './directives/only-integer.directive';
 // Translations
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { OrderHistoryResolverComponent } from './resolver/order-history-resolver/order-history-resolver.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { SearchProductsViewComponent } from './components/search-products-view/search-products-view.component';
 
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -78,7 +77,6 @@ export function createTranslateLoader(http: Http) {
     AppComponent,
     ProductsViewComponent,
     LoginModalComponent,
-    ProfileComponent,
     HomeComponent,
     NavbarComponent,
     SlideshowComponent,
@@ -96,8 +94,8 @@ export function createTranslateLoader(http: Http) {
     FooterComponent,
     OnlyIntegerDirective,
     OrderHistoryComponent,
-    OrderHistoryResolverComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    SearchProductsViewComponent
   ],
   imports: [
     BrowserModule,

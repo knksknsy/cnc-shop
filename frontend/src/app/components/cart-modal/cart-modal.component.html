@@ -1,3 +1,11 @@
+<!--
+*  Copyright (C) 2017
+*
+*   Kaan K.
+*
+*  MIT License
+-->
+
 <button type="button" class="btn btn-outline-primary" (click)="showModal()">
   <span class="fa fa-shopping-cart" aria-hidden="true"></span>
 </button>
@@ -46,7 +54,7 @@
 
         <div *ngIf="!emptyCart" class="row sum">
           <div class="col">
-            <label class="pull-right">Total cost: {{totalCost | currency: 'EUR':true:'1.2-2'}}</label>
+            <label class="pull-right">{{"CART_M_SUM" | translate }} {{totalCost | currency: 'EUR':true:'1.2-2'}}</label>
           </div>
         </div>
 

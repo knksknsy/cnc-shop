@@ -13,13 +13,25 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
 
+/**
+ * Our shopping cart is stored in the localStorage.
+ * We're aware that this is not the best solution in respect of security.
+ * When an user places an order, we're only passing the product id to the server.
+ * The server then looks up the prices stored in the database, and populates
+ * it's orders document.
+ * We're also putting a lot of data into the localStorage. The data is
+ * only relevant for displaying the product information in the shopping cart on the client side.
+*/
+
 @Injectable()
 export class ShoppingCartService {
+
   API = 'https://localhost:8000';
+
   public cart: Array<ICartItem> = [];
   private itemId: number;
   private publicCart: string = 'publicCart';
-  private localStorageKey: string;  
+  private localStorageKey: string;
 
   constructor(private http: Http) {
     this.setLocalStorageKey();
@@ -79,6 +91,14 @@ export class ShoppingCartService {
   }
 
   // call this method whenever user has logged in or out
+  /**
+   * Users that are not logged in have their common localStorage key 'publicCart'
+   * Logged in users get their own loacalStorage key, so the privacy of the shopping cart
+   * is assured.
+   * An unregistered user get's his own key after registration. After the login his items
+   * of the 'publicCart' are then transfered in his own cart via received key.
+   * After that the publicCart is also getting cleared.
+   */
   public setLocalStorageKey() {
     this.localStorageKey = this.publicCart;
     this.orderKey()
