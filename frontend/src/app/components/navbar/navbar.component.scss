@@ -1,3 +1,12 @@
+/**
+*  Copyright (C) 2017
+*
+*  
+*   Kaan K.
+*  Valdet D. <vd021@hdm-stuttgart.de>
+*
+*/
+
 .container-burger {
 	display: flex;
 }
@@ -190,7 +199,6 @@ button {
 }
 
 
-/*From Kaan*/
 
 .i18n, .cart, .user {
 	padding-right: 15px;
@@ -200,12 +208,12 @@ button {
 /* media queries
 *  tablet landscape
 */
-@media (min-width: 1024px) and (max-width: 1200px){
+/*@media (min-width: 1024px) and (max-width: 1200px){
 	.card.card-block.card-header{
 		// height: 0vh !important;
 	}
 }
-
+*/
 /*
 *  tablet portrait
 */

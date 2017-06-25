@@ -10,8 +10,8 @@
 // Modul dependencies
 const express = require('express');
 const path = require('path');
-//const http = require('http');
 const https = require('https');
+// const tls = require('tls');
 const morgan = require('morgan');
 const winston = require('winston');
 const cookieParser = require('cookie-parser');
@@ -19,9 +19,12 @@ const bodyParser = require('body-parser');
 var sessions = require("client-sessions");
 const cookie = require("./config/db.config").cookie;
 const fs = require("fs");
-const config = {
+
+const options = {
   key: fs.readFileSync('./certs/privkey.pem'),
-  cert: fs.readFileSync('./certs/fullchain.pem')
+  cert: fs.readFileSync('./certs/fullchain.pem'),
+  ciphers: 'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!3DES:!MD5:!PSK',
+  honorCipherOrder: true
 };
 
 // Include db.model: Handles connection and includes db models
@@ -126,4 +129,13 @@ var logger = new winston.Logger({
 });
 
 // Create HTTPS server
-https.createServer(config, app).listen(8000);
+https.createServer(options, app).listen(8000);
+
+// var client = tls.connect(8000, config, function () {
+//    console.log(client.authorized ? 'Authorized' : 'Not authorized');
+// });
+//
+// client.on('data', function (data) {
+//    console.log(data.toString());
+//    client.end();
+// });

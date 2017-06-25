@@ -7,6 +7,12 @@
 *  MIT License
 */
 
+/**
+ * The complete documentation of the backend
+ * can be found in the ../postman/Cap'n Can.postman_collection.json file.
+ * Import it in your local postman environment.
+ */
+
 const express = require('express');
 const router = express.Router();
 

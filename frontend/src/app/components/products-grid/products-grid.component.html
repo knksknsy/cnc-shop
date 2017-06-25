@@ -1,16 +1,30 @@
 <!--
 *  Copyright (C) 2017
 *
-*   Kaan K.
+*  Kaan K.
+* Valdet D. <vd021@hdm-stuttgart.de>
 *
 *  MIT License
 -->
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-6 col-sm-2">
       <h1>{{category | translate }}</h1>
     </div>
+    <div class="col-md-6 col-sm-10 py-1 d-flex justify-content-end">
+  <div class="btn-group" dropdown>
+    <button dropdownToggle type="button" class="btn btn-default dropdown-toggle">
+    {{ "SORT_BUTTON_NAME" | translate}}<span class="caret"></span>
+    </button>
+  <ul *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu">
+    <li role="menuitem"><a class="dropdown-item" (click)="sortTypeNameAZ('name')">{{"SORT_NAME_AZ" | translate}}</a></li>
+    <li role="menuitem"><a class="dropdown-item" (click)="sortTypeNameZA('name')">{{"SORT_NAME_ZA" | translate}}</a></li>
+    <li role="menuitem"><a class="dropdown-item" (click)="sortPriceAscending()">{{"SORT_PRICE_ASC" | translate}}</a></li>
+    <li role="menuitem"><a class="dropdown-item" (click)="sortPriceDescending()">{{"SORT_PRICE_DESC"| translate}}</a></li>
+  </ul>
+</div>
+</div>
   </div>
   <div class="row">
     <app-product-card *ngFor="let product of products" [product]="product" class="col-md-4"></app-product-card>
