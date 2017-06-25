@@ -86,5 +86,10 @@
   "STATIC_LIST": "Products List:",
   "STATIC_CART": "Shopping Cart:",
   "_comment": "translatesection: components/videos",
-  "VIDEO_TUT": "Video Tutorials"
+  "VIDEO_TUT": "Video Tutorials",
+  "SORT_BUTTON_NAME": "Sort by",
+  "SORT_NAME_AZ": "Name: A-Z",
+  "SORT_NAME_ZA": "Name: Z-A",
+  "SORT_PRICE_ASC": "Price: ascending",
+  "SORT_PRICE_DESC" : "Price: descending"
 }
