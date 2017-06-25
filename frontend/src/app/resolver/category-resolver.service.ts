@@ -12,7 +12,7 @@ import { Observable } from 'rxjs//Observable';
 import { CategoryService } from '../services/category.service';
 
 @Injectable()
-export class CategoryResolverService {
+export class CategoryResolverService implements Resolve<any> {
 
   constructor(private categoryService: CategoryService) { }
 

@@ -24,7 +24,7 @@ import { CategoryCardComponent } from "app/components/category-card/category-car
 import { ProductCardComponent } from "app/components/product-card/product-card.component";
 
 
-describe('ProductsViewComponent', () => {
+describe('ProductsView Component', () => {
   let component: ProductsViewComponent;
   let fixture: ComponentFixture<ProductsViewComponent>;
 

@@ -9,10 +9,12 @@
 const express = require('express');
 const router = express.Router();
 
+var authController = require('../../controllers/auth.controller');
+
 var mongoose = require('mongoose');
 var Categories = mongoose.model('Categories');
 
-router.post('/add', (req, res, next) => {
+router.post('/add', authController.isAdmin, (req, res, next) => {
     var categories = [];
     if (!req.body.data) {
         // return res.status(500).json({ 'message': 'No body defined' });
@@ -33,7 +35,7 @@ router.post('/add', (req, res, next) => {
                     return next(err);
                 }
             }
-        )
+        );
     });
     return res.sendStatus(200);
 });

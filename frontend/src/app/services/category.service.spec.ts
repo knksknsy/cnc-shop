@@ -20,7 +20,7 @@ import {HttpModule} from '@angular/http';
 //Import a created Moch data
 import { MockCategories } from "app/services/categoties.data.mock";
 
-describe('CategoryService', () => {
+describe('Category Service', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [CategoryService],

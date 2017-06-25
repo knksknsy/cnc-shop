@@ -8,9 +8,10 @@
 */
 
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
 const dbURI = require('../config/db.config').database;
 var autoIncrement = require('mongoose-auto-increment');
-var Schema = mongoose.Schema;
 
 var connection = mongoose.createConnection(dbURI);
 
@@ -19,12 +20,12 @@ autoIncrement.initialize(connection);
 var productSchema = new Schema({
     id: { type: Number, unique: true },
     name: { type: String, unique: true },
-    image: String,
+    image: { type: String, required: true },
     quantity: { type: Number, required: false },
-    description: String,
+    description: { type: String, required: true },
     information: { type: [String], required: false },
-    price: Number,
-    category: String
+    price: { type: Number, required: true },
+    category: { type: String, required: true }
 });
 
 productSchema.plugin(autoIncrement.plugin, {

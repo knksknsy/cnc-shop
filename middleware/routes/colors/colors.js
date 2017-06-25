@@ -9,11 +9,13 @@
 const express = require('express');
 const router = express.Router();
 
+var authController = require('../../controllers/auth.controller');
+
 var mongoose = require('mongoose');
 var Colors = mongoose.model('Colors');
 
 // add array of hex values
-router.post('/add', (req, res, next) => {
+router.post('/add', authController.isAdmin, (req, res, next) => {
     var colors = [];
     if (!req.body.data) {
         return res.status(500).json({ 'message': 'No body defined' });
@@ -36,7 +38,7 @@ router.post('/add', (req, res, next) => {
             }
         )
     });
-    return res.send(200);
+    return res.sendStatus(200);
 });
 
 // get all colors
