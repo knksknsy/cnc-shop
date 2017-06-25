@@ -151,7 +151,8 @@
 @media (min-width: 667px) and (max-width: 767px){
 
     .container-fluid {
-        margin-top: 110px;
+        // margin-top: 110px;
+				margin-top: 40px;
     }
 
 	.slideshow{
@@ -206,10 +207,10 @@
 /*
 *  phone portrait
 */
-@media (max-width: 375px){
+@media (min-width: 335px) and (max-width: 666px){
 
     .container-fluid {
-        margin-top: 110px;
+        margin-top: 40px;
     }
 
 	.slideshow{
