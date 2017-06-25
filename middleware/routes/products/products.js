@@ -9,14 +9,17 @@
 const express = require('express');
 const router = express.Router();
 
+var authController = require('../../controllers/auth.controller');
+
 var mongoose = require('mongoose');
 var Products = mongoose.model('Products');
 var Categories = mongoose.model('Categories');
+var User = mongoose.model('Users');
 
 // search products
 router.get('/search/:query', (req, res, next) => {
     Products
-        .find({ name: { $regex: req.params.query, $options: 'i'} })
+        .find({ name: { $regex: req.params.query, $options: 'i' } })
         .select('-_id id name image price')
         .exec((err, products) => {
             if (err) {
@@ -45,7 +48,7 @@ router.get('/details/:id', (req, res, next) => {
         return res.status(500).json({ 'message': 'No product id passed' });
     }
     Products
-        .findOne({id: req.params.id})
+        .findOne({ id: req.params.id })
         .select('-_id id name image quantity description information price')
         .exec((err, product) => {
             if (err) {
@@ -90,6 +93,11 @@ router.get('/category/:category', (req, res, next) => {
 
 // get the most popular products of each category
 router.get('/popular', (req, res, next) => {
+    // Popular products to be filtered:
+    // A better solution would be to filter for
+    // the ids instead by names.
+    // Unfortunately the assignment of the product ids
+    // is not generated deterministicly. 
     let productNames = [
         "CAP'N CAN Artist Acrylic Spray 400 ml",
         "CAP'N CAN Artist Marker 4-8 mm",
@@ -146,11 +154,19 @@ router.post('/add', (req, res, next) => {
                 );
             });
     });
-    return res.sendStatus(200);
 });
 
-router.put('/update', (req, res, next) => {
-
+// Update product information
+router.put('/update', authController.isAdmin, (req, res, next) => {
+    let product = req.body.data;
+    if (!product || !product.id) {
+        return res.sendStatus(500).json({ 'message': 'No body defined.' });
+    }
+    Products
+        .findOneAndUpdate({ id: product.id }, product, { new: true }, (err, doc) => {
+            if (err) return next(err);
+            return res.send(doc);
+        });
 });
 
 module.exports = router;
