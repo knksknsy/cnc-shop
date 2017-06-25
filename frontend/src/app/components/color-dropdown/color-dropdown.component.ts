@@ -1,3 +1,11 @@
+/**
+*  Copyright (C) 2017
+*
+*   Kaan K.
+*
+*  MIT License
+*/
+
 import { Component, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 import { IColor } from '../../interfaces/color';
 
