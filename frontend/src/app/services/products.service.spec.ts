@@ -22,7 +22,7 @@ import { MockProducts } from "app/services/products.data.mock";
 
 
 
-describe('ProductsService', () => {
+describe('Products Service', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [ProductsService],
