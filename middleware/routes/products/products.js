@@ -13,6 +13,19 @@ var mongoose = require('mongoose');
 var Products = mongoose.model('Products');
 var Categories = mongoose.model('Categories');
 
+// search products
+router.get('/search/:query', (req, res, next) => {
+    Products
+        .find({ name: { $regex: req.params.query, $options: 'i'} })
+        .select('-_id id name image price')
+        .exec((err, products) => {
+            if (err) {
+                return next(err);
+            }
+            return res.send(products);
+        });
+});
+
 // get all products
 router.get('/all', (req, res, next) => {
     Products
@@ -134,6 +147,10 @@ router.post('/add', (req, res, next) => {
             });
     });
     return res.sendStatus(200);
+});
+
+router.put('/update', (req, res, next) => {
+
 });
 
 module.exports = router;

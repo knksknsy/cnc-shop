@@ -5,7 +5,7 @@ import { Observable } from 'rxjs//Observable';
 import { IOrder } from '../interfaces/order';
 
 @Injectable()
-export class OrderHistoryResolverService implements Resolve<IOrder>{
+export class OrderHistoryResolverService implements Resolve<IOrder> {
 
   API = 'https://localhost:8000';
 
