@@ -15,7 +15,9 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ShoppingCartService {
+
   API = 'https://localhost:8000';
+  
   public cart: Array<ICartItem> = [];
   private itemId: number;
   private publicCart: string = 'publicCart';

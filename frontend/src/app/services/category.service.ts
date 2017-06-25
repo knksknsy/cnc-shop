@@ -16,8 +16,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class CategoryService {
 
- API = 'https://localhost:8000';
-  // API = 'https://46.38.255.109:8000';
+  API = 'https://localhost:8000';
 
   constructor(private http: Http) { }
 

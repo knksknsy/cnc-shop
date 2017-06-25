@@ -15,6 +15,7 @@ import { IProduct } from '../interfaces/product';
 
 @Injectable()
 export class ProductsService {
+  
   API = 'https://localhost:8000';
 
   constructor(private http: Http) { }

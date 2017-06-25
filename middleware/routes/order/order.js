@@ -56,6 +56,9 @@ router.post('/', (req, res, next) => {
                                         if (err) {
                                             reject(err);
                                         }
+                                        if (!product) {
+                                            return res.status(500).json({ message: 'Order could not be placed.' });
+                                        }
                                         resolve({ product: product, item: item });
                                     });
                             });
