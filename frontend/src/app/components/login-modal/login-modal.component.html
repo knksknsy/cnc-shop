@@ -8,8 +8,8 @@
   </button>
 
   <ul *dropdownMenu class="dropdown-menu" role="menu" container="body">
-    <li role="menuItem" class="dropdown-item" (click)="openOrderHistory()">Order History</li>
-    <li role="menuItem" class="dropdown-item" (click)="onLogout()">Sign out</li>
+    <li role="menuItem" class="dropdown-item" (click)="openOrderHistory()">{{ "LOGIN_ORDERHIST" | translate }}</li>
+    <li role="menuItem" class="dropdown-item" (click)="onLogout()">{{ "LOGIN_SIGNOUT" | translate }}</li>
   </ul>
 
 </div>
@@ -28,14 +28,14 @@
                 <label class="sr-only">{{ "LOGIN_MAIL" | translate }}</label>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                   <div class="input-group-addon"><span class="fa fa-at"></span></div>
-                  <input formControlName="loginEmail" type="email" class="form-control" placeholder="Email address" required autofocus>
+                  <input formControlName="loginEmail" type="email" class="form-control" placeholder="{{ 'LOGIN_MAIL' | translate }}" required autofocus>
                 </div>
               </div>
               <div class="form-group row">
                 <label class="sr-only">{{ "LOGIN_PSW" | translate }}</label>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                   <div class="input-group-addon"><span class="fa fa-unlock-alt"></span></div>
-                  <input formControlName="loginPassword" type="password" class="form-control" placeholder="Password" required>
+                  <input formControlName="loginPassword" type="password" class="form-control" placeholder="{{ 'LOGIN_PSW' | translate }}" required>
                 </div>
               </div>
               <div class="row">
@@ -53,47 +53,47 @@
                 <label class="sr-only">{{ "LOGIN_NAME" | translate }}</label>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                   <div class="input-group-addon"><span class="fa fa-user"></span></div>
-                  <input formControlName="registerName" class="form-control" placeholder="Name" required autofocus>
+                  <input formControlName="registerName" class="form-control" placeholder="{{ 'LOGIN_NAME' | translate }}" required autofocus>
                 </div>
               </div>
 
               <div class="form-group row">
-                <label class="sr-only">Surname</label>
+                <label class="sr-only">{{ "LOGIN_SURNAME" | translate }}</label>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                   <div class="input-group-addon"><span class="fa fa-user"></span></div>
-                  <input formControlName="registerSurname" class="form-control" placeholder="Surname" required autofocus>
+                  <input formControlName="registerSurname" class="form-control" placeholder="{{ 'LOGIN_SURNAME' | translate }}" required autofocus>
                 </div>
               </div>
 
               <div class="form-group row">
-                <label class="sr-only">Street</label>
+                <label class="sr-only">{{ "LOGIN_STREET" | translate }}</label>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                   <div class="input-group-addon"><span class="fa fa-road"></span></div>
-                  <input formControlName="registerStreet" class="form-control" placeholder="Street" required autofocus>
+                  <input formControlName="registerStreet" class="form-control" placeholder="{{ 'LOGIN_STREET' | translate }}" required autofocus>
                 </div>
               </div>
 
               <div class="form-group row">
-                <label class="sr-only">Postcode</label>
+                <label class="sr-only">{{ "LOGIN_POSTCODE" | translate }}</label>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                   <div class="input-group-addon"><span class="fa fa-road"></span></div>
-                  <input formControlName="registerPostcode" class="form-control" placeholder="Postcode" required autofocus>
+                  <input formControlName="registerPostcode" class="form-control" placeholder="{{ 'LOGIN_POSTCODE' | translate }}" required autofocus>
                 </div>
               </div>
 
               <div class="form-group row">
-                <label class="sr-only">City</label>
+                <label class="sr-only">{{ "LOGIN_CITY" | translate }}</label>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                   <div class="input-group-addon"><span class="fa fa-road"></span></div>
-                  <input formControlName="registerCity" class="form-control" placeholder="City" required autofocus>
+                  <input formControlName="registerCity" class="form-control" placeholder="{{ 'LOGIN_CITY' | translate }}" required autofocus>
                 </div>
               </div>
 
               <div class="form-group row">
-                <label class="sr-only">State</label>
+                <label class="sr-only">{{ "LOGIN_STATE" | translate }}</label>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                   <div class="input-group-addon"><span class="fa fa-road"></span></div>
-                  <input formControlName="registerState" class="form-control" placeholder="State" required autofocus>
+                  <input formControlName="registerState" class="form-control" placeholder="{{ 'LOGIN_STATE' | translate }}" required autofocus>
                 </div>
               </div>
 
@@ -101,7 +101,7 @@
                 <label class="sr-only">{{ "LOGIN_MAIL" | translate }}</label>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                   <div class="input-group-addon"><span class="fa fa-at"></span></div>
-                  <input formControlName="registerEmail" type="email" class="form-control" placeholder="Email address" required autofocus>
+                  <input formControlName="registerEmail" type="email" class="form-control" placeholder="{{ 'LOGIN_MAIL' | translate }}" required autofocus>
                 </div>
               </div>
 
@@ -109,13 +109,13 @@
                 <label class="sr-only">{{ "LOGIN_PSW" | translate }}</label>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                   <div class="input-group-addon"><span class="fa fa-unlock-alt"></span></div>
-                  <input formControlName="registerPassword" type="password" class="form-control" placeholder="Password" required>
+                  <input formControlName="registerPassword" type="password" class="form-control" placeholder="{{ 'LOGIN_PSW' | translate }}" required>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col">
-                  <button class="btn btn-outline-primary btn-block" type="submit">{{ "LOGIN_REGISTER" | translate }}</button>
+                  <button class="btn btn-outline-primary btn-block" type="submit" [disabled]="!registerForm.valid">{{ "LOGIN_REGISTER" | translate }}</button>
                 </div>
               </div>
             </form>

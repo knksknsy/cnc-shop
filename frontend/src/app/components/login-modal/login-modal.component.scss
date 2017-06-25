@@ -1,3 +1,11 @@
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948;
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442;
+}
+
 .modal-dialog {
     margin-right: 15px;
     margin-top: 70px;
@@ -29,7 +37,7 @@
                 width: 15%;
             }
         }
-    }    
+    }
 }
 
 .fa-user {
@@ -38,20 +46,20 @@
 
 .btn {
     border-color: #2e90c0;
-    
+
         &:hover {
 	        background-color: #2e90c0;
 
         .fa {
             color: #F27433;
-            
+
         }
     }
 }
 
 button {
 	border-color: #2e90c0;
-    
+
 }
 
 .menu-drop {
