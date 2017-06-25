@@ -23,6 +23,7 @@ var userSchema = new Schema({
     city: { type: String, required: true },
     state: { type: String, required: true },
     orderId: { type: String, required: false },
+    isAdmin: { type: Boolean, default: false }
 });
 
 // Generate hashed, salted and bcrypted passwords
