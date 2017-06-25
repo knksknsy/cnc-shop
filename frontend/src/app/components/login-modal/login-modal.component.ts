@@ -33,12 +33,12 @@ export class LoginModalComponent implements OnInit {
   });
 
   public registerForm = this.formBuilder.group({
-    registerName: ["", Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9äöüÄÖÜß -]{3,16}$')])],
-    registerSurname: ["", Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9äöüÄÖÜß -]{3,23}$')])],
+    registerName: ["", Validators.compose([Validators.required, Validators.pattern('^[a-zA-ZäöüÄÖÜß -]{3,16}$')])],
+    registerSurname: ["", Validators.compose([Validators.required, Validators.pattern('^[a-zA-ZäöüÄÖÜß -]{3,23}$')])],
     registerStreet: ["", Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9äöüÄÖÜß .-]{5,23}$')])],
     registerPostcode: ["", Validators.compose([Validators.required, Validators.pattern('[0-9]{5}')])],
-    registerCity: ["", Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9äöüÄÖÜß .-]{3,16}$')])],
-    registerState: ["", Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9äöüÄÖÜß .-]{5,16}$')])],
+    registerCity: ["", Validators.compose([Validators.required, Validators.pattern('^[a-zA-ZäöüÄÖÜß .-]{3,16}$')])],
+    registerState: ["", Validators.compose([Validators.required, Validators.pattern('^[a-zA-ZäöüÄÖÜß .-]{5,16}$')])],
     registerEmail: ["", Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9 .-@]{5,23}$')])],
     registerPassword: ["", Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9-_.:]{7,33}$')])]
   });
