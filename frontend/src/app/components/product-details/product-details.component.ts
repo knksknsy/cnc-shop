@@ -24,7 +24,6 @@ export class ProductDetailsComponent implements OnInit {
   public cartDisabled: boolean = true;
   public resetSelectedColors: boolean = false;
   public selectedItemColors: Array<IColor> = [];
-  // todo: enable setting multiple products to cart
   public itemQuantity: number = 1;
   // public pulse: boolean = true;
 
@@ -66,10 +65,6 @@ export class ProductDetailsComponent implements OnInit {
         colors: this.selectedItemColors,
         quantity: this.itemQuantity
       };
-      // sort color names by length
-      cartItem.colors = cartItem.colors.sort((a, b) => {
-        return b.name.length - a.name.length || a.name.localeCompare(b.name);
-      });
       this.shoppingCartService.addProduct(cartItem);
       this.selectedItemColors = [];
       this.resetSelectedColors = true;

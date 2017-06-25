@@ -13,3 +13,4 @@
 {"level":"error","message":"Middleware: 204 No Content","timestamp":"2017-06-25T14:44:34.279Z"}
 {"level":"error","message":"Middleware: 204 No Content","timestamp":"2017-06-25T14:44:44.216Z"}
 {"level":"info","message":"Mongoose connected to mongodb://localhost/cncshop","timestamp":"2017-06-25T14:45:22.036Z"}
+{"level":"info","message":"Mongoose connected to mongodb://localhost/cncshop","timestamp":"2017-06-25T14:58:26.599Z"}
