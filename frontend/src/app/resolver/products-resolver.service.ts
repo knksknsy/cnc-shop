@@ -12,7 +12,7 @@ import { ProductsService } from '../services/products.service';
 import { Observable } from 'rxjs//Observable';
 
 @Injectable()
-export class ProductsResolverService implements Resolve<any>{
+export class ProductsResolverService implements Resolve<any> {
 
   constructor(private productsService: ProductsService) { }
 
