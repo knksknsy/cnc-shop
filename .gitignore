@@ -1,5 +1,8 @@
 # Artur B.
 
+# log files
+access.log
+
 # tmp data
 *.~/
 
