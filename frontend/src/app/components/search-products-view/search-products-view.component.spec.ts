@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+/*import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SearchProductsViewComponent } from './search-products-view.component';
 
@@ -23,3 +23,4 @@ describe('SearchProductsViewComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+*/
