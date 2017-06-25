@@ -13,7 +13,7 @@ describe ('CategoriesGrid Component:', ()=> {
 
   // Test if the component ' Categories-grid ' created ***********
   it('should be created', () => {
-    let categoriwsGrid = new CategoriesGridComponent();
-    expect (categoriwsGrid).toBeTruthy ();
+    let categoriwGrid = new CategoriesGridComponent();
+    expect (categoriwGrid).toBeTruthy ();
   })
 })
