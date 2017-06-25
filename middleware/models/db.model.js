@@ -13,6 +13,7 @@ const winston = require('winston');
 
 var mongoose = require('mongoose');
 const dbURI = require('../config/db.config').database;
+const admin = require('../config/db.config').admin;
 
 // logging to a file
 // create a write stream (in append mode)
@@ -27,8 +28,34 @@ var logger = new winston.Logger({
 
 mongoose.connect(dbURI);
 
+require('./categories.model');
+require('./products.model');
+require('./users.model');
+require('./colors.model');
+require('./orders.model.js');
+
+var Users = mongoose.model('Users');
+
 // CONNECTION EVENTS
 mongoose.connection.on('connected', function() {
+  Users
+    .findOne({ email: admin.email })
+    .exec((err, found) => {
+      if (!found) {
+        Users.create({
+          email: admin.email,
+          password: admin.password,
+          name: admin.other,
+          surname: admin.other,
+          street: admin.other,
+          postcode: admin.other,
+          city: admin.other,
+          state: admin.other,
+          orderId: admin.other,
+          isAdmin: true
+        });
+      }
+    });
   //console.log('Mongoose connected to ' + dbURI);
   logger.info('Mongoose connected to ' + dbURI);
 });
@@ -40,9 +67,3 @@ mongoose.connection.on('disconnected', function() {
   //console.log('Mongoose disconnected');
   logger.info('Mongoose disconnected');
 });
-
-require('./categories.model');
-require('./products.model');
-require('./users.model');
-require('./colors.model');
-require('./orders.model.js');
