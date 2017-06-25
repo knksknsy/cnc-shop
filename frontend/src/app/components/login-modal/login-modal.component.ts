@@ -2,6 +2,7 @@
 *  Copyright (C) 2017
 *
 *   Kaan K.
+*  Artur B.
 *
 *  MIT License
 */
@@ -27,19 +28,19 @@ export class LoginModalComponent implements OnInit {
   public isLoggedIn: boolean;
 
   public loginForm = this.formBuilder.group({
-    loginEmail: ["", Validators.required],
-    loginPassword: ["", Validators.required]
+    loginEmail: ["", Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9 .-@]{5,23}$')])],
+    loginPassword: ["", Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9-_.:]{7,33}$')])]
   });
 
   public registerForm = this.formBuilder.group({
-    registerName: ["", Validators.required],
-    registerSurname: ["", Validators.required],
-    registerStreet: ["", Validators.required],
-    registerPostcode: ["", Validators.required],
-    registerCity: ["", Validators.required],
-    registerState: ["", Validators.required],
-    registerEmail: ["", Validators.required],
-    registerPassword: ["", Validators.required]
+    registerName: ["", Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9äöüÄÖÜß -]{3,16}$')])],
+    registerSurname: ["", Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9äöüÄÖÜß -]{3,23}$')])],
+    registerStreet: ["", Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9äöüÄÖÜß .-]{5,23}$')])],
+    registerPostcode: ["", Validators.compose([Validators.required, Validators.pattern('[0-9]{5}')])],
+    registerCity: ["", Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9äöüÄÖÜß .-]{3,16}$')])],
+    registerState: ["", Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9äöüÄÖÜß .-]{5,16}$')])],
+    registerEmail: ["", Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9 .-@]{5,23}$')])],
+    registerPassword: ["", Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9-_.:]{7,33}$')])]
   });
 
   constructor(private formBuilder: FormBuilder, private authenticationService: AuthenticationService, private shoppingCartService: ShoppingCartService, private router: Router) { }
