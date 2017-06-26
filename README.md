@@ -19,6 +19,7 @@ src/app/services/authentication.service.ts  > API = 'https://<IP>:8000';
 src/app/services/category.service.ts  > API = 'https://<IP>:8000';
 src/app/services/color.service.ts  > API = 'https://<IP>:8000';
 src/app/services/products.service.ts  > API = 'https://<IP>:8000';
+src/app/services/shopping-cart.service.ts  > API = 'https://<IP>:8000';
 src/app/resolver/order-history-resolver.service  > API = 'https://<IP>:8000';
 
 
@@ -29,7 +30,7 @@ Run `docker-compose up` on your remote machine for an production server.
 
 ## Development server
 
-Run `ng serve` in the frontend directory on your local machine for an dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm start` in the frontend directory on your local machine for an dev server. Navigate to `https://localhost:4200/`. The app will automatically reload if you change any of the source files.
 In the middleware directory start the express server with `node server.js`.
 You also need da database, so call `mongod`.
 
