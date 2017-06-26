@@ -12,7 +12,7 @@ WORKDIR /usr/src/app
 RUN npm install
 
 # http
-EXPOSE 3000
-# https 
+#EXPOSE 3000
+# https
 EXPOSE 8000
 CMD ["npm", "start"]

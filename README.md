@@ -1,12 +1,7 @@
-<!--- Copyright (C) 2017  Artur B. -->
 # **webshop: cap'n can** #
 
-<!--- TODO: Desciribe Webshop-->
-FYI: A commit should be start with an UpperCase and ends with a dot.
-
 ### Prerequirements ###
-You need Docker and some other tools to run this project. First clone this
-project and than run dockernode.sh to install Docker CE and Node.js on your
+You need Docker and some other tools to run a production server for this project. First clone this project and than run dockernode.sh to install Docker CE and Node.js on your
 server:
 
 ```bash
@@ -19,49 +14,53 @@ cd cnc-shop
 ./config/dockernode.sh
 ```
 
-### Server Settings ###
+protractor.conf.js > baseUrl: 'http://<IP>:4200/',
+src/app/services/authentication.service.ts  > API = 'https://<IP>:8000';
+src/app/services/category.service.ts  > API = 'https://<IP>:8000';
+src/app/services/color.service.ts  > API = 'https://<IP>:8000';
+src/app/services/products.service.ts  > API = 'https://<IP>:8000';
+src/app/services/shopping-cart.service.ts  > API = 'https://<IP>:8000';
+src/app/resolver/order-history-resolver.service  > API = 'https://<IP>:8000';
+
+
+## Production server
+
+Run `docker-compose up` on your remote machine for an production server.
+
+
+## Development server
+
+Run `npm start` in the frontend directory on your local machine for an dev server. Navigate to `https://localhost:4200/`. The app will automatically reload if you change any of the source files.
+In the middleware directory start the express server with `node server.js`.
+You also need da database, so call `mongod`.
+
+Make sure to populate the database before starting the development server. For this purpose you can find a postman collection in /middleware/postman/Cap'n Can.postman_collection.json.
+
+Import this file to your postman and call the /add endpoints in this order:
+* categories/categories/add
+* colors/colors/add
+* products/products/add
+
+
+### Further notes ###
 In case of the message "Invalid Host Header" we currently use the
 --disable-host-check flag till we setup a proxy.
 
-Further we have X-OS Problems. Node-Sass has to be C-Compiled. So we 
-need to rebuild this npm package for the dev PC/Server. A quick hack
+Further we have X-OS Problems. Node-Sass has to be C-Compiled. So we
+need to rebuild this npm package for the devServer/remoteServer. A quick hack
 to save time is compress the node-sass/ and extract it at the running system.
-(It seems that the Problem is gone by adding node-sass to package.json!!!)
-
-First we need to enter the docker containerimage called frontend. For this run 
-in a new terminal following commands. 
+Mount it via volumes, or just execute `npm rebuild node-sass --force`.
 
 ```bash
 # Check the container ID for the frontend container
 docker ps -a
 # Next we can enter the running container with
-docker exec -it <CONTAINERID> /bin/bash
-# You ll enter the working dir.
-
-# Extract node-sass@4.5.3 into node_modules
-tar xf ./config/node_sass.tar<mac OR lnx>.xz -C .
+docker exec -it <CONTAINERID/NAME> /bin/bash
 ```
 
-### Start Container ###
-To run all container which are linked together just hit the following in the
-project root directory.
-
-```bash
-# build and run container
-docker-compose build
-docker-compose up
-```
-
-### Server certificate ###
-For the servers certificate we use dehydrated.....
-
-
-### Call website ###
-You should now be able to use the webshop by open your browser and .........
 
 ### Author ###
 (c) Artur B., Valdet D., Eli Kabasele, Kaan K.
 
 ### License ###
 MIT
-

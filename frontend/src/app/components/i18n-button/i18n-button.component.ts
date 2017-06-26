@@ -1,7 +1,7 @@
 /**
 *  Copyright (C) 2017
 *
-*  Artur bergen <ab176@hdm-stuttgart.de>
+*   Artur B.
 *
 *  MIT License
 */
