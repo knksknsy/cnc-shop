@@ -8,7 +8,6 @@
 */
 
 import { Component, Input } from '@angular/core';
-// impert IProducts hier
 import { IProduct } from '../../interfaces/product';
 
 @Component({
