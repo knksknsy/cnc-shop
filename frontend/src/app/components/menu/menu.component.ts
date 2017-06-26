@@ -2,6 +2,7 @@
 *  Copyright (C) 2017
 *
 *   Kaan K.
+*   Artur B.
 *
 *  Eli K.
 *
