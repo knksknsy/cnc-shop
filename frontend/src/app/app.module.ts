@@ -67,6 +67,8 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { SearchProductsViewComponent } from './components/search-products-view/search-products-view.component';
+import { GraffitiTurorialComponent } from './components/graffiti-turorial/graffiti-turorial.component';
+import { TutorialPageComponent } from './components/tutorial-page/tutorial-page.component';
 
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -95,7 +97,9 @@ export function createTranslateLoader(http: Http) {
     OnlyIntegerDirective,
     OrderHistoryComponent,
     NotFoundComponent,
-    SearchProductsViewComponent
+    SearchProductsViewComponent,
+    GraffitiTurorialComponent,
+    TutorialPageComponent
   ],
   imports: [
     BrowserModule,

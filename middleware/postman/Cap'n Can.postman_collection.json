@@ -18,6 +18,11 @@
 						"method": "POST",
 						"header": [
 							{
+								"key": "mySession",
+								"value": "",
+								"description": ""
+							},
+							{
 								"key": "Content-Type",
 								"value": "application/json",
 								"description": ""
@@ -55,6 +60,11 @@
 						"method": "POST",
 						"header": [
 							{
+								"key": "mySession",
+								"value": "",
+								"description": ""
+							},
+							{
 								"key": "Content-Type",
 								"value": "application/json",
 								"description": ""
@@ -82,6 +92,71 @@
 			]
 		},
 		{
+			"name": "order",
+			"description": "",
+			"item": [
+				{
+					"name": "/key",
+					"request": {
+						"url": "https://localhost:8000/order/key",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mySession",
+								"value": "",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "Get order key for localStorage in Client."
+					},
+					"response": []
+				},
+				{
+					"name": "/order",
+					"request": {
+						"url": "https://localhost:8000/order",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "mySession",
+								"value": "",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"orders\": [\n\t\t{\n\t\t\t\"pId\": 543210,\n\t\t\t\"colors\": [{ \"name\": \"Black\", \"hexcode\": \"#000000\" }],\n\t\t\t\"quantity\": 1\n\t\t}\n\t]\n}"
+						},
+						"description": "Place a new order."
+					},
+					"response": []
+				},
+				{
+					"name": "/history",
+					"request": {
+						"url": "https://localhost:8000/order/history",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mySession",
+								"value": "",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "Get the order history of an user."
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "products",
 			"description": "",
 			"item": [
@@ -91,6 +166,11 @@
 						"url": "https://localhost:8000/products/add",
 						"method": "POST",
 						"header": [
+							{
+								"key": "mySession",
+								"value": "",
+								"description": ""
+							},
 							{
 								"key": "Content-Type",
 								"value": "application/json",
@@ -133,7 +213,6 @@
 						"url": {
 							"raw": "https://localhost:8000/products/category/:category",
 							"protocol": "https",
-							"auth": {},
 							"host": [
 								"localhost"
 							],
@@ -164,7 +243,6 @@
 						"url": {
 							"raw": "https://localhost:8000/products/details/:id",
 							"protocol": "https",
-							"auth": {},
 							"host": [
 								"localhost"
 							],
@@ -186,6 +264,141 @@
 						"header": [],
 						"body": {},
 						"description": "Get product details."
+					},
+					"response": []
+				},
+				{
+					"name": "/products/search/:query",
+					"request": {
+						"url": {
+							"raw": "https://localhost:8000/products/search/:query",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"products",
+								"search",
+								":query"
+							],
+							"query": [],
+							"variable": [
+								{
+									"key": "query",
+									"value": "Spray"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "Search products."
+					},
+					"response": []
+				},
+				{
+					"name": "/products/update",
+					"request": {
+						"url": "https://localhost:8000/products/update",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "mySession",
+								"value": "1Kq9XnmEcxt64IHrxl4MYw.T2TiMjyUObQHd4zMVxXt7diB_Wowu-u0VlUdu6kxfj1-YKETRfO1hsPqGY-RqeEf.1498419774789.7200000.wdsJCGmiOK9enQIbcqTrS17Yja-pjxT-h86IFAupeNQ",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"data\": {\n\t\t\"id\": 543210,\n\t\t\"name\": \"CAP'N CAN Artist Acrylic Spray 400 ml\",\n\t\t\"image\": \"/assets/products/cans/cnc_can.png\",\n\t\t\"description\": \"Mit der CAP'N CAN Artist Acrylic bekommt man nicht nur ein reines, schnelltrocknendes Acrylat, sondern auch eine variable Ventileinstellung mit nur einem Cap. Dadurch lassen sich unterschiedlich feine oder breite Striche ziehen. Die streichfähige Farbe lässt sich außerdem mit einem Pinsel oder einem Spachtel auftragen und besitzt eine hohe UV-Beständigkeit.\",\n\t\t\"information\": [\n\t\t    \"Acrylbasis (100% reines Acrylat)\",\n\t\t    \"hochdeckend\",\n\t\t    \"permanent\",\n\t\t    \"hohe UV-Beständigkeit\",\n\t\t    \"extrem vergilbungsarm\",\n\t\t    \"streichfähig und spachtelbar\",\n\t\t    \"variable Aussprührate\",\n\t\t    \"Strichbreiten: 4 – 200 mm mit einem Sprühkopf\",\n\t\t    \"400 ml\"\n\t\t],\n\t\t\"quantity\": 1,\n\t\t\"price\": 7.95,\n\t\t\"category\": \"cans\"\n\t}\n}"
+						},
+						"description": "Edit a product."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"description": "",
+			"item": [
+				{
+					"name": "/register",
+					"request": {
+						"url": "https://localhost:8000/user/register",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user\": {\n        \"email\": \"test@cnc.de\",\n        \"name\": \"Test\",\n        \"surname\": \"User\",\n        \"street\": \"Street\",\n        \"postcode\": \"12345\",\n        \"city\": \"City\",\n        \"state\": \"State\",\n        \"password\": \"123456789\"\n      }\n}"
+						},
+						"description": "Register a new User."
+					},
+					"response": []
+				},
+				{
+					"name": "/login",
+					"request": {
+						"url": "https://localhost:8000/user/login",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user\": {\n\t\t\"email\": \"admin@cnc.de\",\n\t\t\"password\": \"topsecretadmin\"\n\t}\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/logout",
+					"request": {
+						"url": "https://localhost:8000/user/logout",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mySession",
+								"value": "",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/isLoggedIn",
+					"request": {
+						"url": "https://localhost:8000/user/isLoggedIn",
+						"method": "GET",
+						"header": [
+							{
+								"key": "mySession",
+								"value": "",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "Check if a user is logged in."
 					},
 					"response": []
 				}
