@@ -1,7 +1,7 @@
 /**
 *  Copyright (C) 2017
 *
-*   Eli K.
+*   Artur B.
 *
 *  MIT License
 */
