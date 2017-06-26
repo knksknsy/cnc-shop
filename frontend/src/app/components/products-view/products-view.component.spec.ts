@@ -48,7 +48,7 @@ describe('ProductsView Component', () => {
   });
 
 //Test if the component 'products-view' ist correctly created
-  it('should be created', () => {
+  it('should create Component PRODUCTS-VIEW, which includes other Components', () => {
     expect(component).toBeTruthy();
   });
 

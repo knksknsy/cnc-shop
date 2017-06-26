@@ -24,6 +24,7 @@ import { CategoryResolverService } from './resolver/category-resolver.service';
 import { ColorsResolverService } from './resolver/colors-resolver.service';
 import { OrderHistoryResolverService } from './resolver/order-history-resolver.service';
 import { SearchProductsResolverService } from './resolver/search-products-resolver.service';
+import { TutorialPageComponent } from "app/components/tutorial-page/tutorial-page.component";
 
 const appRoutes: Routes = [
     {
@@ -64,6 +65,10 @@ const appRoutes: Routes = [
         resolve: {
             history: OrderHistoryResolverService
         }
+    },
+    {
+        path: 'graffitiPage',
+        component: TutorialPageComponent
     },
     {
         path: '404',
