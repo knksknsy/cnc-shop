@@ -75,3 +75,49 @@
 .cart-info {
     padding-left: 15px;
 }
+
+/*
+*  phone landscape
+*/
+@media (min-width: 576px) and (max-width: 767px){
+	.col-2 {
+        font-size: 22px;
+    }
+    .col-4 {
+        font-size: 22px;
+    }
+     .row.cart-body{
+        .col-2 {
+            font-size: 14px;
+        }
+    }
+}
+/*
+*  phone portrait
+*/
+@media (min-width: 333px) and (max-width: 575px){
+	.col-2 {
+        font-size: 16px;
+        .form-group{
+            font-size: 10px;
+        }
+    }
+    .col-4 {
+        font-size: 16px;
+    }
+    .row.cart-body{
+        .col-2 {
+            font-size: 12px;
+            .form-group{
+            font-size: 10px;
+            }
+        }
+    }
+    /*button {
+        &.btn.btn-danger{
+            width: 20px;
+            height: 16px
+        }
+    }*/
+}
+
