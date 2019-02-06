@@ -1,8 +1,8 @@
 /**
 *  Copyright (C) 2017
 *
-*   Artur B.
-*   Kaan K.
+*  Artur B.
+*  Kaan K.
 *
 *  MIT License
 */

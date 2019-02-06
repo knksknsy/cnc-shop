@@ -22,11 +22,9 @@ src/app/services/products.service.ts  > API = 'https://<IP>:8000';
 src/app/services/shopping-cart.service.ts  > API = 'https://<IP>:8000';
 src/app/resolver/order-history-resolver.service  > API = 'https://<IP>:8000';
 
-
 ## Production server
 
 Run `docker-compose up` on your remote machine for an production server.
-
 
 ## Development server
 
@@ -58,9 +56,8 @@ docker ps -a
 docker exec -it <CONTAINERID/NAME> /bin/bash
 ```
 
-
 ### Author ###
-(c) Artur B., Valdet D., Eli Kabasele, Kaan K.
+(c) Artur B., Valdet D., Eli K., Kaan K.
 
 ### License ###
 MIT

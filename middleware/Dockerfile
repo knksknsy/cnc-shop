@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017  Artur B.
+# Copyright (C) 2017 Artur B.
 #
 
 FROM node:7
