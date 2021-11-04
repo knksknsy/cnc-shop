@@ -1,7 +1,12 @@
 # Artur B.
 
 # log files
-access.log
+passwords.txt
+config/certs
+frontend/certs
+middleware/certs
+middleware/config
+middleware/access.log
 
 # tmp data
 *.~/
@@ -37,8 +42,3 @@ testem.log/
 # System Files
 .DS_Store/
 Thumbs.db/
-passwords.txt
-config/certs
-frontend/certs
-middleware/certs
-middleware/config

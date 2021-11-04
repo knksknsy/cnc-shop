@@ -2,7 +2,7 @@
 *  Copyright (C) 2017
 *
 *  Kaan K.
-*  Artur B.
+*  Artur Bergen  <ab176@hdm-stuttgart.de>
 *
 *  MIT License
 */

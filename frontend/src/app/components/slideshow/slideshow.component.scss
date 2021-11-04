@@ -16,7 +16,7 @@
 
 	// carosuel height
 	/deep/ div.carousel > div.carousel-inner{
-		height: 60vh;
+		height: 40vh;
 		border-radius: 0.25rem;
 
 		.carousel-caption{
@@ -25,14 +25,14 @@
 
 		slide{
 			background-color: #fff;
-			height: 60vh;
+			height: 40vh;
 			.item{
 				width: 100%;
 
 				img {
 					position: relative;
 					bottom: 25px;
-                    height: 60vh;
+                    height: 40vh;
                     display: block;
                     margin: 0 auto;
 					cursor: pointer;

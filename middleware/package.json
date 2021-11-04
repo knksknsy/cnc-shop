@@ -4,8 +4,8 @@
   "description": "Middleware for cnc-shop.",
   "license": "MIT",
   "author": [
-    "Artur B.",
-    "Kaan K."
+    "Artur Bergen",
+    "Kaan Keskinsoy"
   ],
   "keywords": [
     "express",
